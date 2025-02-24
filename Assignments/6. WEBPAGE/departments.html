@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departments - GECH</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .container {
+            background-color: black;
+            padding: 10px;
+            text-align: right;
+            position: relative;
+        }
+        .container a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .links {
+            position: sticky;
+            top: 0px;
+            z-index: 1000;
+            /* border: 0.5px solid black; */
+            box-shadow: 0px 0px 25px 0px black;
+            background-color: white;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .links ul {
+            list-style: none;
+            display: flex;
+        }
+        .links ul li {
+            margin-left: 20px;
+        }
+        .links ul li a {
+            text-decoration: none;
+            color: black;
+        }
+        .links ul li a:hover{
+            color: pink;
+        }
+        .departments {
+            background: url('./black.webp') no-repeat center center/cover;
+            opacity: 0.9;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            position: relative;
+            text-align: center;
+        }
+        .departments p a{
+            color: white;
+            text-decoration: none;
+            font-size: medium;
+        }
+        .departments p a:hover{
+            color: pink;
+        }
+        .departments-section {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .departments-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 3fr);
+            column-gap: 20px;
+            row-gap: 20px;
+            padding: 50px;
+            margin-left: 50px;
+            margin-top: 20px;
+            margin-right: 50px;
+            margin-bottom: 20px;
+        }
+        .grid-item {
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 0 10px black;
+        }
+        .grid-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="#">Login</a>
+        <a href="#">Register</a>
+    </div>
+    <div class="links">
+        <h2><i class="fa-solid fa-book-open"></i> GECH</h2>
+        <ul>
+            <li><a href="./webpage.html">HOME</a></li>
+            <li><a href="./departments.html">COURSES</a></li>
+            <li><a href="./gallery.html">GALLERY</a></li>
+            <li><a href="./contactus.html">CONTACT US</a></li>
+            <li>
+                <i class="fa-solid fa-magnifying-glass" style="color: black"></i>
+              </li>
+        </ul>
+    </div>
+    <div class="departments">
+        <h1>Our Departments</h1>
+        <p style="font-size: medium; color: white;"><a href="./webpage.html">Home</a> > <a href="./departments.html">Departments</a></p>
+    </div>
+    <div class="departments-section">
+        <h2>Explore Our Departments</h2>
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="./mech.jpg" alt="Mechanical Engineering" />
+                <h3>Department of Mechanical Engineering (ME)</h3>
+                <p>Faculty Of ME | 4 Years</p>
+            </div>
+            <div class="grid-item">
+                <img src="./AI.avif" alt="AI/ML Engineering" />
+                <h3>Artificial Intelligence(AI)</h3>
+                <p>Faculty Of AI | 4 Years</p>
+            </div>
+            <div class="grid-item">
+                <img src="./civil.jpg" alt="Civil Engineering" />
+                <h3>Department of Civil Engineering (CE)</h3>
+                <p>Faculty Of CE | 4 Years</p>
+            </div>
+            <div class="grid-item">
+                <img src="./electrical.jpg" alt="EEE" />
+                <h3>Department of Electrical Engineering (EEE)</h3>
+                <p>Faculty Of EE | 4 Years</p>
+            </div>
+            <div class="grid-item">
+                <img src="./cs.avif" alt="Computer Science Engineering" />
+                <h3>Department of Computer Science Engineering (CSE)</h3>
+                <p>Faculty Of CSE | 4 Years</p>
+            </div>
+            <div class="grid-item">
+                <img src="./electro.jpg" alt="Electronics and Communication Engineering" />
+                <h3>Department of Electronics and Communication Engineering (ECE)</h3>
+                <p>Faculty Of ECE | 4 Years</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2025 GECH. All rights reserved.</p>
+    </div>
+</body>
+</html>

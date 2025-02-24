@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GALLERY - GECH</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .container {
+            background-color: black;
+            padding: 10px;
+            text-align: right;
+            position: relative;
+        }
+        .container a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .links {
+            /* border: 0.5px solid black; */
+            background-color: white;
+            box-shadow: 0px 0px 25px 0px black;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0px;
+            z-index: 10000;
+        }
+        .links ul {
+            list-style: none;
+            display: flex;
+        }
+        .links ul li {
+            margin-left: 20px;
+        }
+        .links ul li a {
+            text-decoration: none;
+            color: black;
+        }
+        .links ul li a:hover{
+            color: pink;
+        }
+        .gallery {
+            background: url('./black.webp') no-repeat center center/cover;
+            opacity: 0.7px;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            position: relative;
+            text-align: center;
+        }
+        .gallery p a{
+            text-decoration: none;
+            color: white;
+            font-size: medium;
+        }
+        .gallery p a:hover{
+            color: pink;
+        }
+        .photo-gallery{
+            padding: 50px 50px auto auto;
+            background-color: white;
+            justify-content: center;
+        }
+        .gallery-container{
+            width: 800px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            padding: 30px;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        .gallery-container img{
+
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 0 5px grey;
+        }
+
+        .footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        @media screen and (max-width:500px) {
+            .container{
+                width: 100wh;
+            }
+            .gallery-container{
+                grid-template-columns: repeat(1, 1fr) ;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="#">Login</a>
+        <a href="#">Register</a>
+    </div>
+    <div class="links">
+        <h2><i class="fa-solid fa-book-open"></i> GECH</h2>
+        <ul>
+            <li><a href="./webpage.html">HOME</a></li>
+            <li><a href="./departments.html">COURSES</a></li>
+            <li><a href="./gallery.html">GALLERY</a></li>
+            <li><a href="./contactus.html">CONTACT US</a></li>
+            <li>
+                <i class="fa-solid fa-magnifying-glass" style="color: black"></i>
+              </li>
+        </ul>
+    </div>
+    <div class="gallery">
+        <h1>PHOTO GALLERY</h1>
+        <p style="font-size: medium; color: white;"><a href="./webpage.html">Home</a> > <a href="./gallery.html">Gallery</a></p>
+    </div>
+    <div class="photo-gallery">
+        <div class="gallery-container">
+            <img src="./class.jpg" alt="Classroom">
+            <img src="stud.jpeg" alt="study">
+            <img src="library.jpg" alt="library">
+            <img src="grad.jpeg" alt="graduation">
+            <img src="fest.jpeg" alt="fest">
+            <img src="./gard.jpg" alt="garden">
+        </div>
+    </div>
+    
+
+    </div>
+    <div class="footer">
+        <p>&copy; 2025 GECH. All rights reserved.</p>
+    </div>
+</body>
+</html>
