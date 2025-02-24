@@ -1,0 +1,16 @@
+body{
+    background-color: aquamarine;
+}
+
+p{
+    color: red;
+    text-align: justify;
+    font-size: 30px;
+    margin: left;
+}
+h1{
+    color: rebeccapurple;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+}

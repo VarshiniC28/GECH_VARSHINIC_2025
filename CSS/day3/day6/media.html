@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media</title>
+    <style>
+        .container{
+            width: 100wh;
+            height: 100vh;
+            border: 1px solid black;
+            background-color: aliceblue;
+        }
+        /* @media not|only media_type and (max-width:500vw) and (condition) {
+             css style           
+        } */
+         @media print {
+            
+         }
+         @media screen and (min-width:600px) and (max-width:700px){
+            .container{
+                background-color: rgb(194, 52, 52);
+                /* width: 600px; */
+            }
+            
+         }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque doloremque
+      est consequuntur, adipisci ipsam porro.
+    </div>
+  </body>
+</html>
