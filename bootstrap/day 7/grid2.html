@@ -26,26 +26,29 @@
         <!-- if ony col it becomes auto and adjusts to whole width -->
          <!-- row-cols-* -1-12(ex: row-cols-4)
          row-cols-* -sm-xxxl -1-12(ex: row-cols-lg-6, row-cols-md-4)  -->
-         <!-- Here this row-cols-lg-6 means for one row 6 divs will be dispalayed for large -->
+         <!-- Here this row-cols-lg-6 means for one row 6 divs will be dispalayed for large --> 
 
-        <!-- <div class="row row-cols-lg-6 row-cols-md-4 row-cols-sm-3 row-cols-2">
+        <div class="row row-cols-lg-6 row-cols-md-4 row-cols-sm-3 row-cols-2">
             <div class="col bg-secondary-subtle child">1</div>
             <div class="col bg-secondary child">2</div>
             <div class="col bg-secondary-subtle child">3</div>
             <div class="col bg-secondary child">4</div>
             <div class="col bg-secondary-subtle child">5</div>
             <div class="col bg-secondary child">6</div>
-        </div> -->
-
-        <!-- Justify-content adn align items and content-->
-        <!-- <div class="row row-cols-2 justify-content-lg-center Justify-content-md-around Justify-content-md-space-evenly align-items-md-center align-content-xl-center">
-            <div class="col bg-secondary-subtle w-25 child">1</div>
-            <div class="col bg-secondary child w-25">2</div>
+        </div>
+<br>
+        <!-- Justify-content and align items and content-->
+        <!-- align-items-md-center align-content-xl-center -->
+        <!-- justify-content-lg-center justify-content-md-around justify-content-sm-evenly justify-content-around justify-content-xl-between -->
+        <div class="row row-cols-6 align-content-lg-center justify-content-lg-center justify-content-md-around justify-content-sm-evenly justify-content-around justify-content-xl-between ">
+            <div class="col bg-secondary-subtle child w-25">1</div>
+            <div class="col bg-secondary child w-25 ">2</div>
             <div class="col bg-secondary-subtle child w-25">3</div>
-            <div class="col bg-secondary child w-25">4</div>
+            <div class="col bg-secondary child w-25 ">4</div>
             <div class="col bg-secondary-subtle child w-25">5</div>
             <div class="col bg-secondary child w-25">6</div>
-        </div> -->
+        </div>
+        <br><br>
 
         <!-- Nesting of coloumns -->
         <div class="container text-center">
@@ -53,32 +56,33 @@
               <div class="col-6 col-sm-3 bg-secondary">first</div>
               
               <div class="col-6 col-sm-9 bg-secondary-subtle">
-                second
+                
 
                 <div class="row">
-                  <div class="col-8 col-sm-6 bg-primary">
+                  <div class="col-8 col-md-6 col-lg-12 bg-success">
                     1
                   </div>
-                  <div class="col-4 col-sm-6 bg-primary-subtle">
+                  <div class="col-4 col-md-6 col-lg-12 bg-success-subtle">
                     2
                   </div>
                 </div>
+                
                 <!-- extra one more row for trying -->
-                <!-- <div class="row">
-                    <div class="col-6 col-sm-4 bg-primary">
+                <div class="row">
+                    <div class="col-6 col-sm-4 bg-secondary">
                       1
                     </div>
-                    <div class="col-6 col-sm-4 bg-primary-subtle">
+                    <div class="col-6 col-sm-4 bg-secondary-subtle">
                       2
                     </div>
-                    <div class="col-6 col-sm-4 bg-success">
+                    <div class="col-6 col-sm-4 bg-primary">
                         3
                     </div>
-                </div> -->
+                </div>
                 
                 </div>
               </div>
-          </div>
+          </div> 
 
     </div>
     <script
