@@ -1,67 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Data types</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- data types -->
-     <h3>1. Number</h3>
-     <h3>2. String</h3>
-     <h3>3. boolean</h3>
-     <h3>4. undefined</h3>
-     <h3>5. null</h3>
-     <h3>6. bigint</h3>
-     <h3>7. Object</h3>
-     <h3>8. Symbol</h3>
+    <h3>1. Number</h3>
+    <h3>2. String</h3>
+    <h3>3. boolean</h3>
+    <h3>4. undefined</h3>
+    <h3>5. null</h3>
+    <h3>6. bigint</h3>
+    <h3>7. Object</h3>
+    <h3>8. Symbol</h3>
 
-     <script>
-        // dynamic and static languages
-        // static- have to declare variables
-        // javascript is a dynamic language because we dont declare a variable we directly write name and give its values
-        // 1. Number
-        // var, let , const
-        let a=12;
-        console.log("Type of a :", a);
-        console.log("value of a:", typeof a)
+    <script>
+      // dynamic and static languages
+      // static- have to declare variables
+      // javascript is a dynamic language because we dont declare a variable we directly write name and give its values
 
-        // 2. String
-        let b = "hello";
-        console.log("Type of b :", b);
-        console.log("value of b:",typeof b);
+      // 1. Number
+      // var, let , const
+      let a = 12;
+      console.log("Value of a :", a);
+      console.log("Type of a:", typeof a);
 
-        // 4. undefined
-        let c; 
-        console.log("The value of c is :", c);
-        console.log("Type of c:",typeof c);
-        c=30;
-        console.log("The value of c is :", c);
-        console.log("value of c:",typeof c);
+      // 2. String
+      let b = "hello";
+      console.log("Value of b :", b);
+      console.log("Type of b:", typeof b);
 
+      // 4. undefined
+      let c;
+      console.log("The value of c is :", c);
+      console.log("Type of c:", typeof c);
+      c = 30;
+      console.log("The value of c is :", c);
+      console.log("type of c:", typeof c);
 
-        // 5 null
-        let d=null;
-        console.log("the value of d is:", d);
-        console.log("type of d:", typeof d)
+      // 5 null
+      // a historical javascrip bug because null is object and is intentional absence f a value unlike undefined
+      let d = null;
+      console.log("the value of d is:", d);
+      console.log("type of d:", typeof d);
 
-        // 6. Bigint
-        let e=121n;
-        console.log("the value of e is:", e);
-        console.log("The type of d is:",typeof e);
+      // 6. Bigint
+      // BigInt is a special numeric type used to store very large integers beyond the safe range of Number type.
+      let e = 121n;
+      console.log("the value of e is:", e);
+      console.log("The type of d is:", typeof e);
 
-        // 7.Object
-        let obj =[1,2,3,4,5];
-        console.log("The value of obj:", obj);
-        console.log("The type of obj is:",typeof obj);
+      // 7.Object
+      // An object in JavaScript is a collection of key-value pairs.
+      //new Object() (Less common)
+      let obj = [1, 2, 3, 4, 5];
+      console.log("The value of obj:", obj);
+      console.log("The type of obj is:", typeof obj);
 
-        let obj1={
-            firstName:"some",
-            Lastname: "Thing"
-        }
-        console.log("The value of obj1:", obj1);
-        console.log("The type of obj1 is:",typeof obj1);
-
-     </script>
-</body>
+      // Object Literal {}
+      let obj1 = {
+        firstName: "some",
+        Lastname: "Thing",
+      };
+      console.log("The value of obj1:", obj1);
+      console.log("The type of obj1 is:", typeof obj1);
+    </script>
+  </body>
 </html>

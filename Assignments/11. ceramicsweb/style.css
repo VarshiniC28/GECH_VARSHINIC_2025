@@ -39,7 +39,7 @@
   .shop-section{
     height: 30vh;
     background: rgb(222,226,233);
-    background: radial-gradient(circle, rgba(222,226,233,1) 0%, rgba(7,14,31,0.7596288515406162) 0%), url(./2.webp);
+    background: radial-gradient(circle, rgba(222,226,233,1) 0%, rgba(7,14,31,0.7596288515406162) 0%), url(./blog.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -47,14 +47,19 @@
   }
   .work-section{
     height: 40vh;
-    background-image: url(./child.webp);
+    background-image: url(./blog.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
   }
   .blg-section img{
-
+    transition: transform 0.3s ease-in-out;
+    
+  }
+  .blg-section img:hover{
+    transform: scale(0.9);
+    /* opacity: 0.8; */
   }
   .contact-section{
     height: 30vh;

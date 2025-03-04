@@ -14,22 +14,35 @@
     <p>4. using const</p>
 
     <script>
+        // using + when we are concatening , ie even if there is one or two of operands string to add... instead of +we can use ,
         // 1. Automatically
+        //  automatically treats it as a global variable (even if inside a function).
+        //  This can accidentally override existing global variables, leading to bugs.
+        // Not recommended in modern JavaScript.
         var1="Hello";
         console.log("The value is :" + var1);
         console.log("The type is :" + typeof var1);
 
+
         // 2. Var
+        // Can be redeclared (e.g., var var2 = 50;)
+        // Can be reassigned (e.g., var2 = 100;)
+        // Function-scoped (Only accessible inside the function where it is declared)
+        // Hoisted (Moves to the top of the function but remains undefined before execution)
         var var2=24;
         console.log("The value is :" +var2);
         console.log("The type is :" + typeof var2);
 
         // 3. Let
+        // block-scoped
+        // can be reassigned but cant be redeclared
         let var3=true;
         console.log("The value is :" +var3);
         console.log("The type is :" + typeof var3);
 
         // 4. const
+        // block-scoped
+        // cannot be reassignes=d but must be initialized during declaration
         const var4=121n;
         console.log("The value is :" +var4);
         console.log("The type is :" + typeof var4);
