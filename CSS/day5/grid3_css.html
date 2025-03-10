@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grid in CSS</title>
     <style>
-        .grid-container{
+        .grid-container {
             width: 500px;
             height: 500px;
             border: 2px solid black;
@@ -16,19 +17,21 @@
             /* align-items: center; */
             /* justify-content: center; */
         }
-        .child{
+
+        .child {
             border: 2px solid blue;
             background-color: aliceblue;
             width: 50px;
             height: 50px;
         }
-        .first{
+
+        .first {
             justify-self: center;
             align-self: flex-end;
         }
-        
     </style>
 </head>
+
 <body>
     <div class="grid-container">
         <div class="child first">1</div>
@@ -42,4 +45,5 @@
         <div class="child">9</div>
     </div>
 </body>
+
 </html>

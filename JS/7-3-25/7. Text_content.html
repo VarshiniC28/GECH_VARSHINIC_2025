@@ -20,10 +20,10 @@
         // it prints all text .. even the hidden text is printed
         console.log(p_tag.textContent);
 
-        // even if the text content inside the ptag is changed to hello. console prints original text above thsi
-        p_tag.innerText = "Hello";
+        // even if the text content inside the ptag is changed to hello. console prints original text above this..that is before this was declared 
+        console.log(p_tag.innerText = "Hello");// changes to hello
 
-        p_tag.textContent = "World"; // hello changes to world
+        console.log(p_tag.textContent = "World"); // hello changes to world
     </script>
 </body>
 

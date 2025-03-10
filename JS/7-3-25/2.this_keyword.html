@@ -10,7 +10,7 @@
 <body>
 
     <h1>this keyword</h1>
-    <p>this keyword will poin to currect object</p>
+    <p>this keyword will point to currect object</p>
     <script>
         //it prints all- window object.. can go to document and check our code
         // console.log(this);
@@ -20,7 +20,7 @@
         }
         hello();
 
-        // this keyword when using a object in our code 
+        // // this keyword when using it in a our object
         const obj = {
             name: "varsha",
             age: 21,
@@ -31,13 +31,13 @@
         }
         obj.about();
 
-        //to print elements i.e firstname and lastname using this keyword
+        // //to print properties i.e firstname and lastname using this keyword
         const obj1 = {
             firstname: "Varshini",
             lastname: "C",
             age: 21,
             adress: "hassan",
-            about: function (name, age) {
+            about: function () {
                 console.log(this.firstname + " " + this.lastname);
             }
         }
