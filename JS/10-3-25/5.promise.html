@@ -12,7 +12,7 @@
 
     <p>promise is a future value where it can be resolved to rejected</p>
     <p>1. pending - initial state</p>
-    <p>2. rejected - rejected</p>
+    <p>2. resolve - rejected</p>
     <p>
     <pre>
         const var_name = new Promise((resolve, reject)=>{
@@ -31,9 +31,10 @@
                 return reject("Cannot make fried rice")
             }
         });
-        // await result;
+
 
         //1. then and catch
+        //for reject-this doesnt show in the format of error that is in red since we use catch...but in await if we dont use try and catch it display in form of error
         console.log(result);
         result.then((value) => {
             console.log(value);

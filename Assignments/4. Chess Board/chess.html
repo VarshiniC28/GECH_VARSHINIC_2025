@@ -1,73 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chess Board</title>
-    <style>
-        body{
-            width: 900px;
-            margin: 10px auto;
-        }
-        .board{
-            width: 800px;
-            height: 800px;
-            border: 1px solid black;
-            display: grid;
-            /* display: flex; */
-            grid-template-columns: repeat(8,auto);
-            grid-template-rows: repeat(8,auto);
-        }
-        .square{
-            border: 1px solid black;
-            width: auto;
-            height: auto;
-            /* background: black, !important; ; */
-        }
-        
-        .board > div:nth-child(odd) {
-          background-color: white;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chess Board</title>
+  <style>
+    body {
+      width: 900px;
+      margin: 10px auto;
+    }
 
-        .board > div:nth-child(even) {
-          background-color: black;
-        }
-        .board:nth-child(16n+9),
-        .board > div:nth-child(16n+10),
-        .board > div:nth-child(16n+11),
-        .board > div:nth-child(16n+12),
-        .board > div:nth-child(16n+13),
-        .board > div:nth-child(16n+14),
-        .board > div:nth-child(16n+15),
-        .board > div:nth-child(16n+16) {
-          background-color: initial; 
-        }
-        .board > div:nth-child(16n+9):nth-child(odd),
-        .board > div:nth-child(16n+10):nth-child(odd),
-        .board > div:nth-child(16n+11):nth-child(odd),
-        .board > div:nth-child(16n+12):nth-child(odd),
-        .board > div:nth-child(16n+13):nth-child(odd),
-        .board > div:nth-child(16n+14):nth-child(odd),
-        .board > div:nth-child(16n+15):nth-child(odd),
-        .board > div:nth-child(16n+16):nth-child(odd)
-         {
-          background-color: black;
-        }
+    .board {
+      width: 800px;
+      height: 800px;
+      border: 1px solid black;
+      display: grid;
+      /* display: flex; */
+      grid-template-columns: repeat(8, auto);
+      grid-template-rows: repeat(8, auto);
+    }
 
-        .board > div:nth-child(16n+9):nth-child(even),
-        .board > div:nth-child(16n+10):nth-child(even),
-        .board > div:nth-child(16n+11):nth-child(even),
-        .board > div:nth-child(16n+12):nth-child(even),
-        .board > div:nth-child(16n+13):nth-child(even),
-        .board > div:nth-child(16n+14):nth-child(even),
-        .board > div:nth-child(16n+15):nth-child(even),
-        .board > div:nth-child(16n+16):nth-child(even) {
-          background-color: white;
-        }
-    </style>
+    .square {
+      border: 1px solid black;
+      width: auto;
+      height: auto;
+      /* background: black, !important; ; */
+    }
+
+    .board>div:nth-child(odd) {
+      background-color: white;
+    }
+
+    .board>div:nth-child(even) {
+      background-color: black;
+    }
+
+    .board:nth-child(16n+9),
+    .board>div:nth-child(16n+10),
+    .board>div:nth-child(16n+11),
+    .board>div:nth-child(16n+12),
+    .board>div:nth-child(16n+13),
+    .board>div:nth-child(16n+14),
+    .board>div:nth-child(16n+15),
+    .board>div:nth-child(16n+16) {
+      background-color: initial;
+    }
+
+    .board>div:nth-child(16n+9):nth-child(odd),
+    .board>div:nth-child(16n+10):nth-child(odd),
+    .board>div:nth-child(16n+11):nth-child(odd),
+    .board>div:nth-child(16n+12):nth-child(odd),
+    .board>div:nth-child(16n+13):nth-child(odd),
+    .board>div:nth-child(16n+14):nth-child(odd),
+    .board>div:nth-child(16n+15):nth-child(odd),
+    .board>div:nth-child(16n+16):nth-child(odd) {
+      background-color: black;
+    }
+
+    .board>div:nth-child(16n+9):nth-child(even),
+    .board>div:nth-child(16n+10):nth-child(even),
+    .board>div:nth-child(16n+11):nth-child(even),
+    .board>div:nth-child(16n+12):nth-child(even),
+    .board>div:nth-child(16n+13):nth-child(even),
+    .board>div:nth-child(16n+14):nth-child(even),
+    .board>div:nth-child(16n+15):nth-child(even),
+    .board>div:nth-child(16n+16):nth-child(even) {
+      background-color: white;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="board">
+  <div class="board">
     <div class="square"></div>
     <div class="square"></div>
     <div class="square"></div>
@@ -132,7 +137,8 @@
     <div class="square"></div>
     <div class="square"></div>
     <div class="square"></div>
-</div>
+  </div>
 
 </body>
+
 </html>

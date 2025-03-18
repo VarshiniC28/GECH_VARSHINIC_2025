@@ -1,387 +1,415 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GECH</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      .body {
-        overflow-x: hidden;
-        font-family: Arial, Helvetica, sans-serif;
-      }
-      .container {
-        position: relative;
-        background-color: white;
-      }
-      .up {
-        width: 100%;
-        height: 5vh;
-        padding-right: 5px;
-        background-color: black;
-        display: flex;
-        align-content: center;
-        justify-content: flex-end;
-      }
-      h5 {
-        margin-top: 7px;
-      }
-      .up.hover {
-        color: black;
-      }
-      .GECH {
-        width: 100%;
-        height: 8vh;
-        /* border: 0.5px solid black; */
-        box-shadow: 0px 0px 25px 0px black;
-        background-color: white;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 50px;
-        position: sticky;
-        top: 0px;
-        z-index: 3;
-      }
-      .h2 {
-        margin: 20px auto;
-        word-spacing: 20px;
-      }
-      .links {
-        display: flex;
-        align-items: center;
-      }
-      .links ul {
-        display: flex;
-        list-style: none;
-        justify-content: space-between;
-      }
-      .links ul li {
-        margin-left: 20px;
-      }
-      .links ul li a {
-        text-decoration: none;
-        color: black;
-      }
-      .links ul li a:hover {
-        color: rgb(246, 164, 177);
-        /* background-color: aliceblue; */
-      }
-      .intro {
-        margin: 180px 180px 180px 180px;
-        position: absolute;
-        justify-content: left;
-        top: 20px;
-        z-index: 2;
-      }
-      .intro a {
-        margin-top: 15px;
-        padding: 5px;
-        text-decoration: none;
-        color: black;
-        border: 0.5px solid black;
-        border-radius: 2px;
-      }
-      .img img {
-        width: 100%;
-        height: 400px;
-        object-fit: cover;
-        opacity: 0.5;
-        position: relative;
-      }
-      .arrow {
-        position: absolute;
-        top: 250px;
-        font-size: 24px;
-        color: black;
-        background-color: rgba(255, 255, 255, 0.312);
-        padding: 10px;
-        border-radius: 50%;
-        cursor: progress;
-        transition: all 0.3s;
-        perspective: 1000px;
-      }
-      .left {
-        left: 20px;
-      }
-      .right {
-        right: 20px;
-      }
-      .arrow:hover {
-        background-color: black;
-        color: white;
-        transform: translateZ(50px);
-      }
-      .info {
-        width: 100%;
-        height: 100%;
-        margin: 0x;
-        padding-top: 50px;
-        padding-left: 250px;
-        padding-right: 250px;
-        padding-bottom: 50px;
-        background-color: white;
-        text-align: justify;
-      }
-      .info img {
-        float: left;
-        margin-right: 20px;
-        /* margin-bottom: 50px ; */
-        width: 250px;
-        height: 200px;
-        border-radius: 15%;
-      }
-      .info a {
-        text-decoration: none;
-        text-align: justify;
-        padding: 5px 5px;
-        border: 0.5px solid white;
-        border-radius: 2px;
-        color: white;
-        background-color: black;
-      }
-      .departments {
-        background-color: white;
-        height: auto;
-        width: 100%;
-        padding-top: 50px;
-        padding-bottom: 50px;
-        margin: 0;
-        overflow: hidden;
-      }
-      .grid-container {
-        display: grid;
-        /* background-color: aliceblue; */
-        grid-template-columns: repeat(3, 3fr);
-        column-gap: 20px;
-        row-gap: 20px;
-        padding: 50px;
-        margin-left: 50px;
-        /* margin-top: 20px; */
-        margin-right: 50px;
-        margin-bottom: 20px;
-      }
-      .grid-item {
-        background-color: white;
-        padding: 20px;
-        text-align: center;
-        border-radius: 20px;
-        box-shadow: 0 0 10px black;
-      }
-      .grid-item img {
-        width: 100%;
-        height: 250px;
-        object-fit: cover;
-        border-radius: 10px;
-        margin-bottom: 10px;
-      }
-      .footer {
-        background-color: black;
-        height: 250px;
-        width: 100%;
-        display: flex;
-        /* flex-direction: column; */
-        justify-content: space-between;
-        /* margin-top: 20px; */
-        align-items: center;
-        padding: 100px;
-        /* display: inline-block; */
-      }
-      .footer-left {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        /* margin-top: 20px; */
-        padding: 100px;
-        display: inline-block;
-      }
-      .footer-right {
-        text-align: right;
-        color: white;
-        line-height: 2;
-      }
-      .icons {
-        color: white;
-        display: flex;
-        /* flex-direction: row; */
-        gap: 20px;
-        /* justify-content: flex-start; */
-        margin-left: 30px;
-      }
-      .bottom {
-        background-color: black;
-        color: white;
-        display: flex;
-        justify-content: space-evenly;
-        padding: 10px 10px;
-      }
-      .bottom a {
-        color: white;
-        text-decoration: none;
-      }
-      .intro a:hover {
-        background-color: black;
-        color: pink;
-        transform: translateZ(-50px);
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="up">
-        <h5 style="word-spacing: 30px">
-          <a href="#" style="text-decoration: none; color: white">LogIn</a>
-          <a href="#" style="text-decoration: none; color: white">Register</a>
-        </h5>
-      </div>
 
-      <div class="GECH">
-        <h2>
-          <i class="fa-solid fa-book-open" style="color: rgb(16, 2, 2)"></i>
-          &nbsp;GECH
-        </h2>
-        <div class="links">
-          <ul>
-            <li><a href="./webpage.html">HOME</a></li>
-            <li><a href="./departments.html">COURSES</a></li>
-            <li><a href="./gallery.html">GALLERY</a></li>
-            <li><a href="./contactus.html">CONTACT US</a></li>
-            <li>
-              <i class="fa-solid fa-magnifying-glass" style="color: black"></i>
-            </li>
-          </ul>
-        </div>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GECH</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-      <div class="img">
-        <img src="./black.webp" alt="Image not found" />
-        <i class="fa-solid fa-arrow-left arrow left"></i>
-        <i class="fa-solid fa-arrow-right arrow right"></i>
-        <div class="intro">
-          <p><b>Welcome To Gov.t Engineering College, Hassan</b></p>
-          <br />
-          <h1>The Best Learning Institution</h1>
-          <br />
-          <p style="width: 50vw">
-            Premier institution dedicated to academic excellence, innovation,
-            and holistic student development. With a diverse range of programs
-            and state-of-the-art facilities, we empower students to achieve
-            their full potential and succeed in their careers.
-          </p>
-          <br />
-          <a href="./departments.html">Veiw courses</a>
-        </div>
-      </div>
+    .body {
+      overflow-x: hidden;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-      <div class="info">
-        <img src="./studen.webp" alt="Image not found" />
-        <h3 style="color: rgb(80, 80, 80)">About GECH</h3>
-        <br />
-        <p style="color: rgb(91, 89, 89)">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius rem
-          aperiam provident nesciunt accusantium vitae, aliquam totam explicabo
-          asperiores ipsa nihil eos quis, ea illum minima? Sequi esse itaque
-          eos, at animi ab quia quam voluptate laboriosam amet tempora ipsum
-          totam dolores? Ullam voluptatum dicta impedit numquam distinctio,
-          minus ex.
-        </p>
-        <br />
-        <a href="#">LEARN NOW</a>
-      </div>
-      <br />
-      <hr />
-      <div class="departments">
-        <h2
-          style="color: rgb(53, 14, 14); text-align: center; margin-top: 50px"
-        >
-          OUR DEPARTMENTS
-        </h2>
-        <p style="text-align: center; color: gray">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </p>
+    .container {
+      position: relative;
+      background-color: white;
+    }
 
-        <div class="grid-container">
-          <div class="grid-item">
-            <img src="./mech.jpg" alt="Mechanical Engineering" />
-            <h3>Department of Mechanical Engineering (ME)</h3>
-            <p>Faculty Of ME | 4 Years</p>
-          </div>
-          <div class="grid-item">
-            <img src="./AI.avif" alt="AI/ML Engineering" />
-            <h3>Artificial Intelligence(AI)</h3>
-            <p>Faculty Of AI | 4 Years</p>
-          </div>
-          <div class="grid-item">
-            <img src="./civil.jpg" alt="Civil Engineering" />
-            <h3>Department of Civil Engineering (CE)</h3>
-            <p>Faculty Of CE | 4 Years</p>
-          </div>
-          <div class="grid-item">
-            <img src="./electrical.jpg" alt="EEE" />
-            <h3>Department of Electrical Engineering (EEE)</h3>
-            <p>Faculty Of EE | 4 Years</p>
-          </div>
-          <div class="grid-item">
-            <img src="./cs.avif" alt="Computer Science Engineering" />
-            <h3>Department of Computer Science Engineering (CSE)</h3>
-            <p>Faculty Of CSE | 4 Years</p>
-          </div>
-          <div class="grid-item">
-            <img
-              src="./electro.jpg"
-              alt="Electronics and Communication Engineering"
-            />
-            <h3>Department of Computer Science Engineering (CSE)</h3>
-            <p>Faculty Of CSE | 4 Years</p>
-          </div>
-        </div>
-      </div>
-      <br />
-      <hr style="margin: 0; padding: 0" />
+    .up {
+      width: 100%;
+      height: 5vh;
+      padding-right: 5px;
+      background-color: black;
+      display: flex;
+      align-content: center;
+      justify-content: flex-end;
+    }
 
-      <div class="footer">
-        <div class="footer-left">
-          <h2 style="color: white; margin-bottom: 10px; padding: 20px auto">
-            <i class="fa-solid fa-book-open" style="color: white"></i>
-            &nbsp;GECH
-          </h2>
-          <p style="color: white; padding: 10px auto; margin-bottom: 10px">
-            Look for us on Social Media
-          </p>
-          <div class="icons">
-            <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-twitter"></i>
-          </div>
-        </div>
+    h5 {
+      margin-top: 7px;
+    }
 
-        <div class="footer-right">
-          <h2 style="margin-bottom: 10px">Get in Touch</h2>
-          <p>Email: contact@gech.com</p>
-          <p>Phone: +91 0000000000</p>
-          <p>Location: Opp. Dairy Circle , Hasan, Karnataka</p>
-        </div>
-      </div>
-      <hr color="white" />
-      <div class="bottom">
-        <p>
-          @2025 GECH. Made with
-          <i class="fa-solid fa-heart stylecolor red" !important></i> by
-          Varshini C
-        </p>
-        <p>
-          <a href="#">Privacy policy</a> &nbsp;
-          <a href="#">Terms and Conditions apply</a>
-        </p>
+    .up.hover {
+      color: black;
+    }
+
+    .GECH {
+      width: 100%;
+      height: 8vh;
+      /* border: 0.5px solid black; */
+      box-shadow: 0px 0px 25px 0px black;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 50px;
+      position: sticky;
+      top: 0px;
+      z-index: 3;
+    }
+
+    .h2 {
+      margin: 20px auto;
+      word-spacing: 20px;
+    }
+
+    .links {
+      display: flex;
+      align-items: center;
+    }
+
+    .links ul {
+      display: flex;
+      list-style: none;
+      justify-content: space-between;
+    }
+
+    .links ul li {
+      margin-left: 20px;
+    }
+
+    .links ul li a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .links ul li a:hover {
+      color: rgb(246, 164, 177);
+      /* background-color: aliceblue; */
+    }
+
+    .intro {
+      margin: 180px 180px 180px 180px;
+      position: absolute;
+      justify-content: left;
+      top: 20px;
+      z-index: 2;
+    }
+
+    .intro a {
+      margin-top: 15px;
+      padding: 5px;
+      text-decoration: none;
+      color: black;
+      border: 0.5px solid black;
+      border-radius: 2px;
+    }
+
+    .img img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      opacity: 0.5;
+      position: relative;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 250px;
+      font-size: 24px;
+      color: black;
+      background-color: rgba(255, 255, 255, 0.312);
+      padding: 10px;
+      border-radius: 50%;
+      cursor: progress;
+      transition: all 0.3s;
+      perspective: 1000px;
+    }
+
+    .left {
+      left: 20px;
+    }
+
+    .right {
+      right: 20px;
+    }
+
+    .arrow:hover {
+      background-color: black;
+      color: white;
+      transform: translateZ(50px);
+    }
+
+    .info {
+      width: 100%;
+      height: 100%;
+      margin: 0x;
+      padding-top: 50px;
+      padding-left: 250px;
+      padding-right: 250px;
+      padding-bottom: 50px;
+      background-color: white;
+      text-align: justify;
+    }
+
+    .info img {
+      float: left;
+      margin-right: 20px;
+      /* margin-bottom: 50px ; */
+      width: 250px;
+      height: 200px;
+      border-radius: 15%;
+    }
+
+    .info a {
+      text-decoration: none;
+      text-align: justify;
+      padding: 5px 5px;
+      border: 0.5px solid white;
+      border-radius: 2px;
+      color: white;
+      background-color: black;
+    }
+
+    .departments {
+      background-color: white;
+      height: auto;
+      width: 100%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .grid-container {
+      display: grid;
+      /* background-color: aliceblue; */
+      grid-template-columns: repeat(3, 3fr);
+      column-gap: 20px;
+      row-gap: 20px;
+      padding: 50px;
+      margin-left: 50px;
+      /* margin-top: 20px; */
+      margin-right: 50px;
+      margin-bottom: 20px;
+    }
+
+    .grid-item {
+      background-color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 20px;
+      box-shadow: 0 0 10px black;
+    }
+
+    .grid-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .footer {
+      background-color: black;
+      height: 250px;
+      width: 100%;
+      display: flex;
+      /* flex-direction: column; */
+      justify-content: space-between;
+      /* margin-top: 20px; */
+      align-items: center;
+      padding: 100px;
+      /* display: inline-block; */
+    }
+
+    .footer-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      /* margin-top: 20px; */
+      padding: 100px;
+      display: inline-block;
+    }
+
+    .footer-right {
+      text-align: right;
+      color: white;
+      line-height: 2;
+    }
+
+    .icons {
+      color: white;
+      display: flex;
+      /* flex-direction: row; */
+      gap: 20px;
+      /* justify-content: flex-start; */
+      margin-left: 30px;
+    }
+
+    .bottom {
+      background-color: black;
+      color: white;
+      display: flex;
+      justify-content: space-evenly;
+      padding: 10px 10px;
+    }
+
+    .bottom a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .intro a:hover {
+      background-color: black;
+      color: pink;
+      transform: translateZ(-50px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="up">
+      <h5 style="word-spacing: 30px">
+        <a href="#" style="text-decoration: none; color: white">LogIn</a>
+        <a href="#" style="text-decoration: none; color: white">Register</a>
+      </h5>
+    </div>
+
+    <div class="GECH">
+      <h2>
+        <i class="fa-solid fa-book-open" style="color: rgb(16, 2, 2)"></i>
+        &nbsp;GECH
+      </h2>
+      <div class="links">
+        <ul>
+          <li><a href="./webpage.html">HOME</a></li>
+          <li><a href="./departments.html">COURSES</a></li>
+          <li><a href="./gallery.html">GALLERY</a></li>
+          <li><a href="./contactus.html">CONTACT US</a></li>
+          <li>
+            <i class="fa-solid fa-magnifying-glass" style="color: black"></i>
+          </li>
+        </ul>
       </div>
     </div>
-  </body>
+
+    <div class="img">
+      <img src="./black.webp" alt="Image not found" />
+      <i class="fa-solid fa-arrow-left arrow left"></i>
+      <i class="fa-solid fa-arrow-right arrow right"></i>
+      <div class="intro">
+        <p><b>Welcome To Gov.t Engineering College, Hassan</b></p>
+        <br />
+        <h1>The Best Learning Institution</h1>
+        <br />
+        <p style="width: 50vw">
+          Premier institution dedicated to academic excellence, innovation,
+          and holistic student development. With a diverse range of programs
+          and state-of-the-art facilities, we empower students to achieve
+          their full potential and succeed in their careers.
+        </p>
+        <br />
+        <a href="./departments.html">Veiw courses</a>
+      </div>
+    </div>
+
+    <div class="info">
+      <img src="./studen.webp" alt="Image not found" />
+      <h3 style="color: rgb(80, 80, 80)">About GECH</h3>
+      <br />
+      <p style="color: rgb(91, 89, 89)">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius rem
+        aperiam provident nesciunt accusantium vitae, aliquam totam explicabo
+        asperiores ipsa nihil eos quis, ea illum minima? Sequi esse itaque
+        eos, at animi ab quia quam voluptate laboriosam amet tempora ipsum
+        totam dolores? Ullam voluptatum dicta impedit numquam distinctio,
+        minus ex.
+      </p>
+      <br />
+      <a href="#">LEARN NOW</a>
+    </div>
+    <br />
+    <hr />
+    <div class="departments">
+      <h2 style="color: rgb(53, 14, 14); text-align: center; margin-top: 50px">
+        OUR DEPARTMENTS
+      </h2>
+      <p style="text-align: center; color: gray">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </p>
+
+      <div class="grid-container">
+        <div class="grid-item">
+          <img src="./mech.jpg" alt="Mechanical Engineering" />
+          <h3>Department of Mechanical Engineering (ME)</h3>
+          <p>Faculty Of ME | 4 Years</p>
+        </div>
+        <div class="grid-item">
+          <img src="./AI.avif" alt="AI/ML Engineering" />
+          <h3>Artificial Intelligence(AI)</h3>
+          <p>Faculty Of AI | 4 Years</p>
+        </div>
+        <div class="grid-item">
+          <img src="./civil.jpg" alt="Civil Engineering" />
+          <h3>Department of Civil Engineering (CE)</h3>
+          <p>Faculty Of CE | 4 Years</p>
+        </div>
+        <div class="grid-item">
+          <img src="./electrical.jpg" alt="EEE" />
+          <h3>Department of Electrical Engineering (EEE)</h3>
+          <p>Faculty Of EE | 4 Years</p>
+        </div>
+        <div class="grid-item">
+          <img src="./cs.avif" alt="Computer Science Engineering" />
+          <h3>Department of Computer Science Engineering (CSE)</h3>
+          <p>Faculty Of CSE | 4 Years</p>
+        </div>
+        <div class="grid-item">
+          <img src="./electro.jpg" alt="Electronics and Communication Engineering" />
+          <h3>Department of Computer Science Engineering (CSE)</h3>
+          <p>Faculty Of CSE | 4 Years</p>
+        </div>
+      </div>
+    </div>
+    <br />
+    <hr style="margin: 0; padding: 0" />
+
+    <div class="footer">
+      <div class="footer-left">
+        <h2 style="color: white; margin-bottom: 10px; padding: 20px auto">
+          <i class="fa-solid fa-book-open" style="color: white"></i>
+          &nbsp;GECH
+        </h2>
+        <p style="color: white; padding: 10px auto; margin-bottom: 10px">
+          Look for us on Social Media
+        </p>
+        <div class="icons">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-twitter"></i>
+        </div>
+      </div>
+
+      <div class="footer-right">
+        <h2 style="margin-bottom: 10px">Get in Touch</h2>
+        <p>Email: contact@gech.com</p>
+        <p>Phone: +91 0000000000</p>
+        <p>Location: Opp. Dairy Circle , Hasan, Karnataka</p>
+      </div>
+    </div>
+    <hr color="white" />
+    <div class="bottom">
+      <p>
+        @2025 GECH. Made with
+        <i class="fa-solid fa-heart stylecolor red" !important></i> by
+        Varshini C
+      </p>
+      <p>
+        <a href="#">Privacy policy</a> &nbsp;
+        <a href="#">Terms and Conditions apply</a>
+      </p>
+    </div>
+  </div>
+</body>
+
 </html>

@@ -50,16 +50,16 @@
         //1. Mouse Events:
         const btn = document.querySelector("#btn");
         const htag = document.querySelector("#htag")
-        // btn.addEventListener("click", () => {
-        //     htag.textContent = "Hello JS";
-        // })
+        btn.addEventListener("click", () => {
+            htag.textContent = "Hello JS";
+        })
 
         // btn.addEventListener("mouseover", () => {
         //     htag.textContent = "Hello JS";
         // })
 
         // btn.addEventListener("mouseout", () => {
-        //     htag.textContent = "Hello JS";
+        //     htag.textContent = "bye JS";
         // })
 
         // btn.addEventListener("mouseup", () => {
@@ -77,11 +77,11 @@
         // })
 
         // 2. keyboard events
-        // let input = document.querySelector("#input");
-        // let ptag = document.querySelector("#keymsg");
-        // input.addEventListener("keydown", function (event) {
-        //     ptag.innerText = "You pressed:" + event.key;
-        // })
+        let input = document.querySelector("#input");
+        let ptag = document.querySelector("#keymsg");
+        input.addEventListener("keydown", function (event) {
+            ptag.innerText = "You pressed:" + event.key;
+        })
 
 
         //3. Form events:
@@ -92,28 +92,28 @@
             document.querySelector("#result").innerText += name.value;
         })
 
-        // change 
-        name.addEventListener("change", function () {
-            document.querySelector("#result").innerText = name.value;
-        })
+        // change
+        // name.addEventListener("change", function () {
+        //     document.querySelector("#result").innerText = name.value;
+        // })
 
         //blur
-        name.addEventListener("blur", function () {
-            document.querySelector("#result").innerText = name.value;
-        })
+        // name.addEventListener("blur", function () {
+        //     document.querySelector("#result").innerText = name.value;
+        // })
 
         //
-        name.addEventListener("focus", function () {
-            // document.querySelector("#result").innerText = name.value;
-            console.log("Hello World");
-        })
+        // name.addEventListener("focus", function () {
+        //     // document.querySelector("#result").innerText = name.value;
+        //     console.log("Hello World");
+        // })
 
         //change:
-        document.querySelector("#dropdown").addEventListener("change", () => {
-            console.log("Select input feild is changed");
-        })
+        // document.querySelector("#dropdown").addEventListener("change", () => {
+        //     console.log("Select input feild is changed");
+        // })
 
-        //submit event checking with contact form
+        // submit event checking with contact form
         const contactForm = document.querySelector("#contactform");
         contactForm.addEventListener("submit", (event) => {
             event.preventDefault();
