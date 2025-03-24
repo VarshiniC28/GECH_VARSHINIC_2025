@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>Expain javascript objects, key-value pairs, and how to manipulate object prorperties
+        <br>
+        Task: Create an object representing a student with properties name, age, marks and create function that
+        increases the marks by 10
+    </div>
+
+    <script>
+        const student = {
+            name: "John Doe",
+            age: 20,
+            marks: 75,
+            increaseMarks: function () {
+                this.marks += 10;
+                console.log(`New marks: ${this.marks}`);
+            }
+        };
+        student.increaseMarks();
+        console.log(`Original marks: ${student.marks}`);
+        student.increaseMarks();
+    </script>
+</body>
+
+</html>

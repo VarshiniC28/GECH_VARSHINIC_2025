@@ -20,8 +20,8 @@ public class StringMethods {
 		 * 12. isBlank()
 		 * */
 		
-		String str1 =new String("Hello1ab ");
-		String str2 =new String("Hello1ab");
+		String str1 =new String("HellO ab");
+		String str2 =new String("Hello ab");
 		String str3 = new String(" ");
 		
 		//1. equals
@@ -40,10 +40,13 @@ public class StringMethods {
 		System.out.println(str1.toUpperCase());
 		
 		//6. toLowerCase;
-		System.out.println(str1);
+		System.out.println(str1.toLowerCase());
 		
-		//7. toLowerCase
-		System.out.println(str1);
+		//7. strip()
+//		trim() → Removes only leading and trailing spaces (ASCII space U+0020).
+//		strip() → Removes leading and trailing Unicode whitespace (includes special spaces like \u2003, \u00A0, etc.).
+		System.out.println("Before strip: [" + str1 + "]");
+        System.out.println("After strip: [" + str1.strip() + "]");
 		
 		//8. compareTo
 		System.out.println(str1.compareTo(str2));

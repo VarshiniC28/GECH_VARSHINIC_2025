@@ -1,42 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Position in css</title>
     <style>
-        body{
+        body {
             margin: 0px;
-            padding:0px;
+            padding: 0px;
             box-sizing: border-box;
         }
-        .container{
+
+        .container {
             width: 40vw;
             height: 1500px;
             border: 2px solid black;
-            margin: 30px ;
-            position: relative; 
+            margin: 30px;
+            position: relative;
         }
-        .div{
+
+        .div {
             width: 80px;
             height: 30px;
             border: 1px solid black;
         }
-        .first{
+
+        .first {
             background-color: aliceblue;
             position: relative;
             top: 10px;
             left: 20px;
-            right: 50px; 
+            right: 50px;
 
         }
-        .sec{
+
+        .sec {
             background-color: rgb(186, 164, 232);
             position: absolute;
             top: 30px;
-            left: 30px ; 
+            left: 30px;
         }
-        .thir{
+
+        .thir {
             background-color: rgb(167, 147, 232);
             position: absolute;
             /* position: fixed; */
@@ -44,7 +50,8 @@
             left: 40px;
 
         }
-        .four{
+
+        .four {
             background-color: blueviolet;
             /* position: absolute; */
             /* top: 70px; */
@@ -54,6 +61,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="div first">1</div>
@@ -62,4 +70,5 @@
         <div class="div four">4</div>
     </div>
 </body>
+
 </html>

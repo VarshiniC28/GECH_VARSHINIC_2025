@@ -11,7 +11,8 @@ public class NonPrimitive {
 		 * <datatype>[] arrayanme = {};
 		 * 
 		 * 2. String:
-		 * String name = "";*/
+		 * String name = "";
+		 * */
 		
 		int[] array1 = {1,2,3,4,5};
 		System.out.println(array1[2]);
@@ -20,8 +21,8 @@ public class NonPrimitive {
 //		System.out.println(name);
 		
 //		Scanner sc = new Scanner(System.in);
-//		String name = sc.nextLine();
-//		System.out.println("Name is:"+name);
+//		String nameS = sc.nextLine();
+//		System.out.println("Name is:"+nameS);
 		
 		Scanner sc= new Scanner(System.in);
 //		String name =sc.next(); // used when we want to write only one line as it takes only one word

@@ -57,9 +57,9 @@ public class Operators {
 		//5. Bitwise Operators
 		int h = 2;
 		int i = 3;
-		System.out.println("Bitwise &: "+(h&i));
-		System.out.println("Bitwise |: "+(h|i));
-		System.out.println("Bitwise ^: "+(h^i));
+		System.out.println("Bitwise &: "+(h&i)); //2
+		System.out.println("Bitwise |: "+(h|i)); //3
+		System.out.println("Bitwise ^: "+(h^i)); //1
 		System.out.println("Bitwise ~: "+(~i));
 		
 		//6. Unary operators:
@@ -71,7 +71,17 @@ public class Operators {
 		System.out.println(j);
 		
 		//7. Shift operators:
-		int k = 0;
+		
+		//left shift
+		int x = 5;  // 5 in binary = 0000 0101
+		int result = x << 2; // Shift left by 2 places
+		System.out.println(result); // 20
+		
+		//right shift
+		int y = 20;  // Binary: 0001 0100
+		int res = y >> 2; // Shift right by 2 places
+		System.out.println(res); // Output: 5
+		
 		
 	}
 

@@ -7,7 +7,7 @@ public class FunctionsInJava {
 	}
 	public void add1() {
 		System.out.println("Varshini" + "C");
-	}
+	} 
 	public int add3() {
 		return 2+3;
 	}
@@ -30,7 +30,7 @@ public class FunctionsInJava {
 		 * 2. userdefined:- defined by user
 		 * ==============
 		 * 4types 
-		 * 1.returning value and not accepting value
+		 * 1.returning value and accepting value
 		 * 2.not returning value and not accepting value
 		 * 3.returning value and not accepting value
 		 * 4.not returning value and accepting value

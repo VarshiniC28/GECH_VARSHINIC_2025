@@ -6,7 +6,7 @@ public class ArrayInJava {
 
 	public static void main(String[] args) {
 		/*
-		 * Arrays in JAVA: If we want to store a multiple value of the same datatypewe use array
+		 * Arrays in JAVA: If we want to store a multiple value of the same data type we use array
 		 * 
 		 * How to declare the array:
 		 * <datatype> [] array_name= new <datatype>[size];
@@ -36,7 +36,7 @@ public class ArrayInJava {
 		//arr[5] =100; => array index out of bound exception
 		
 		for(int i=0; i<=4; i++) {
-			arr[i] =10;
+			arr[i] = i;
 		}
 		System.out.println(arr);
 		
@@ -60,9 +60,32 @@ public class ArrayInJava {
 		System.out.println("Array elements are: ");
 		for(int j=0; j<array.length; j++) {
 			System.out.println(array[j]+" ");
-		}sc.close();
+		}
+		
+		//-----------------------------------------------------------------------------------------
+		sc.nextLine();
 		
 		/*write a program to take the user input char values and store inside array and just print it*/
+	
+
+	        System.out.println("Enter the size of the character array:");
+	        int size1 = sc.nextInt();
+	        sc.nextLine();
+	        char[] Array = new char[size1];
+
+	        System.out.println("Enter the characters for the array:");
+	        for (int i = 0; i < Array.length; i++) {
+//	            System.out.print("Enter character " + (i + 1) + ": ");
+	            Array[i] = sc.next().charAt(0);
+	        }
+
+	        System.out.println("Character array elements are:");
+	        for (char ch : Array) {
+	            System.out.print(ch + " ");
+	        }
+
+	        sc.close();
+		
 		}
 
 }

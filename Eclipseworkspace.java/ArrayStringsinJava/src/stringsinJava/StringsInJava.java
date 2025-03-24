@@ -45,7 +45,9 @@ public class StringsInJava {
 		System.out.println(str5); // String5 (immutable)cant change
 		
 		//but can reassign values
-		str5 = "Str";
+		str5 = str5.concat("Hello"); // String5Hello
+		System.out.println(str5);
+		str5 = "str";
 		System.out.println(str5);
 		
 	}

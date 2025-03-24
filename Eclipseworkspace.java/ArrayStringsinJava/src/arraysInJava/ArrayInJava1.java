@@ -45,9 +45,32 @@ public class ArrayInJava1 {
 				System.out.print(array[i][j]+" ");
 			}System.out.println();
 				
-		}sc.close();
+		}
 			
 			//Assignment character input
+		System.out.println("Enter the number of rows and columns:");
+        int Row = sc.nextInt();
+        int Col = sc.nextInt();
+        sc.nextLine();
+
+        char[][] Array = new char[Row][Col];
+
+        System.out.println("Enter the characters for the array:");
+        for (int i = 0; i < Row; i++) {
+            for (int j = 0; j < Col; j++) {
+                System.out.print("Enter character for position [" + i + "][" + j + "]: ");
+                Array[i][j] = sc.next().charAt(0);
+            }
+        }
+
+        System.out.println("Character array is:");
+        for (int i = 0; i < Row; i++) {
+            for (int j = 0; j < Col; j++) {
+                System.out.print(Array[i][j] + " ");
+            }
+            System.out.println(); 
+        }
+
 			
 			
 	}

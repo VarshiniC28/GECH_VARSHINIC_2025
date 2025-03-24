@@ -22,10 +22,12 @@ public class UserInputValues {
 		
 		sc.nextLine(); // called a buffering to avoid a error
 		// character
-		//shows error even when we enter after entering age because enter is also a character so to add buffering we add sc.nextLine(); above her
+		//shows error even when we enter 'enter' after entering age because enter is also a character so to add buffering we add sc.nextLine(); above her
+		
 		System.out.println("Enter the student name:");
-		char stdname = sc.nextLine().charAt(0);
+		char stdname = sc.next().charAt(0);
 		//can also give as sc.next().charAt(0);
+		//only takes first character.
 		System.out.println("The name of the student is:"+stdname);
 	}
 
