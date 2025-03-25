@@ -16,7 +16,7 @@ class Parentt implements interface3{
 
 	@Override
 	public void interface2method() {
-		System.out.println("This is interfac2 method");
+		System.out.println("This is interface2 method");
 		
 	}
 

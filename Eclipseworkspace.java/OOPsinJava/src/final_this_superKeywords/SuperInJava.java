@@ -44,7 +44,7 @@ public class SuperInJava {
 
 	public static void main(String[] args) {
 		/*
-		 * super: 
+		 * super: difference between this and super is that super accesses var or constructor or methods from parent class where as this points the current class.
 		 * 1. Used to call super class instance variables 
 		 * 2. Used to call super class constructor 
 		 * 3. Used to call super class methods

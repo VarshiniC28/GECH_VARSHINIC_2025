@@ -45,12 +45,12 @@ public class Encapsulation {
 	public static void main(String[] args) {
 		// Encapsulation:
 		/*
-		 * Encapsulation is a mechanism that binds the data (variables) and methods that
+		 * Encapsulation is a mechanism that binds the data (variables) and methods(getters and setters) that
 		 * manipulate the data into a single unit (class).
 		 *
-		 * - All fields (variables) should be private to restrict direct access. - We
-		 * provide public getter and setter methods to control access. - This helps in
-		 * data hiding and protects the integrity of the data. 
+		 * - All fields (variables) should be private to restrict(protect) direct access. 
+		 * - We provide public getter and setter methods to control access. 
+		 * - This helps in data hiding and protects the integrity of the data. 
 		 * (or) 
 		 * -Every feilds must be private when we want to protect data ,so we use encapsulation and create
 		 * getters and setters to make it public so that we can set and get the data

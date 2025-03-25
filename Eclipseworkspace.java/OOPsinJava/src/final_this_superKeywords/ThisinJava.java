@@ -34,9 +34,9 @@ public class ThisinJava {
 	public static void main(String[] args) {
 		/*This Keyword:
 		 * 
-		 * 1. used to refer instance variable in current class
-		 * 2. used to refer current class constructor 
-		 * 3.  used to refer method in current class
+		 * 1. used to refer instance variable in current class.
+		 * 2. used to refer current class constructor. 
+		 * 3. used to refer method in current class.
 		 * 
 		 * */
 		Person disp = new Person("Varshs",20);

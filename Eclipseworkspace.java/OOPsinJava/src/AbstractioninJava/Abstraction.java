@@ -14,7 +14,7 @@ class Lion implements Animal{ //no need of abstract keyword here also
 	
 }
 
-abstract class Vehicle{ // we cant create a object for abstract method so we need to create another class extend to this.
+abstract class Vehicle{ // we cant create a object for abstract class so we need to create another class and extend to this.
 	//Abstract method:
 	public abstract void start();
 	

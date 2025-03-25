@@ -35,7 +35,7 @@ public class Polymorphism {
          * 
          * Poly -> Many, Morphism -> Forms
          * 
-         * => Polymorphism is a mechanism where methods perform different actions based on the situation.
+         * => Polymorphism is a mechanism where same methods perform different actions based on the situation.
          * => In simple words, polymorphism allows us to use the same method in different classes 
          *    while changing its behavior.
          * 
@@ -49,7 +49,7 @@ public class Polymorphism {
         Person person = new Varsha();
         person.walking(); // Calls the overridden method in Varsha class
 
-        // ✅ 2. Method Overloading Example
+        // ✅ 2. Method Overloading Example - same method with different number of input parameters
         // Since these are static methods, we call them directly using the class name
         Addition.add(5, 5);      // Calls method with two parameters
         Addition.add(5, 5, 5);   // Calls method with three parameters

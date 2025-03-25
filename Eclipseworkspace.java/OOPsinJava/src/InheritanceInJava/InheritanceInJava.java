@@ -46,7 +46,7 @@ public class InheritanceInJava {
 		 * 4. hybrid => one child extends form both interface and a
 		 * parent class using implements and extends 
 		 * 
-		 * 5.Multiple => not possible as java
+		 * 5.Multiple => not possible in java
 		 * doesnt support inheritance for multiple parents to one child so we use interface as we learnt previously
 		 */
 		
