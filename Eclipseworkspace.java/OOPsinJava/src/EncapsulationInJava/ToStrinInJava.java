@@ -11,13 +11,13 @@ class Person{
 		this.age = age;
 	}
 
-	//Now to call the object directly and print it directly we use toString() method that overrides coonatructor 
+	//Now to call the object directly and print it directly we use toString() method that overrides constructor 
 	//right click > sources > Generate toString() > gives output as below
-	//Here , instead of calling just name and age we can use this.name or this.age but it became optional from JAVA17
+	//Here in toString() method , instead of calling just name and age we can use this.name or this.age but it became optional from JAVA17
 	
 	@Override
 	public String toString() {
-		return "person [name=" + name + ", age=" + age + "]";
+		return "person [name=" + this.name + ", age=" + age + "]";
 	}
 	
 	

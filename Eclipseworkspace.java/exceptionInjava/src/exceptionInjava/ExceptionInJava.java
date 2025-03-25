@@ -1,66 +1,73 @@
 package exceptionInjava;
 
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.PrintWriter;
 
 public class ExceptionInJava {
 
-	// recursion.- function calling itslef as below
-	public static void Display() {
-		Display();
-	}
+    // Recursion - function calling itself
+    public static void display() {
+        display(); // ❌ Leads to StackOverflowError
+    }
 
-	public static void main(String[] args) throws FileNotFoundException {
-		/*
-		 * Exception in Java: =>When there is a unwanted or un-expected event occur in
-		 * the program. =>Whenever there is execption the normal flow will stop. 
-		 * 1. IOExecption 
-		 * 2. FileNotFoundException - When the file we are trying to write
-		 * or print doesnt exist to avoid the error we create a execption that creates
-		 * andthan write the content as we give 
-		 * 3. Exception - parent of all exception
-		 * 
-		 * 2 TYPES: 1. checked exception(compile time) - FileNotFoundException(2 ways)
-		 * 2. unchecked exception(run time) - arrayIndexOutOfBound Exception(1 way)
-		 */
+    public static void main(String[] args) throws FileNotFoundException {
+        /*
+         * ❌ Exception in Java:
+         * => An unwanted or unexpected event that disrupts the normal program flow.
+         * => Whenever an exception occurs, normal execution stops.
+         * 
+         * 🛑 2 Types of Exceptions:
+         * 1️⃣ Checked Exception (Compile-Time) ✅ Must be handled using try-catch or throws
+         *    - Example: FileNotFoundException, IOException
+         * 2️⃣ Unchecked Exception (Runtime) ❌ Program crashes if not handled
+         *    - Example: ArrayIndexOutOfBoundsException, NullPointerException
+         * 
+         * 🏗️ Exception Handling Mechanisms:
+         * ✔ try → Code that may cause an exception.
+         * ✔ catch → Handles the exception.
+         * ✔ finally → Always runs (even if an exception occurs).
+         * ✔ throws → Declares exceptions in method signature.
+         * 
+         * ❗ ERROR vs EXCEPTION:
+         * - ERROR = System-level issue (Cannot be handled) 🚨
+         * - EXCEPTION = Program-level issue (Can be handled) ⚠️
+         */
 
-		/*
-		 * ERROR: => Its a problem where the programmer cant handle it EX:
-		 * 
-		 */
+        // 🚨 Example of ERROR: StackOverflowError (Unrecoverable, cannot be handled)
+//        ExceptionInJava.display(); // ❌ Causes infinite recursion & crashes program
 
-		// ERROR:
-//		ExceptionInJava.Display();
+        // ✅ Example of Checked Exception (Handled with throws)
+        PrintWriter printWriter = new PrintWriter("abc.txt"); // Compiler forces handling
+        printWriter.println("Hello WORLD!");
+        System.out.println("File written successfully! ✍️");
+        printWriter.close();
 
-//		results in StackOverflowError - as function is calling by itself
+        // ✅ Example of Checked Exception (Handled with try-catch)
+        try {
+            PrintWriter writer = new PrintWriter("abc.txt"); // Risky code
+            writer.println("Hello from try-catch!");
+            System.out.println("File written in try-catch! ✅");
+            writer.close();
+        } catch (FileNotFoundException e) { // Specific exception handling
+            System.out.println("⚠️ File not found! Handling exception...");
+            e.printStackTrace();
+        }
 
-		// checked execption
-		// 1.try catch
-		// 2. throws
+        // ✅ Example of Unchecked Exception (Runtime Error)
+        try {
+            int arr[] = {1, 2, 3};
+            System.out.println(arr[5]); // ❌ Throws ArrayIndexOutOfBoundsException
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("⚠️ Array index is out of bounds! Exception handled.");
+        }
 
-//		PrintWriter  -  A class in java 
-		//2. throws
-		PrintWriter printWriter = new PrintWriter("abc.txt");
-		printWriter.println("Hello WORLD");
-		System.out.println("Varsha");
-		printWriter.close();		
-		
-		//1. try and catch
-//		try {
-//			printWriter = new PrintWriter("abc.txt");
-//			printWriter.println("Hello World");
-//			System.out.println("Hello World");
-//			printWriter.close();
-//		} catch (FileNotFoundException e) {
-////		} catch(IOException e) {
-////		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-		
-		
-
-	}
-
+        // ✅ Example of Finally Block (Always Executes)
+        try {
+            System.out.println("Inside try block");
+        } catch (Exception e) {
+            System.out.println("Exception caught!");
+        } finally {
+            System.out.println("✅ Finally block executed!");
+        }
+    }
 }

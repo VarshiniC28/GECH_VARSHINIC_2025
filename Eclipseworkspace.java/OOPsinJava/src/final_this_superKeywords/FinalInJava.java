@@ -19,7 +19,7 @@ public class FinalInJava {
 
 	public static void main(String[] args) {
 		/*
-		 * final -> We cnat change the value once set using final keyword
+		 * final -> We cant change the value once set using final keyword
 		 * Final Keyword with Variables, method, class
 		 * 
 		 * variables => The values of vars cannont be changed

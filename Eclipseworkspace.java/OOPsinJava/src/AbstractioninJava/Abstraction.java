@@ -43,8 +43,8 @@ public class Abstraction {
 		 * => Its a process of hiding the implementation and showing only the essential resources.
 		 * 
 		 * 2 Ways:
-		 * 1. Abstraction using Interface(gives 100% abstraction)
-		 * 2. abstract class(0-100% , when we want to achieve abstraction in between range)
+		 * 1. Abstraction using Interface(gives 100% abstraction)-full implementation
+		 * 2. abstract class(0-100% , when we want to achieve abstraction in between range)- partial implementation
 		 * */
 		
 		//1. Interface

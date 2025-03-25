@@ -34,8 +34,8 @@ public class ExceptionInJava4 {
 		/*
 		 * throw :
 		 * =>It is used to throw exception.
-		 * 
-		 * 
+		 * -can be done by defo=ault in method
+		 * - in class
 		 * */
 		
 		try {

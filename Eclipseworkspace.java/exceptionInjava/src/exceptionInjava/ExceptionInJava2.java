@@ -9,7 +9,7 @@ public class ExceptionInJava2 {
 		int a = 10;
 		int b=0;
 		//System.out.println("Result: "+a/b);//
-		//this throws ArithmeticException since we cant ivide a number by 0 
+		//this throws ArithmeticException since we cant divide a number by 0 
 		//So we use try and catch
 		try {
 			System.out.println("Result: "+a/b);
