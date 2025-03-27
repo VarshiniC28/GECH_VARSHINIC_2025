@@ -16,7 +16,10 @@ public class CollectionInJava1 {
 		 * => When you represent a group of indiviual object as a single entity then we should go for collection
 		 * => Root interface in collection framework.
 		 * => This will provide some of the built-in methods to work with any collection class.
-		 * 
+		 * => Collection allows heterogeneous data like we can insert multiple data types into array.
+		 * => In collection converts the data give automatically from primitive dattatype to Object called as autoboxing.
+		 * => In collection there is no type safety sice we use multiple data types.
+		 * => And we have to explicitly do type casting while unboxing.
 		 * */
 		
 		//collection has lists , queue, sets

@@ -9,7 +9,7 @@ public class WrapperClasses {
 		 * -> A purely object-oriented language would treat everything as an object.
 		 * 
 		 * PRIMITIVE DATA TYPES: 
-		 * byte, short, int, long, flooat , double, char , boolean.
+		 * byte, short, int, long, float , double, char , boolean.
 		 * 
 		 * COLLECTIONS: 
 			=>Java provides Collections Framework (ArrayList, HashSet, HashMap, etc.) t
@@ -41,7 +41,8 @@ public class WrapperClasses {
 		 * char --> Character
 		 * boolean --> Boolean
 		 * 
-		 * 
+		 * ⚠️ Collections like ArrayList cannot store primitive data types.
+		 * ✅ But using Wrapper Classes, we can store primitive values as objects!
 		 * */
 		
 		//Key Features of Wrapper Classes:
