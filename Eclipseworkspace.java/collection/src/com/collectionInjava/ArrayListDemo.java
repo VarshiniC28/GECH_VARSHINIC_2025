@@ -4,46 +4,56 @@ import java.util.ArrayList;
 
 public class ArrayListDemo {
 
-	public static void main(String[] args) {
-		/*
-		 * ARRAY LIST:
-		 * ===========
-		 * => ArrayList is a improved version of an array(dynamic array)
-		 * => ArrayList underline a data structure called Dynamic array => means array can grow or shrink.
-		 * => Arraylist allows duplicate.
-		 * => ArrayList allow random acces i.e can access any elements througout the array using index number.
-		 * => ArrayList will allow null values.
-		 * => ArrayList will preserve the order of insertion similar to lists.
-		 * */
-		
-//		Arraylist is accepting a generic value Integer here.
-		ArrayList<Integer> list = new ArrayList<Integer>();
-		list.add(12);
-		list.add(1);
-		list.add(1);
-		list.add(null);
-		list.add(null);
-		list.add(34);
-		list.add(12);
-		list.add(1);
-		list.add(1);
-		list.add(null);
-		list.add(null);
-		list.add(34);
-		
-		System.out.println(list);
-		System.out.println(list.get(3));
-		System.out.println(list.size());
-		
-		list.remove(0);
-		System.out.println(list);
-		
-		Integer i = 34; //  declaring a var that has 34 . so we can remove 34 using i variable.
-		list.remove(i);
-		System.out.println(list);
-		
-		list.clear();
-		System.out.println(list);
-	}
+    public static void main(String[] args) {
+        /*
+         * ARRAYLIST:
+         * ==========
+         * => ArrayList is a **resizable array implementation** in Java.
+         * => It is a part of the **Java Collections Framework** and implements the **List interface**.
+         * => The underlying data structure of an ArrayList is a **dynamic array**, meaning it can **grow or shrink** dynamically.
+         * => **Allows duplicate elements**.
+         * => **Preserves insertion order** (elements remain in the order they were added).
+         * => **Allows null values**.
+         * => **Supports random access** (can access any element using its index in O(1) time complexity).
+         * => **Not synchronized** (not thread-safe by default, but can be synchronized using `Collections.synchronizedList()`).
+         */
 
+        // Creating an ArrayList that only stores Integer values (Type-safe using Generics).
+        ArrayList<Integer> list = new ArrayList<Integer>();
+
+        // Adding elements to the ArrayList
+        list.add(12);
+        list.add(1);
+        list.add(1);
+        list.add(null); // Null values are allowed
+        list.add(null);
+        list.add(34);
+        list.add(12);
+        list.add(1);
+        list.add(1);
+        list.add(null);
+        list.add(null);
+        list.add(34);
+
+        System.out.println("ArrayList elements: " + list);
+
+        // Accessing an element using get(index)
+        System.out.println("Element at index 3: " + list.get(3));
+
+        // Checking the size of the ArrayList
+        System.out.println("Size of ArrayList: " + list.size());
+
+        // Removing an element by index
+        list.remove(0);
+        System.out.println("After removing index 0: " + list);
+
+        // Removing an element by value
+        Integer i = 34; // Assigning 34 to an Integer variable
+        list.remove(i); // Removes the first occurrence of 34
+        System.out.println("After removing first occurrence of 34: " + list);
+
+        // Clearing all elements from the ArrayList
+        list.clear();
+        System.out.println("After clearing the ArrayList: " + list);
+    }
 }

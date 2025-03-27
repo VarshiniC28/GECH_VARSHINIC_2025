@@ -35,6 +35,7 @@ public class TypeCastingJava {
 //		long a3 = 10;
 //		int a4 = a3
 		
+		
 		long a3 = 10;
 		int a4 = (int)a3;
 		

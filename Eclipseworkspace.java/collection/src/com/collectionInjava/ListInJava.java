@@ -5,33 +5,47 @@ import java.util.List;
 
 public class ListInJava {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		/*
-		 * Lists: ====
-		 * 
-		 * => Its a child interface of collection. 
-		 * => It will contain some of the builtin methods that used inside a list implemented classes only. 
-		 * => When you represent a group of indiviual object as a single entity where order is
-		 * preserved and index based access and duplicate is allowed.
-		 * => In collection> list converts the data give automatically from primitive dattatype to Object called as autoboxing.
-		 */
-		//Here List is interface , and ArrayList() is a class so we call it Like this ArrayList().
-		// On ArrayList() ctrl + hover + click
-		List list = new ArrayList();
-		list.add(2); // index 0 //automatically its object i.e Integer not int => Autoboxing
-		list.add("Hello"); //index 1
-		list.add(10.67); //2
-		System.out.println(list);
-		
-		//In array we know what datatype the elements are , but in collection we dont know
-		//There will be type mismatching , cant convert object(list element) to string or int(data type) error will occur . 
-		//as list element is object but if we wnat to strore that object element in a variable like str/int var_name = we need to convert object to primitive datatype.
-		String str = (String) list.get(1); // to get a particular index value we use get and convert object to string
-		System.out.println(str);
-		
-		double value = (double) list.get(2); //converting object Double to primitive data type double 
-		System.out.println(value);
-	}
+        /*
+         * List in Java:
+         * =============
+         * - `List` is a **child interface** of `Collection` and part of the Java Collections Framework.
+         * - It provides **ordered storage**, **index-based access**, and **allows duplicate elements**.
+         * - Elements in a `List` can be retrieved using their index position.
+         * - Supports **autoboxing** (automatically converts primitive types to their wrapper class objects).
+         * - Implementations of `List`: `ArrayList`, `LinkedList`, `Vector`, `Stack`.
+         * 
+         * Differences from Arrays:
+         * ------------------------
+         * - **Arrays** have a fixed size, while **Lists** are dynamic.
+         * - **Arrays** require specifying a type, while **Lists** can store multiple types (if not using generics).
+         * - **Arrays** do not provide built-in methods like `add()`, `remove()`, `get()`, etc., which are available in `List`.
+         */
 
+        // Creating a List (ArrayList implementation)
+        List list = new ArrayList(); // List is an interface, ArrayList is a class
+
+        // Adding elements (autoboxing: converts primitives to wrapper classes)
+        list.add(2);         // Index 0 -> Integer (Autoboxing from int to Integer)
+        list.add("Hello");   // Index 1 -> String
+        list.add(10.67);     // Index 2 -> Double (Autoboxing from double to Double)
+        
+        System.out.println(list); // Output: [2, Hello, 10.67]
+
+        /*
+         * Type Issues in Collections:
+         * ===========================
+         * - Since `List` stores elements as `Object` (without generics), retrieving an element returns an `Object`.
+         * - Type casting is required to convert `Object` back to its original type (called **Unboxing**).
+         * - If incorrect casting is done, it results in `ClassCastException`.
+         */
+
+        // Correct type casting while retrieving elements
+        String str = (String) list.get(1); // Converting Object to String
+        System.out.println(str);  // Output: Hello
+
+        double value = (double) list.get(2); // Converting Object to double
+        System.out.println(value); // Output: 10.67
+    }
 }

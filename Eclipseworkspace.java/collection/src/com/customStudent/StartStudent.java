@@ -26,7 +26,7 @@ public class StartStudent {
         System.out.println("After");
         System.out.println(students);
         
-        Collections.sort(students, (s1,s2)-> s1.getRollno()-s2.getRollno()); //s2 to s1 -> lower to higher
+        Collections.sort(students, (s1,s2)-> s1.getName().compareTo(s2.getName())); //alphabetical order
         System.out.println("After");
         System.out.println(students);
     }
