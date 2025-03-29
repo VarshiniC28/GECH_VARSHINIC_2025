@@ -8,7 +8,7 @@ public class SupplierInJava {
 	public static void main(String[] args) {
 		//SUPLIER
 		/*
-		 * it won't take anything but it will return value
+		 * it won't take any parameters but it will return value
 		 * datatype of lambda expression is defaultly FunctionalInterface
 		 */
 		
