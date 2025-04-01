@@ -32,7 +32,7 @@ public class FunctionalInterfaceInjava1 {
 		int res = i3.string("Hello World"); // calling the method 
 		System.out.println("Result is : "+res);
 		
-		//another functional interface to perform  addition using lamda expression for functioal interface.
+		//another functional interface to perform  addition using lamda expression for functional interface.
 		Interface4 i4 = (a,b)-> {return a+b;}; //i4 var has the operation we want to perform using lambda expression.
 		int result = i4.add(1, 2);
 		System.out.println("Addition using lambda expression: " +result);

@@ -6,16 +6,33 @@ import java.util.function.Supplier;
 public class SupplierInJava {
 
 	public static void main(String[] args) {
-		//SUPLIER
+		// SUPPLIER Functional Interface
 		/*
-		 * it won't take any parameters but it will return value
-		 * datatype of lambda expression is defaultly FunctionalInterface
+		 * ✅ Supplier<T> is a functional interface in java.util.function package.
+		 * ✅ It does NOT take any input but RETURNS a value of type T.
+		 * ✅ It is often used to provide or generate values on demand.
+		 * ✅ It contains only ONE abstract method: get()
 		 */
-		
-		Supplier<Date> s =()-> new Date(); // current date and time
-		Date date =s.get();
-		System.out.println(date);
-		
-	}
 
+		// Example: Supplier returning the current date and time
+		Supplier<Date> s = () -> new Date(); // Generates a new Date object when called
+		Date date = s.get(); // Calling get() to retrieve the value
+		System.out.println(date);
+
+		/*
+		 * 🔹 Common Use Cases of Supplier:
+		 * ===============================
+		 * ✅ Generating random values (UUID, OTP, random numbers)
+		 * ✅ Fetching configuration values or system properties
+		 * ✅ Lazy initialization of objects
+		 */
+
+		// Example: Generating a random number using Supplier
+		Supplier<Double> randomNumber = () -> Math.random(); // Generates a random number
+		System.out.println("Random Number: " + randomNumber.get());
+
+		// Example: Generating a unique ID using Supplier
+		Supplier<String> uniqueIdSupplier = () -> "ID-" + System.currentTimeMillis();
+		System.out.println("Generated ID: " + uniqueIdSupplier.get());
+	}
 }

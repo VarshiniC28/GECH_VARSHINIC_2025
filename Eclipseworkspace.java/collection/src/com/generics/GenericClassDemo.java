@@ -8,9 +8,10 @@ package com.generics;
 //Using generics its possible to create classes that work with different data types
 
 //We are creating our own generic class with our own generic value T which can be changed later 
-class Student<T>{ //<> called as angle brackets.
+class Student<T>{ //<> called as angle brackets. //Here since we are using <T> , next while decalring vars the type of it would be T
 	T student_id;
 
+	//constructor
 	public Student(T student_id) {
 		super();
 		this.student_id = student_id;
@@ -24,17 +25,17 @@ class Student<T>{ //<> called as angle brackets.
 public class GenericClassDemo {
 
 	public static void main(String[] args) {
-		// How to make our generic class like ArrayList<e> where we can change the
+		
+		// How to make our generic class like ArrayList<e> where we can change the 
 		// object data type of a single/same variable, whenever and wherever we want using the letter declared inside <>.
 		
 		Student<Integer> std1 = new Student<>(12); // was supposed to write generic values inside <> while calling but now its optional after Java8
 		System.out.println(std1.returnValue());
-		
+
 		//Changing the generic type.
 		Student<String> std2 = new Student<>("SANJAY C");
 		System.out.println(std2.returnValue());
 	
 	}
 	
-
 }

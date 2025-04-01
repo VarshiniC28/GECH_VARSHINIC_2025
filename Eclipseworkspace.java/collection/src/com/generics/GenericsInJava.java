@@ -16,7 +16,7 @@ public class GenericsInJava {
 		char FirstEle = arr[0]; //Without type casting
 		System.out.println(FirstEle);
 		
-		//Withput generics, i.e without type safety.
+		//Without generics, i.e without type safety.
 		//Here List is interface , and ArrayList() is a class so we call it Like this ArrayList().
 		List arr1 = new ArrayList(); //There is no type safety.
 		arr1.add(12);
@@ -24,7 +24,7 @@ public class GenericsInJava {
 		arr1.add("Hello");
 		System.out.println(arr1);
 		
-		int value = (int)arr1.get(0); // explicit type casting.
+		int value = (int) arr1.get(0); // explicit type casting.
 		System.out.println(value);
 		
 		System.out.println("-----------------------------------------------");

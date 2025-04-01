@@ -27,9 +27,9 @@ public class ListInJava {
         List list = new ArrayList(); // List is an interface, ArrayList is a class
 
         // Adding elements (autoboxing: converts primitives to wrapper classes)
-        list.add(2);         // Index 0 -> Integer (Autoboxing from int to Integer)
+        list.add(2);         // Index 0 -> Integer (Autoboxing from int to Integer automatically)
         list.add("Hello");   // Index 1 -> String
-        list.add(10.67);     // Index 2 -> Double (Autoboxing from double to Double)
+        list.add(10.67);     // Index 2 -> Double (Autoboxing from double to Double automatically)
         
         System.out.println(list); // Output: [2, Hello, 10.67]
 
