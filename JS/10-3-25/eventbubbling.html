@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 20px;
+            background-color: pink;
+        }
+
+        div {
+            padding: 20px;
+            background-color: green;
+            width: max-content;
+        }
+
+        span {
+            display: block;
+            padding: 20px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<!-- <body>
+    <div>
+        <span>
+            <button>Click Me!</button>
+        </span>
+    </div>
+</body> -->
+<!-- <script>
+    const button = document.querySelector("button");
+    const span = document.querySelector("span")
+    const div = document.querySelector("div");
+    const body = document.querySelector("body");a
+
+    button.addEventListener("click", () => console.log("Button Clicked"));
+    span.addEventListener("click", () => console.log("Span clicked"));
+    div.addEventListener("click", () => console.log("Div Clicked"));
+    body.addEventListener("click", () => console.log("Body Clicked"));
+</script> -->
+
+<body>
+    <div id="div">
+        <button>Button 1</button>
+        <button>Button 2</button>
+        <button>Button 3</button>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const div = document.getElementById("div");
+            div.addEventListener("click", (event) => {
+                const target = event.target;
+                if (target.tagName == "BUTTON") {
+                    console.log(target.innerText);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

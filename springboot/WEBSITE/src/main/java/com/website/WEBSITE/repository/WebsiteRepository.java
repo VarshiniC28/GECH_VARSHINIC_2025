@@ -1,10 +1,7 @@
 package com.website.WEBSITE.repository;
 
-public class WebsiteRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.website.WEBSITE.models.Website;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
+public interface WebsiteRepository extends JpaRepository<Website, Long> {
 }
