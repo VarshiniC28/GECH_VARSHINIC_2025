@@ -25,12 +25,14 @@ public class StudentForm {
 	
 	@Column(name = "Std_password")
 	private String password;
+	
+	private String imagePath;
 
 	public StudentForm() {
 		super();
 	}
 
-	public StudentForm(long rollNo, String name, int age, String address, String email, String password) {
+	public StudentForm(long rollNo, String name, int age, String address, String email, String password ,String imagePath) {
 		super();
 		RollNo = rollNo;
 		Name = name;
@@ -38,6 +40,7 @@ public class StudentForm {
 		this.address = address;
 		this.email = email;
 		this.password = password;
+		this.imagePath= imagePath;
 	}
 
 	public long getRollNo() {
@@ -88,7 +91,13 @@ public class StudentForm {
 		RollNo = rollNo;
 	}
 
+	public String getImagePath() {
+		return imagePath;
+	}
 
-	
-	
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
+	}
+
+
 }

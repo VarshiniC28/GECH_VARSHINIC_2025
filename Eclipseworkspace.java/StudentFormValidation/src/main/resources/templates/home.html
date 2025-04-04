@@ -1,10 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		table,
+		th,
+		td {
+			border: 0.25px solid black;
+			border-radius: 10px;
+			border-collapse: collapse;
+		}
+
+		a {
+			text-align: center;
+		}
+	</style>
+
 </head>
-<body>
-	<h1>Home page</h1>
+
+<body class>
+	<h1 style="text-align:center; color:rebeccapurple;">List of Students</h1>
+	<a th:href="@{/add-student}">Add student</a>
+	<div th:if="${success}">
+		<p th:text="${success}"></p>
+	</div>
+	<table>
+		<thead>
+			<tr>
+				<th>Rollno.</th>
+				<th>Name</th>
+				<th>Age</th>
+				<th>Email</th>
+				<th>Address</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each=" student : ${students}">
+				<td th:text="${student.rollNo}"></td>
+				<td th:text="${student.name}"></td>
+				<td th:text="${student.age}"></td>
+				<td th:text="${student.email}"></td>
+				<td th:text="${student.address}"></td>
+				<td>
+					<a th:href="@{std-edit(rollNo = ${student.rollNo})}">Edit</a>
+					<a th:href="@{std-delete(rollNo = ${student.rollNo})}">Delete</a>
+					<!-- get method for -delete -->
+				</td>
+			</tr>
+		</tbody>
+	</table>
 </body>
+
 </html>

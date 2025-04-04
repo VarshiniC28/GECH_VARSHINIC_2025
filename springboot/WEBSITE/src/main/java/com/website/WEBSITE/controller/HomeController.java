@@ -28,42 +28,49 @@ public class HomeController {
 
     @GetMapping("/register")
     public String registerWebsite(Model model) {
-        WebsiteDTO userDTO = new WebsiteDTO();
-        model.addAttribute("userDTO", userDTO);
+        WebsiteDTO websiteDTO = new WebsiteDTO();
+        model.addAttribute("websiteDTO", websiteDTO);
         return "register_user";
     }
 
     @PostMapping("/register")
-    public String saveWebsite(@ModelAttribute("userDTO") WebsiteDTO userDTO) {
-        websiteService.saveWebsite(userDTO);
+    public String saveWebsite(@ModelAttribute("websiteDTO") WebsiteDTO websiteDTO) {
+        websiteService.saveWebsite(websiteDTO);
         return "redirect:/";
     }
 
     @GetMapping("/edit-website")
     public String editWebsite(@RequestParam Long id, Model model) {
         Website website = websiteService.getWebsite(id);
-        WebsiteDTO userDTO = new WebsiteDTO();
+        
+        // ✅ Check if website exists before proceeding
+        if (website == null) {
+            return "redirect:/"; // Redirect to home if no website found
+        }
 
-        // ✅ Ensure `id` is set
-        userDTO.setId(website.getId());
-        userDTO.setName(website.getName());
-        userDTO.setAge(website.getAge());
-        userDTO.setEmail(website.getEmail());
-        userDTO.setPhone(website.getPhone());
-        userDTO.setPassword(website.getPassword());
-        userDTO.setDob(website.getDob());
-        userDTO.setCity(website.getCity());
-        userDTO.setGender(website.getGender());
-        userDTO.setSkills(website.getSkills());
-        userDTO.setAddress(website.getAddress());
+        WebsiteDTO websiteDTO = new WebsiteDTO();
+        websiteDTO.setId(website.getId());
+        websiteDTO.setName(website.getName());
+        websiteDTO.setAge(website.getAge());
+        websiteDTO.setEmail(website.getEmail());
+        websiteDTO.setPhone(website.getPhone());
+        websiteDTO.setPassword(website.getPassword());
+        websiteDTO.setDob(website.getDob());
+        websiteDTO.setCity(website.getCity());
+        websiteDTO.setGender(website.getGender());
+        websiteDTO.setSkills(website.getSkills());
+        websiteDTO.setAddress(website.getAddress());
 
-        model.addAttribute("userDTO", userDTO);
+        model.addAttribute("websiteDTO", websiteDTO);
         return "edit_user";
     }
 
     @PostMapping("/edit-website")
-    public String updateWebsite(@ModelAttribute("userDTO") WebsiteDTO userDTO) {
-        websiteService.updateWebsite(userDTO, userDTO.getId());
+    public String updateWebsite(@ModelAttribute("websiteDTO") WebsiteDTO websiteDTO) {
+        if (websiteDTO.getId() == null) {
+            return "redirect:/"; // Prevent update if ID is missing
+        }
+        websiteService.updateWebsite(websiteDTO, websiteDTO.getId());
         return "redirect:/";
     }
 
