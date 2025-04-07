@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -45,6 +46,9 @@ public class HomeController {
 	
 	@PostMapping("/add-student")
 		public String addStudent(@Valid @ModelAttribute StudentDTO studentDTO, BindingResult result ,Model model, RedirectAttributes  attributes) {
+		if(studentDTO.getImage().isEmpty()) {
+			result.addError((new FieldError("StudentDTO","image","Image is required")));
+		}
 		if(result.hasErrors()) {
 			return "add_student";
 		}

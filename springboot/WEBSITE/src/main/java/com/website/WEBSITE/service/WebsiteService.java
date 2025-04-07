@@ -5,6 +5,8 @@ import com.website.WEBSITE.dto.WebsiteDTO;
 import com.website.WEBSITE.models.Website;
 import com.website.WEBSITE.repository.WebsiteRepository;
 
+import jakarta.validation.Valid;
+
 import java.util.List;
 
 @Service
@@ -70,4 +72,9 @@ public class WebsiteService {
     public Website getWebsite(Long id) {
         return websiteRepository.findById(id).orElse(null);
     }
+
+	public void saveUser(@Valid Website website) {
+		// TODO Auto-generated method stub
+		
+	}
 }

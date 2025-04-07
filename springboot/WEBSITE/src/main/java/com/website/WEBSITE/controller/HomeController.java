@@ -1,13 +1,16 @@
+
 package com.website.WEBSITE.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import com.website.WEBSITE.dto.WebsiteDTO;
 import com.website.WEBSITE.models.Website;
 import com.website.WEBSITE.service.WebsiteService;
 
+import jakarta.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -34,7 +37,11 @@ public class HomeController {
     }
 
     @PostMapping("/register")
-    public String saveWebsite(@ModelAttribute("websiteDTO") WebsiteDTO websiteDTO) {
+    public String saveWebsite(@ModelAttribute("websiteDTO") @Valid WebsiteDTO websiteDTO,
+                               BindingResult result, Model model) {
+        if (result.hasErrors()) {
+            return "register_user";
+        }
         websiteService.saveWebsite(websiteDTO);
         return "redirect:/";
     }
@@ -42,10 +49,8 @@ public class HomeController {
     @GetMapping("/edit-website")
     public String editWebsite(@RequestParam Long id, Model model) {
         Website website = websiteService.getWebsite(id);
-        
-        // ✅ Check if website exists before proceeding
         if (website == null) {
-            return "redirect:/"; // Redirect to home if no website found
+            return "redirect:/";
         }
 
         WebsiteDTO websiteDTO = new WebsiteDTO();
@@ -68,7 +73,7 @@ public class HomeController {
     @PostMapping("/edit-website")
     public String updateWebsite(@ModelAttribute("websiteDTO") WebsiteDTO websiteDTO) {
         if (websiteDTO.getId() == null) {
-            return "redirect:/"; // Prevent update if ID is missing
+            return "redirect:/";
         }
         websiteService.updateWebsite(websiteDTO, websiteDTO.getId());
         return "redirect:/";

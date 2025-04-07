@@ -1,6 +1,8 @@
 package com.website.WEBSITE.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "websites")
@@ -9,16 +11,20 @@ public class Website {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotBlank(message = "Name is required")
     private String name;
     private int age;
+
+    @NotBlank(message = "Email is required")
+    @Email(message = "Enter a valid email address")
     private String email;
+    
     private String phone;
     private String password;
     private String dob;
     private String city;
     private String gender;
     
-    // ✅ Ensure this field exists
     private String skills;
     private String address;
 

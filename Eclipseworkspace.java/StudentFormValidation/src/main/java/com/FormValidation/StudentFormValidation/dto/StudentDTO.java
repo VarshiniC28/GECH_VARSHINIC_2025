@@ -25,8 +25,10 @@ public class StudentDTO {
 	@NotBlank(message = "Students password is required")
 	private String password;
 	
+	//Why we dont need to add validation to image is if its not mandatory
 	private MultipartFile image;
-	
+	//
+	//
 	public String getName() {
 		return name;
 	}
