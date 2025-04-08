@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forms</title>
 </head>
+
 <body>
     <!-- contact form -->
-     <h1>Contact form</h1>
+    <h1>Contact form</h1>
 
-     <form action="#" method="post" novalidate >
-      <fieldset>
-         <legend>Personal Info</legend>
-        <input type="hidden" name="csrf" value="csrftoken">
-        <label for="name">NAME:</label>
-        <input type="text" name="name" id="name" placeholder="Name" required value="VARSHA" readonly disabled>
-        <br>
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email" placeholder="Email" required value="var@gmail.com" disabled >
-        <br>
-        <label for="Message">Message:</label>
-        <textarea name="Message" id="Message" cols="30" rows="2" placeholder="Message" required ></textarea>
-        <br>
+    <form action="#" method="post" novalidate>
+        <fieldset>
+            <legend>Personal Info</legend>
+            <input type="hidden" name="csrf" value="csrftoken">
+            <label for="name">NAME:</label>
+            <input type="text" name="name" id="name" placeholder="Name" required value="VARSHA" readonly disabled>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="Email" required value="var@gmail.com" disabled>
+            <br>
+            <label for="Message">Message:</label>
+            <textarea name="Message" id="Message" cols="30" rows="2" placeholder="Message" required></textarea>
+            <br>
 
-        <!-- 2 types of using submit buttons -->
-        <button type="submit">Submit</button>
-        <input type="submit" value="1">
-      </fieldset>
-     </form>
-     <br><br>
-     <form action="#" method="post">
+            <!-- 2 types of using submit buttons -->
+            <button type="submit">Submit</button>
+            <input type="submit" value="1">
+        </fieldset>
+    </form>
+    <br><br>
+    <form action="#" method="post">
         <input type="text" name="name" id="name" placeholder="Name">
         <br>
         <input type="email" name="email" id="email" placeholder="Email">
@@ -49,7 +51,7 @@
         <br>
 
         <!-- FILE  -->
-         <!-- single -->
+        <!-- single -->
         <input type="file" name="img_file" id="img_file" accept=".jpg">
         <br>
         <!-- multiple -->
@@ -59,7 +61,6 @@
 
         <!-- SKILLS -->
         <label for="Skills">Skills</label>
-        
         <input type="checkbox" name="skills" id="html">
         <label for="HTML">HTML</label>
         <br>
@@ -74,13 +75,14 @@
         <br>
 
         <!-- SELECT -->
-         <select name="country" id="country">
+        <select name="country" id="country">
             <option value="">Select the country</option>
-            <option value="INDIA">INDIA</option>
+            <option value="India">INDIA</option>
             <option value="USA">USA</option>
-            <option value="KOREA">KOREA</option>
-         </select>
-         <br>
-     </form>
+            <option value="">INDIA</option>
+        </select>
+        <br>
+    </form>
 </body>
+
 </html>

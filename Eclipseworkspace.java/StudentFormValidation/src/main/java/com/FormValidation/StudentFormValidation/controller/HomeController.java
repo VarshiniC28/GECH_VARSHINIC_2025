@@ -46,6 +46,10 @@ public class HomeController {
 	
 	@PostMapping("/add-student")
 		public String addStudent(@Valid @ModelAttribute StudentDTO studentDTO, BindingResult result ,Model model, RedirectAttributes  attributes) {
+		StudentForm student = studentRepository.findByEmail(studentDTO.getEmail());
+		if(student!= null) {
+			result.addError(new FieldError("StudentDTO", "email", "Email is already taken"));
+		}
 		if(studentDTO.getImage().isEmpty()) {
 			result.addError((new FieldError("StudentDTO","image","Image is required")));
 		}
@@ -76,6 +80,10 @@ public class HomeController {
 	
 	@PostMapping("/edit-student")
 	public String updateStudent(@Valid @ModelAttribute StudentDTO studentDTO,@RequestParam Long rollNo, BindingResult result , Model model,RedirectAttributes attributes) {
+		StudentForm student1 = studentRepository.findByEmail(studentDTO.getEmail());
+		if(student1!= null && student1.getRollNo()!=rollNo) {
+			result.addError(new FieldError("StudentDTO", "email", "Email is already taken"));
+		}
 		if(result.hasErrors()) {
 			StudentForm student = studentRepository.findById(rollNo).get();
 			model.addAttribute("student" ,student);

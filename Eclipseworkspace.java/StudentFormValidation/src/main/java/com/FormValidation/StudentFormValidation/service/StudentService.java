@@ -20,7 +20,6 @@ public class StudentService {
 	
 	private StudentRepository studentRepository;
 	
-
 	public StudentService(StudentRepository studentRepository) {
 		super();
 		this.studentRepository = studentRepository;
@@ -28,31 +27,29 @@ public class StudentService {
 
 	public List<StudentForm> getAllStudents() {
 		List<StudentForm> students = studentRepository.findAll();
-		return students; //return type of students is List<StudentForm>
+		return students;
 	}
 
 	public void saveStudent(StudentDTO studentDTO) {
 		MultipartFile image = studentDTO.getImage();
 		Date createdAt = new Date();
-		String storeImageName = createdAt.getTime()+"_"+ image.getOriginalFilename();
-		System.out.println(storeImageName);
+		String storeImageName = createdAt.getTime() + "_" + image.getOriginalFilename();
+		System.out.println("Storing image as: " + storeImageName);
 		
-		//to create a folder for this
+		// Create the upload directory if it doesn't exist
 		try {
-			String uploadDir = "public/images/"; //this public/images is a folder that we are creating , public? will be same for all and images is the folder naemwe have given
+			String uploadDir = "public/images/";
 			Path uploadPath = Paths.get(uploadDir);
-			if(!Files.exists(uploadPath)) {
+			if (!Files.exists(uploadPath)) {
 				Files.createDirectories(uploadPath);
 			}
-			try {
-				InputStream inputStream = image.getInputStream();
-				Files.copy(inputStream, Paths.get(uploadDir+storeImageName),StandardCopyOption.REPLACE_EXISTING);
+			try (InputStream inputStream = image.getInputStream()) {
+				Files.copy(inputStream, Paths.get(uploadDir + storeImageName), StandardCopyOption.REPLACE_EXISTING);
 			} catch (Exception e) {
-				System.out.println(e.getMessage());
+				System.out.println("Error copying the file: " + e.getMessage());
 			}
-			
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			System.out.println("Error creating directory: " + e.getMessage());
 		}
 		
 		StudentForm student = new StudentForm();
@@ -65,17 +62,15 @@ public class StudentService {
 		studentRepository.save(student);
 	}
 
-
 	public void deleteStudent(Long rollNo) {
 		StudentForm student = studentRepository.findById(rollNo).get();
-		//What is the image path of the student
-		//Before deleting student details first delete the image ..soooo
+		// Delete the image file before deleting the record
 		String uploadDir = "public/images/";
-		Path imagePath = Paths.get(uploadDir+student.getImagePath());
+		Path imagePath = Paths.get(uploadDir + student.getImagePath());
 		try {
 			Files.delete(imagePath);
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			System.out.println("Error deleting image: " + e.getMessage());
 		}
 		studentRepository.delete(student);
 	}
@@ -93,26 +88,25 @@ public class StudentService {
 
 	public void updateStudent(StudentDTO studentDTO, Long rollNo) {
 		StudentForm student = studentRepository.findById(rollNo).get();
-		//to add / edit new image
-		if(!studentDTO.getImage().isEmpty()) {
-			Path oldImagePath = Paths.get("public/images/"+student.getImagePath());
+		// For updating, change the image file if provided.
+		if (!studentDTO.getImage().isEmpty()) {
+			Path oldImagePath = Paths.get("public/images/" + student.getImagePath());
 			try {
 				Files.delete(oldImagePath);
 			} catch (Exception e) {
-				System.out.println(e.getMessage());
+				System.out.println("Error deleting old image: " + e.getMessage());
 			}
 			MultipartFile image = studentDTO.getImage();
 			Date createdAt = new Date();
-			String storeImageName = createdAt.getTime()+"_"+image.getOriginalFilename();
+			String storeImageName = createdAt.getTime() + "_" + image.getOriginalFilename();
 			String uploadDir = "public/images/";
-			try {
-				InputStream inputStream = image.getInputStream();
-				Files.copy(inputStream, Paths.get(uploadDir+storeImageName),StandardCopyOption.REPLACE_EXISTING);
+			try (InputStream inputStream = image.getInputStream()) {
+				Files.copy(inputStream, Paths.get(uploadDir + storeImageName), StandardCopyOption.REPLACE_EXISTING);
 			} catch (Exception e) {
-				System.out.println(e.getMessage());
+				System.out.println("Error updating image file: " + e.getMessage());
 			}
 			student.setImagePath(storeImageName);
-			}
+		}
 		student.setName(studentDTO.getName());
 		student.setEmail(studentDTO.getEmail());
 		student.setAge(studentDTO.getAge());
@@ -120,6 +114,4 @@ public class StudentService {
 		student.setAddress(studentDTO.getAddress());
 		studentRepository.save(student);
 	}
-	
-
 }

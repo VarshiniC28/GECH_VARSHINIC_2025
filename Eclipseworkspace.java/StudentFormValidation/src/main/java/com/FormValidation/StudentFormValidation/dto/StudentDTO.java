@@ -27,6 +27,15 @@ public class StudentDTO {
 	
 	//Why we dont need to add validation to image is if its not mandatory
 	private MultipartFile image;
+	private MultipartFile document;
+	
+	
+	public MultipartFile getDocument() {
+		return document;
+	}
+	public void setDocument(MultipartFile document) {
+		this.document = document;
+	}
 	//
 	//
 	public String getName() {
