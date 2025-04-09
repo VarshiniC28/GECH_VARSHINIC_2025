@@ -1,8 +1,15 @@
 package com.varshini.journalapp.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "JournalEntries")
 public class JournalModels {
 
 	//This is pojo class - plaine old java object
+	@Id //to map it as a primary key
 	private long id;
 	private String title;
 	private String content;

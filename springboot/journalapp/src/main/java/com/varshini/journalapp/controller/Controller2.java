@@ -17,37 +17,36 @@ import org.springframework.web.bind.annotation.RestController;
 import com.varshini.journalapp.models.JournalModels;
 
 @RestController
-@RequestMapping("/_journal")
-public class JournalEntryController {
+@RequestMapping("/journal")
+public class Controller2 {
 	
-	private Map<Long, JournalModels> journalEntries = new HashMap<>();
 	
 	@GetMapping
 	public List<JournalModels> getAll(){ //localjost:8080/journal  - GET
-		return new ArrayList<>(journalEntries.values());
+		return null;
 	}
 	
 	@PostMapping
 	public boolean createEntry(@RequestBody JournalModels myEntry) {  //localhost:8080/journal     -POST
-		journalEntries.put(myEntry.getId(), myEntry);
+		
 		return true;
 	}
 	
 	@GetMapping("id/{myId}")
 	public JournalModels getJournalModelById(@PathVariable Long myId) {
-		return journalEntries.get(myId);
+		return null;
 	}
 	
 //	@GetMapping("/id{myId") also possible , here since its same url for gets
 	@DeleteMapping("/id/{myId}")
 	public JournalModels deleteJournalModelsById(@PathVariable Long myId) {
-		return journalEntries.remove(myId);
+		return null;
 	}
 	
 	//updating
 	@PutMapping("/id/{id}")
 	public JournalModels updateJournalModelById(@PathVariable Long id, @RequestBody JournalModels myEntry){
-		return journalEntries.put(id, myEntry);
+		return null;
 	}
 
 }
