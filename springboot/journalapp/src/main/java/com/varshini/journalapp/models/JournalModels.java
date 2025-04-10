@@ -1,5 +1,7 @@
 package com.varshini.journalapp.models;
 
+import java.util.Date;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -13,7 +15,7 @@ public class JournalModels {
 	private long id;
 	private String title;
 	private String content;
-	
+	private Date date;
 	public long getId() {
 		return id;
 	}
@@ -31,6 +33,12 @@ public class JournalModels {
 	}
 	public void setContent(String content) {
 		this.content = content;
+	}
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
 	}
 	
 	

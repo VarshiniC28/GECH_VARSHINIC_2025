@@ -23,12 +23,12 @@ public class JournalEntryController {
 	private Map<Long, JournalModels> journalEntries = new HashMap<>();
 	
 	@GetMapping
-	public List<JournalModels> getAll(){ //localjost:8080/journal  - GET
+	public List<JournalModels> getAll(){ //localjost:8080/_journal  - GET
 		return new ArrayList<>(journalEntries.values());
 	}
 	
 	@PostMapping
-	public boolean createEntry(@RequestBody JournalModels myEntry) {  //localhost:8080/journal     -POST
+	public boolean createEntry(@RequestBody JournalModels myEntry) {  //localhost:8080/_journal     -POST
 		journalEntries.put(myEntry.getId(), myEntry);
 		return true;
 	}

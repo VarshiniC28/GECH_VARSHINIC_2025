@@ -28,7 +28,6 @@ public class Controller2 {
 	
 	@PostMapping
 	public boolean createEntry(@RequestBody JournalModels myEntry) {  //localhost:8080/journal     -POST
-		
 		return true;
 	}
 	
