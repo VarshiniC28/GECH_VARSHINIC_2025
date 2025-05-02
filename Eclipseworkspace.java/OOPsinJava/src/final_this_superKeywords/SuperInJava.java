@@ -49,7 +49,7 @@ public class SuperInJava {
 		 * 2. Used to call super class constructor 
 		 * 3. Used to call super class methods
 		 * 
-		 * this and super cant be put together -> this(), nd supe()
+		 * this and super cant be put together -> this(), nd super()
 		 */
 
 		NewDog dog = new NewDog("Blacky", 10, "Pedigree");

@@ -33,7 +33,7 @@ public class ArrayInJava1 {
 			System.out.println("Enter the values for array:");
 			for(int i=0; i<sizeRow; i++) {
 				for(int j=0; j<sizeCol; j++) {
-//					System.out.println("enter the elements");
+					System.out.println("enter the " + i+ " th rows " +j+"th element: ");
 					array[i][j] = sc.nextInt();					
 					
 				}

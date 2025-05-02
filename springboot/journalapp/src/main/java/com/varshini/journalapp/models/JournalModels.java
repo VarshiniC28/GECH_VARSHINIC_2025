@@ -3,16 +3,22 @@ package com.varshini.journalapp.models;
 import java.time.LocalDateTime;
 //import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.Data;
 //import lombok.AllArgsConstructor;
 //import lombok.Builder;
 //import lombok.Data;
 //import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 //import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -23,8 +29,8 @@ import lombok.Setter;
 @Table(name = "JournalEntries")
 
 //Instead of creating our own getters, setters, constructors we can use Lomboks annotations as below which automatically generates the code during compilation of that class.(So removed all getters and setters.
-@Getter
-@Setter
+//@Getter
+//@Setter
 //@NoArgsConstructor
 //@AllArgsConstructor
 //@ToString
@@ -33,7 +39,8 @@ import lombok.Setter;
 
 //Instead of writing all these there is still more simpler way
 //Uisng @Data annotation which is a interface which contains all these methods in built - Getter, Setter, @Value, EqualandHashCode, @RequiredArgsConstructor ,@ToString
-//@Data
+@Data
+@NoArgsConstructor //must
 public class JournalModels {
 
 	// This is pojo class - plain old java object
@@ -59,6 +66,9 @@ public class JournalModels {
 	private LocalDateTime date;
 	//Changed to LocalDateTime since we dont want to write date ourselves.
 
-
+	@ManyToOne //Owning side 
+	@JoinColumn(name = "user_id") // Foreign key in journal_entries / if not usd hibernate will give name itselves which we may not like
+	@JsonBackReference
+	private User user;
 
 }

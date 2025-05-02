@@ -20,7 +20,7 @@ public class StringMethods {
 		 * 12. isBlank()
 		 * */
 		
-		String str1 =new String("HellO ab");
+		String str1 =new String("   HellO ab");
 		String str2 =new String("Hello ab");
 		String str3 = new String(" ");
 		
