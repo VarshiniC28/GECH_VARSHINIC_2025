@@ -43,15 +43,16 @@ public class HomeController {
 	}
 	
 	@PostMapping("/register")
-	public String register( @ModelAttribute("studentDTO") StudentDTO studentDTO,
-	                       BindingResult result,
-	                       RedirectAttributes redirectAttributes) {
-	    if (result.hasErrors()) {
-	        return "register"; // return form with errors
-	    }
-	    studentService.storeStudent(studentDTO);
-	    redirectAttributes.addFlashAttribute("success", "Student saved successfully");
-	    return "redirect:/login";
+	public String register(@ModelAttribute StudentDTO studentDTO, RedirectAttributes redirectAttributes, Model model) {
+		try {
+			studentService.storeStudent(studentDTO);
+			redirectAttributes.addFlashAttribute("success","Student saved succesfully");
+		} catch (Exception e) {
+			model.addAttribute("error","Failed to send email");
+			return "registration";
+		}
+		
+		return "redirect:/login";
 	}
 	
 	@GetMapping("/std-details")
