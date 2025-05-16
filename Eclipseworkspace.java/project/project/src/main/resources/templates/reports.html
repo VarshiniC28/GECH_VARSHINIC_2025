@@ -12,9 +12,9 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="admin_dashboard.html">Admin Panel</a>
+    <a class="navbar-brand" href="#">Admin Panel</a>
     <div class="d-flex">
-      <a class="btn btn-light me-2" href="admin_dashboard.html">
+      <a class="btn btn-light me-2" href="/admin/dashboard">
         <i class="bi bi-arrow-left"></i> Dashboard
       </a>
     </div>
@@ -33,25 +33,25 @@
   <!-- Add Report Form -->
   <div class="collapse mb-4" id="addReportForm">
     <div class="card card-body">
-      <form th:action="@{/saveReport}" method="post">
+      <form th:action="@{/saveReport}" method="post" th:object="${report}">
         <div class="row mb-3">
           <div class="col-md-6">
             <label for="reportId" class="form-label">Report ID</label>
-            <input type="text" class="form-control" id="reportId" name="reportId" placeholder="Enter Report ID" required>
+            <input type="text" th:field="*{reportId}" class="form-control" id="reportId" placeholder="Enter Report ID" required>
           </div>
           <div class="col-md-6">
             <label for="reportType" class="form-label">Report Type</label>
-            <input type="text" class="form-control" id="reportType" name="reportType" placeholder="Enter Report Type" required>
+            <input type="text" th:field="*{reportType}" class="form-control" id="reportType" placeholder="Enter Report Type" required>
           </div>
         </div>
         <div class="row mb-3">
           <div class="col-md-6">
             <label for="dateGenerated" class="form-label">Date Generated</label>
-            <input type="date" class="form-control" id="dateGenerated" name="dateGenerated" required>
+            <input type="date" th:field="*{dateGenerated}" class="form-control" id="dateGenerated" required>
           </div>
           <div class="col-md-6">
-            <label for="preparedBy" class="form-label">Prepared By</label>
-            <input type="text" class="form-control" id="preparedBy" name="preparedBy" placeholder="Enter Name" required>
+            <label for="name" class="form-label">Prepared By</label>
+            <input type="text" th:field="*{name}" class="form-control" id="name" placeholder="Enter Name" required>
           </div>
         </div>
         <button type="submit" class="btn btn-primary"><i class="bi bi-check-circle"></i> Submit Report</button>
@@ -71,14 +71,13 @@
       </tr>
     </thead>
     <tbody>
-      <!-- Loop through reports dynamically using Thymeleaf -->
       <tr th:each="report : ${reports}">
         <td th:text="${report.reportId}">R001</td>
-        <td th:text="${report.reportType}">Attendance Summary - March</td>
-        <td th:text="${report.dateGenerated}">2025-04-01</td>
-        <td th:text="${report.preparedBy}">Admin</td>
+        <td th:text="${report.reportType}">Sample Type</td>
+        <td th:text="${#dates.format(report.dateGenerated, 'yyyy-MM-dd')}">2025-01-01</td>
+        <td th:text="${report.name}">Admin</td>
         <td>
-          <a class="btn btn-sm btn-success" th:href="@{'/downloadReport/' + ${report.reportId}}">
+          <a th:href="@{'/downloadReport/' + ${report.reportId}}" class="btn btn-sm btn-success">
             <i class="bi bi-download"></i> PDF
           </a>
         </td>
@@ -89,6 +88,5 @@
 
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>

@@ -21,9 +21,9 @@ import com.varshini.journalapp.service.UserDetailsServiceImpl;
 
 @Configuration //We want to define a bean inside so make it configuration
 //@EnableWebSecurity // No longer required in SpringBoot 3/6 but still can use //Now, Spring Security auto-detects your security configuration through the SecurityFilterChain bean.
-//This above annotation  signals spring to enable web security support and this is what used make our application secured. and used in conjuction with @Configuration.
+//This above annotation signals spring to enable web security support and this is what used make our application secured. and used in conjuction with @Configuration.
 
-//public class SpringSecurity extends WebSecurityConfigurerAdapter{ //This class we were extending to is utility cklass in Spring security of older versions which used to provide default configuration and has config method in it which we were overriding in our class and it provides way to confogure how requests are secured .
+//public class SpringSecurity extends WebSecurityConfigurerAdapter{ //This class we were extending to is utility class in Spring security of older versions which used to provide default configuration and has config method in it which we were overriding in our class and it provides way to configure how requests are secured .
 
 //You should not extend any class now. Instead, just define beans — mainly SecurityFilterChain and AuthenticationManager.
 
@@ -40,6 +40,7 @@ public class SpringSecurity {
 	        .authorizeHttpRequests(request -> request
 	            // Any request to URLs that start with /journal/ must be authenticated (user must log in) -> ** is a wild card pattern i.e url with journal followed by 1/more character must be authenticated 
 	            .requestMatchers("/journal/**","/user/**").authenticated()
+	            .requestMatchers("/admin/**").hasRole("ADMIN")
 	            // All other requests (not matching /journal/**) are allowed without login
 	            .anyRequest().permitAll()
 	        )

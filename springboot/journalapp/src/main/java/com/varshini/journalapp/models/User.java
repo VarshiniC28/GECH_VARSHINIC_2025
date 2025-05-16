@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -42,12 +43,14 @@ public class User {
 	
 	//To link the journal entries(JournalModels) to a particular user
 	//So now we create reference of JournalModels in users entity.
-	@OneToMany(mappedBy = "user") //inverse side //most commonly used in sub class which we are trying to main or owning class(models) // others are OneToOne , @ManyToOne , @ManyToMany (JPA)
+	@OneToMany(mappedBy = "user",cascade=CascadeType.ALL) //inverse side //most commonly used in sub class which we are trying to main or owning class(models) // others are OneToOne , @ManyToOne , @ManyToMany (JPA)
 	@JsonBackReference
 	private List<JournalModels> journalEntries = new ArrayList<>();
 	
 	//mappedBy = "user" -> user is the object/instance name we gave for User class in JournalModels class -> private User user;
 //	create users instance in Models also and do inversed mapping and name the column that we would indicate and join the column userid with the entry
 	
-	private List<String> roles;
+	@Column(nullable = false)
+	private String roles; // This will store comma-separated roles like "USER" or "USER,ADMIN"
+
 }

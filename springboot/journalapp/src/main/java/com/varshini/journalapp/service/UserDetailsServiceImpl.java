@@ -15,17 +15,18 @@ public class UserDetailsServiceImpl implements UserDetailsService{ // inbuilt in
 	@Autowired // Injects the UserRepository dependency to fetch user data from DB
 	private UserRepository userRepository;
 	
-	@Override // Overrides the loadUserByUsername method from UserDetailsService
+	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		User user = userRepository.findByUsername(username); // Fetches user from DB by username
-		if(user!=null) {
-			return org.springframework.security.core.userdetails.User.builder() // Starts building a Spring Security user
-				.username(user.getUsername()) // Sets the username
-				.password(user.getPassword()) // Sets the password (usually encrypted)
-				.roles(user.getRoles().toArray(new String[0]))  // Converts user's list of roles to a array of strings because .roles() needs an array, not a list.
-				.build(); // Builds the UserDetails object if and only user is found else throw execption as below
-		}
-		throw new UsernameNotFoundException("User not found with this username: "+username);
+	    User user = userRepository.findByUsername(username);
+	    if(user != null) {
+	        return org.springframework.security.core.userdetails.User.builder()
+	            .username(user.getUsername())
+	            .password(user.getPassword())
+	            .roles(user.getRoles().split(","))  // Split comma separated roles to String array
+	            .build();
+	    }
+	    throw new UsernameNotFoundException("User not found with this username: " + username);
 	}
+
 
 }

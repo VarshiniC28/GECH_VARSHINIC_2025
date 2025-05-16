@@ -24,12 +24,24 @@ public class UserService {
 	private static final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 	
 	//Its a method created to save - save()
+	//Manually adding ADMIN in db
 	public void saveNewUser(User user) {
-		user.setPassword(passwordEncoder.encode(user.getPassword()));
-		user.setRoles(Arrays.asList("USER"));
-		userRepository.save(user);
+	    user.setPassword(passwordEncoder.encode(user.getPassword()));
+	    if (user.getRoles() == null || user.getRoles().isBlank()) {
+	        user.setRoles("USER"); // default if not explicitly set
+	    }
+	    userRepository.save(user);
 	}
 	
+	//While saving user add as admin
+	public void saveAdmin(User user) {
+	    user.setPassword(passwordEncoder.encode(user.getPassword()));
+	    if (user.getRoles() == null || user.getRoles().isBlank()) {
+	        user.setRoles("USER,ADMIN"); // default if not explicitly set
+	    }
+	    userRepository.save(user);
+	}
+
 	//Save method to add passwordEncoder
 	public void saveUser(User user) {
 		userRepository.save(user);
