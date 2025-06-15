@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--  The <template> tag is used to declare a fragment of HTML that is not to be rendered 
+immediately when the page loads. Instead, it can be instantiated later using JavaScript. This is 
+useful for client-side templating. -->
+    <button id="showTemplate">Show Template Content</button>
+    <div id="output"></div>
+
+    <template id="my-template">
+        <div>
+            <h2>This is from the template!</h2>
+            <p>The &lt;template&gt; tag holds HTML that is not rendered until JavaScript uses it.</p>
+        </div>
+    </template>
+
+    <script>
+        const button = document.getElementById('showTemplate');
+        const template = document.getElementById('my-template');
+        const output = document.getElementById('output');
+
+        button.addEventListener('click', () => {
+            const clone = template.content.cloneNode(true);
+            output.appendChild(clone);
+        });
+    </script>
+
+</body>
+
+</html>

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -43,7 +44,7 @@ public class User {
 	
 	//To link the journal entries(JournalModels) to a particular user
 	//So now we create reference of JournalModels in users entity.
-	@OneToMany(mappedBy = "user",cascade=CascadeType.ALL) //inverse side //most commonly used in sub class which we are trying to main or owning class(models) // others are OneToOne , @ManyToOne , @ManyToMany (JPA)
+	@OneToMany(mappedBy = "user",cascade=CascadeType.ALL, fetch = FetchType.LAZY) //inverse side //most commonly used in sub class which we are trying to main or owning class(models) // others are OneToOne , @ManyToOne , @ManyToMany (JPA)
 	@JsonBackReference
 	private List<JournalModels> journalEntries = new ArrayList<>();
 	

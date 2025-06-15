@@ -21,7 +21,7 @@
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
             <!-- Dynamic user profile actions -->
-            <li><a class="dropdown-item" th:href="@{/profile/(userId=${user.id})}">View Profile</a></li>
+            
             <li><form th:action="@{/logout}" method="post">
     		<button type="submit"><i class="bi bi-box-arrow-right"></i> Logout</button>
 			</form></li>
@@ -51,7 +51,7 @@
 
     <!-- Main Content -->
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 pt-4">
-      <h2>Welcome, <span th:text="${user.name}">Student</span>!</h2>
+      
       <p>Choose your action from the left side menu.</p>
     </main>
 

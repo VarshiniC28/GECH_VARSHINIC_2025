@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- : Data attributes in HTML are custom attributes that start with data- and allow you to store 
+extra information on HTML elements. They are often used to embed custom data that can be 
+accessed via JavaScript. -->
+    <div data-user-id="12345" data-role="admin">User info </div>
+
+    <script>
+        const div = document.querySelector('div');
+        console.log(div.dataset.userId);
+        console.log(div.dataset.role);
+    </script>
+</body>
+
+</html>

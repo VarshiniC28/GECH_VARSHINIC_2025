@@ -74,7 +74,7 @@ public class HomeController {
 			userService.StoreRegisteredUser(userDTO);
 			redirectAttributes.addFlashAttribute("success","Registered Successfully");
 		} catch (Exception e) {
-			model.addAttribute("error","Failed to send email");
+			model.addAttribute("error","Failed to add user");
 			return "register";
 		}
 	    return "redirect:/login";

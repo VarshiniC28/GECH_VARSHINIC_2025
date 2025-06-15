@@ -2,7 +2,7 @@ package Polymorphism;
 
 // ✅ 1. Method Overriding (Runtime Polymorphism / Dynamic Binding)
 class Person {
-    // ❌ Static methods CANNOT be overridden, so removing "static"
+    // ❌ Static methods CANNOT be overridden, so remove "static"
     public void walking() {
         System.out.println("The person is walking");
     }
