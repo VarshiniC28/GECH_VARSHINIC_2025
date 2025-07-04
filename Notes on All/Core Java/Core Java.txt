@@ -7,3 +7,128 @@ Steve Jobs - 1980 - Macintosh first successful mass market all in one desktop pe
 
 Modern day computer 
 -----------------------------------------------------------------------------------------------------------
+
+Microprocessor understand machine level lang - 0's and 1;s
+Assembly Level Langauge(ALL) >>>> Assembler(Translator - from ALL to MLL)>>>>> Microprocessor (understands)
+-----------------------------------------------------------------------------------------------------------------
+*, -,+,/ - High level Langauge >>> Compiler>>>>>MLL >>>>>>>MIcroprocessor
+
+COmpiler is the software that converts HLL to MLL
+
+High Level languages - Java, Javascript, Python, c#, Kotlin, php, C++
+---------------------------------------------------------------------------------
+Microprocessor - Thinks
+Instructions are stored in Hard Disk(SLow, Non Volatile)
+connection between Hard disk and Microprocessor - Bus connection
+RAM - Volatile
+ROM - Non Volatile
+Hard disk - (File)(Loading Saving) >>>RAM(Byte)>>>>>>>> Microprocessor.(Register)
+
+This is all inside operating system
+Platform = Hardware + software(OS)
+Platform = Hardware(Microprocessor + software(OS)
+-----------------------------------------------------------------------------------------------------------------
+
+HLL >>>>>>>>>>>>>> Compiler>>>>>>MLL>>>>>>>Microprocessor
+-----------Compilation Phase------------------------|----------Execution Phase------------
+____________________________________________________________________________
+
+Introduction to Core JAVA:
+	• Java introduced in 1985
+	• Java is Object-Oriented, simple, secured, Platform independent and robust.
+	• Distributed, multithreaded, High performance, Interpreted, Dynamic
+	• Java is Architecture Neutral, Portable
+	
+App.java >>>> Compiler >>>>> Bute code(Intermediate Langause-IL) >>>>>> JVM (OS) >>> Microprocessor
+
+--> JVM - Java Virtual Machine for different OS's
+--> Why is Java called as Platform Independent?
+	• Because it can be compiled in any OS and can be executed in any other OS
+--> Why Is java portable? - Can be transportable to other OS
+--> Why Java is Architecture Neutral? -Whatever the hardware is ,Java is going to run as it is neutral to all kind of architecture
+
+_________________________________________________________________________
+C, C++, Java
+
+--> C is faster beacuse than C++ and Java because C -  compiler - MLL whereas  Java is compiled then bytecode and then JVM and MLL.
+--> C, C++ - speed matters which is needed in Embedded Apps.
+--> Java -> is for Web Apps - Spotify , Netflix
+____________________________________________________________________________
+
+Orientation : perspective, way of looking
+
+Object Orientation:
+	• World is a collection of objects.
+	• Every object belongs to a class (Class is imaginary, Object is Real)
+	• Every Object is having 2 parts, has(state & properties) coded using datatypes and 				does(behaviour) coded using methods
+
+------------------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------
+
+Main Method : 
+	• OS gives the control of execution/permission for programming language through main method
+	• Main method gives the control of execution and its the entry and exit  to a programming language. Only with this OS gives the permission of access.
+	
+C -
+#include <stdio.h>
+Void main(){ printf("Hello World"); } - Main method in C
+--------
+-Same in Java
+public class Demo{
+	
+	public static void main(String[] args){
+		System.out.println("Hello");
+	}
+	
+} 
+
+
+• public- Access specifier which makes - OS  see main method but cant access with only public
+• Static - OS can access main method without creating object i.e can access directly using class 
+• Void: Return type, main method return nothing 
+• OS can access only with both public and static keyword
+• String[] args : command line argument, its an array of strings that is used to pass 	arguments to execute before the main method
+-String... Or String[] are both same
+
+--> In notepad: save the code in a folder and run cmd through ut
+class demo
+{
+	public static void main(String[] args){
+		System.out.println("Hello Java!");
+	}
+}
+-Command prompt with address of that folder and
+-Command : javac name.java
+-creates demo.class file in the folder which is in bytecode
+-To tell java to run the demo.class
+-command: java demo - This gives output in the cmd prompt
+____________________________________________________________________________
+
+LOOPS:
+
+	1. For loop
+	2. While loop
+	3. Do-while loop
+	4. For-each loop
+
+1.for loop
+//		***** - prints in row
+		for(int i=1; i<=5; i++) {
+			System.out.print("*");
+		}
+
+//		Prints in column i.e in next line
+		for(int i=1; i<=5; i++) {
+			System.out.println("*");
+		}
+		
+//		5x5 * using nested for loop
+		for(int i=1; i<=5; i++) {
+			for(int j=1; j<=5; j++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+
+-----------------------------------------------
