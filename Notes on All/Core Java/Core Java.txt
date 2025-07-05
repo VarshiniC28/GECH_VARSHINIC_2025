@@ -105,6 +105,105 @@ class demo
 -command: java demo - This gives output in the cmd prompt
 ____________________________________________________________________________
 
+DATA TYPES IN JAVA
+------------------
+
+Data types are converters that transform real-world data into binary (0's and 1's).
+
+> For positive numbers: base-2 format is used (MSB = 0)
+> For negative numbers: base-2 format + 2's complement is used (MSB = 1)
+
+Java has 8 primitive data types:
+
+==> 1 byte  = 8 bits
+==> short  = 2 bytes = 16 bits
+==> int    = 4 bytes = 32 bits
+==> long   = 8 bytes = 64 bits
+==> float  = 4 bytes = 32 bits
+==> double = 8 bytes = 64 bits
+==> char   = 2 bytes = 16 bits
+==> boolean= 1 byte  = 8 bits
+
+NOTE:
+To find the range of signed data types:
+Range = (-2^(n-1)) to (2^(n-1) - 1), where n = number of bits.
+
+------------------------------------------------------------
+1. Byte: 8 bits
+------------------------------------------------------------
+byte a;
+- 'a' is the identifier (variable name)
+- Range: -128 to +127
+- Only holds values within this range
+
+------------------------------------------------------------
+2. Short: 2 bytes or 16 bits
+------------------------------------------------------------
+short a;
+- Range: -32,768 to +32,767
+- Only holds values within this range
+
+------------------------------------------------------------
+3. Int: 4 bytes or 32 bits
+------------------------------------------------------------
+int a;
+- Range: -2,147,483,648 to +2,147,483,647
+- Around 200 crore range
+
+------------------------------------------------------------
+4. Long: 8 bytes or 64 bits
+------------------------------------------------------------
+long a;
+- Range: -2^63 to +2^63 - 1
+- This range is in lakhs of crores
+
+------------------------------------------------------------
+5. Float: 4 bytes or 32 bits
+------------------------------------------------------------
+float a = (float)45.5;  OR  float a = 45.5f;   // preferred
+- Default for 45.5 is double, so use suffix 'f' or cast to float
+- Range: approx. -3.4 x 10^38 to +3.4 x 10^38
+- Example: 65.23
+- Single precision (less digits after decimal)
+
+------------------------------------------------------------
+6. Double: 8 bytes or 64 bits
+------------------------------------------------------------
+double a;
+- Range: approx. -1.7 x 10^308 to +1.7 x 10^308
+- Example: 65.2345678
+- Double precision (more digits after decimal)
+
+NOTE: 
+- Real number literal like 45.5 is treated as double by default.
+- To treat it as float: use (float)45.5 or 45.5f
+
+------------------------------------------------------------
+7. Char: 2 bytes or 16 bits
+------------------------------------------------------------
+char a = 'A';
+- Represents characters like letters, digits, symbols
+- Java uses Unicode character set (not ASCII)
+- Range: 0 to 65,535 (i.e., 2^16)
+- Example binary: 00000000 00000000 to 11111111 11111111
+
+Note:
+- ASCII = 128 characters (7-bit code: 0 to 127)
+- Unicode = 65,536 characters (16-bit code)
+- Java uses Unicode, C uses ASCII
+
+------------------------------------------------------------
+8. Boolean: 1 byte (8 bits)
+------------------------------------------------------------
+boolean a = true;
+boolean b = false;
+- true = 1, false = 0
+- Although it's just 1 bit logically, Java stores it as a full byte (8 bits)
+- Example: 00000001 or 00000000
+- Storing as 1 byte is faster for processors (byte alignment)
+
+____________________________________________________________________________
+
 LOOPS:
 
 	1. For loop
@@ -112,7 +211,82 @@ LOOPS:
 	3. Do-while loop
 	4. For-each loop
 
-1.for loop
+JAVA LOOPS SUMMARY
+------------------
+
+1. FOR LOOP
+-----------
+• Used when the number of iterations is known.
+
+Syntax:
+for (initialization; condition; update) {
+    // loop body
+}
+
+Explanation:
+• Initialization: Runs once before the loop starts (e.g., int i = 0).
+• Condition: Checked before each loop iteration. If false, the loop ends.
+• Update: Runs after each iteration (e.g., i++).
+
+--------------------------------------------------
+
+2. WHILE LOOP
+-------------
+• Used when the number of iterations is unknown.
+• Condition is checked before the loop starts.
+
+Syntax:
+initialization;
+while (condition) {
+    // loop body
+    update;
+}
+
+Explanation:
+• Initialization: Done before the loop (e.g., int i = 0).
+• Condition: Checked before each iteration.
+• Update: Done inside the loop (e.g., i++).
+
+--------------------------------------------------
+
+3. DO-WHILE LOOP
+----------------
+• Used when the loop must execute at least once.
+• Condition is checked after the loop body.
+
+Syntax:
+initialization;
+do {
+    // loop body
+    update;
+} while (condition);
+
+Explanation:
+• Initialization: Done before the loop starts.
+• Loop Body: Executes once before checking the condition.
+• Condition: Checked after each iteration.
+• Update: Done inside the loop.
+
+--------------------------------------------------
+
+4. FOR-EACH LOOP
+----------------
+• Used to iterate over arrays or collections.
+• Simplified loop for accessing each element directly.
+
+Syntax:
+for (dataType element : collection) {
+    // loop body
+}
+
+Explanation:
+• Initialization/Condition/Update: Not explicitly written.
+• Iteration: Automatically goes through each element.
+• Use Case: Best suited for reading elements, not modifying them using index.
+
+--------------------------------------------------
+CODING ON FOR LOOP:
+
 //		***** - prints in row
 		for(int i=1; i<=5; i++) {
 			System.out.print("*");
@@ -130,5 +304,343 @@ LOOPS:
 			}
 			System.out.println();
 		}
+
+ n*n * pattern
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		for(int i=1; i<=n; i++) {
+			for(int j=1; j<=n; j++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+
+
+Number Pattern
+
+1 1 1 1 1 
+2 2 2 2 2 
+3 3 3 3 3 
+4 4 4 4 4 
+5 5 5 5 5 
+
+public class numberPattern {
+	public static void main(String[] args) {
+		for (int i=1; i<=5; i++) {
+			for(int j=1; j<=5;j++) {
+				System.out.print(i+" ");
+			}
+			System.out.println();
+		}
+	}
+}
+
+
+Hallow space pattern:
+
+*****
+*      *
+*      *
+*      *
+*****
+
+public class hollowSquarePattern {
+
+	public static void main(String[] args) {
+		int n = 8;
+		for(int i =1; i<=n;i++) {
+			for(int j=1; j<=n;j++) {
+				if(i==1 || i==n || j==1 || j==n) {
+					System.out.print(j);
+//					System.out.println("*");
+				}else {
+					System.out.print(" ");
+				}
+			}
+			System.out.println();
+		}
+	
+
+
+1 to 25 numbers in 5*5 grid:
+
+01 02 03 04 05 
+06 07 08 09 10 
+11 12 13 14 15 
+16 17 18 19 20 
+21 22 23 24 25 
+
+// printing 1 to 25 in 5*5 grid
+		int n=5;
+		int count=1;
+		for (int i=1; i<=n; i++) {
+			for(int j=1; j<=n;j++) {
+				if(count < 10) {
+					System.out.print("0");
+				}
+				System.out.print(count+" ");
+				count++;
+			}
+			System.out.println();
+		}
+		
+	
+1 to 25 numbers in 5*5 grid
+		
+		int a = 5;  // Grid size
+        for (int i = 1; i <= a; i++) {         // Rows
+            for (int j = 1; j <= a; j++) {     // Columns
+                System.out.printf("%-3d", (i - 1) * a + j);  // Calculate and print
+            }
+            System.out.println();  // Move to next line
+        }
+	
+        System.out.println();
+
+
+
+1 to 5 table numbers in 5*5 grid :
+
+01 02 03 04 05 
+02 04 06 08 10 
+03 06 09 12 15 
+04 08 12 16 20 
+05 10 15 20 25 
+        
+        //print 5*5 grid with 1,2,3,4,5 then 2,4,6,8,10 then 3,6,9,12,15
+        int m=5;
+		for (int i=1; i<=n; i++) {
+			for(int j=1; j<=n;j++) {
+				int x = i*j;
+				if(x < 10) {
+					System.out.print("0");
+				}
+				System.out.print(x+" ");
+	
+			}
+			System.out.println();
+		}
+------
+Number pattern:
+
+1 2 3 4 5 
+2 3 4 5 6 
+3 4 5 6 7 
+4 5 6 7 8 
+5 6 7 8 9 
+
+		 int y=5;
+			for (int i=1; i<=y; i++) {
+				for(int j=1; j<=y;j++) {
+					System.out.print((i+j-1)+" ");
+				}
+				System.out.println();
+			}
+-----
+
+Right angle triangle *:
+
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+
+		int n =5;
+		for(int i=1; i<=n; i++) {
+			for(int j=1; j<=i; j++) {
+				System.out.print("*"+" ");
+			}
+			System.out.println();
+		}
+-----
+
+Right angled triangle with numbers:
+
+1 
+1 2 
+1 2 3 
+1 2 3 4 
+1 2 3 4 5 
+
+            int a =5;
+		for(int i=1; i<=a; i++) {
+			for(int j=1; j<=i; j++) {
+				System.out.print(j+" ");
+			}
+			System.out.println();
+		}
+
+
+01 
+02 03 
+04 05 06 
+07 08 09 10 
+11 12 13 14 15 
+
+		int x= 5;
+		int count = 1;
+		for(int i=1; i<=x; i++) {
+			for(int j=1; j<=i; j++) {
+				if(count<10) {
+					System.out.print("0");
+				}
+				System.out.print((count++)+" ");
+			}
+			System.out.println();
+		}
+-------------------
+
+Mirrored right angled triangle:
+
+      *
+     **
+    ***
+  ****
+ *****
+
+		int y =5;
+		//in a row
+		for(int i=1; i<=y; i++) {
+			// Spaces:
+			for(int k=0; k<=y-i ; k++) {
+				System.out.print(" ");
+			}
+			
+			for(int j=1; j<=i; j++) {
+				System.out.print( "*");
+			}
+			System.out.println();
+		}
+
+
+Pyramid triangle
+
+    * 
+   * * 
+  * * * 
+ * * * * 
+* * * * * 
+
+/		Pyramid
+		int b = 5;
+		for(int i=1;i<=b;i++) {
+			//spaces
+			for(int k=1; k<=b-i; k++) {
+				System.out.print(" ");
+			}
+			for(int j=1; j<=i; j++) {
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+
+
+Hallow triangle
+
+* 
+* * 
+*   * 
+*      * 
+* * * * * 
+
+		int c = 5;
+		for(int i=1; i<=c; i++) {
+			
+			for(int j=1; j<=i; j++) {
+				if((i==3 & j==2) || (i==4 & j==2) || (i==4 & j==3)) {
+					System.out.print(" "+" ");
+				}else {
+					System.out.print("*"+" ");
+				}
+			}
+			System.out.println();
+		}
+
+// OR
+
+		int c = 5;
+		for(int i=1; i<=c; i++) {
+			
+			for(int j=1; j<=i; j++) {
+				if((i==3 & j==2) || (i==4 & j==2) || (i==4 & j==3)) {
+					System.out.print(" "+" ");
+				}else {
+					System.out.print("*"+" ");
+				}
+			}
+			System.out.println();
+		}
+
+Hallow pyramid:
+
+    * 
+   * * 
+  *    * 
+ *       * 
+* * * * * 
+	
+		int d=5;
+		for(int i=1; i<=d; i++) {
+			for(int k=1; k<= d-i; k++) {
+				System.out.print(" ");
+			}
+			
+			for(int j=1; j<=i; j++) {
+				if(j==1 || i==5 || i==j) {
+					System.out.print("* ");
+				}else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+// OR
+		
+		//hallow pyramid:
+		int c = 5;
+		for(int i=1; i<=c; i++) {
+			for(int k=1; k<=c-i; k++) {
+				System.out.print(" ");
+			}
+			
+			for(int j=1; j<=i; j++) {
+				if((i==3 & j==2) || (i==4 & j==2) || (i==4 & j==3)) {
+					System.out.print(" "+" ");
+				}else {
+					System.out.print("*"+" ");
+				}
+			}
+			System.out.println();
+		}
+
+
+Mirrored Hallow right angled triangle:
+
+        *
+    *  *
+  *    *
+ *     *
+*****
+
+			int g =5;
+		for(int i=1; i<=g; i++) {
+			for (int k=1; k<=g-i; k++) {
+				System.out.print(" ");
+			}
+			
+			for(int j=1; j<=i; j++) {
+				if(j==1 || i==g || i==j) {
+					System.out.print("*");
+				}else{
+				System.out.print(" ");
+				}
+			}
+			System.out.println();
+		}
+
+---------------------------------------------------------------
+2. While loop:
+
 
 -----------------------------------------------
