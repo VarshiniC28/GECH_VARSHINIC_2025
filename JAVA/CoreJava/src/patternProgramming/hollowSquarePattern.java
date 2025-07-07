@@ -15,7 +15,5 @@ public class hollowSquarePattern {
 			System.out.println();
 		}
 		
-		
-		
 	}
 }

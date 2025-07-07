@@ -62,6 +62,5 @@ public class numberPattern {
 				System.out.println();
 			}
 			
-			
 }
 }
