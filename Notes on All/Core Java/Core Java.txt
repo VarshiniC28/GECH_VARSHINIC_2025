@@ -204,6 +204,98 @@ boolean b = false;
 
 ____________________________________________________________________________
 
+_________________________________________________________________________________
+
+Note : 
+    1. Decimal Integer     : 0 1 2 3 4 5 6 7 8 9
+    2. Octal Integer       : 0 1 2 3 4 5 6 7
+    3. Hexadecimal Integer : 0 1 2 3 4 5 6 7 8 9 A B C D E F
+    4. Binary              : 0 1
+
+Prefix and its Meanings:
+    1. No-prefix : Decimal
+    2. 0         : Octal
+    3. 0x        : Hexadecimal
+    4. 0b        : Binary
+
+Note : Assignment is right to left i.e., let’s say b = a;
+       Right to left - assigning a to b, not b to a
+
+_________________________________________________________________________________
+
+45 - is not just an integer, it's a Decimal Integer Literal
+
+Interview Ques: OCTAL TO DECIMAL
+--------------------------------
+    int a = 045;
+    System.out.println(a); // 37
+
+--> Output is 37 because 045 is Octal not Decimal. Java treats 0 prefix as Octal.
+--> Java displays the output in Decimal (converts Octal 045 to Decimal).
+--> To convert Octal to Decimal:
+    - Ignore the leading 0 -> 045 becomes 45
+    - Convert 4 to Binary : 100
+    - Convert 5 to Binary : 101
+    - Combine: 100101
+    - Assign 2^5 to 2^0: 2^5 + 2^2 + 2^0 = 32 + 4 + 1 = 37
+
+OR:
+    int a = 045; // Octal literal (base 8), 045 = 4×8 + 5 = 37
+    System.out.println(a); // Prints 37
+
+_________________________________________________________________________________
+
+Interview Ques: HEXADECIMAL TO DECIMAL
+--------------------------------------
+    int c = 0x45; // Hex literal (base 16), 0x45 = 4×16 + 5 = 69
+    System.out.println(c); // Prints 69
+
+OR:
+    - 4 = 0100, 5 = 0101
+    - Combine: 01000101
+    - Binary → Decimal: 69
+
+_________________________________________________________________________________
+
+Interview Ques: BINARY TO DECIMAL
+---------------------------------
+    int d = 0b00000010; // Binary literal (base 2)
+    System.out.println(d); // Prints 2
+
+OR:
+    - 1 is at 2^1 => 2
+
+_________________________________________________________________________________
+
+Interview Ques: Invalid Octal Literal
+-------------------------------------
+    int e = 078; // ❌ Error: 8 is invalid in Octal (only 0–7 allowed)
+    System.out.println(e); // Compilation error
+
+_________________________________________________________________________________
+
+TYPE CASTING (Type Conversion)
+==============================
+Converting from one datatype to another
+
+• Implicit Type Casting (Widening) — Lower to higher size conversion:
+  byte > short > int > long > float > double
+  (char → int also allowed)
+
+Note: Long (64-bit integer) to float (32-bit floating-point) is allowed.
+      Because float uses IEEE 754 format and can approximate large integers.
+
+Example:
+--------
+    byte a = 45;
+    double b;
+
+    b = a; // Right to left: assigning a to b
+    System.out.println(a); // 45
+    System.out.println(b); // 45.0 (converted to double)
+
+____________________________________________________________________________
+
 LOOPS:
 
 	1. For loop
