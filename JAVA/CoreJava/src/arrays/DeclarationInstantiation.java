@@ -10,6 +10,12 @@ public class DeclarationInstantiation {
 //		○ Array requires Contiguous memory allocation not dispersed.
 //		Hence to overcome we use collection framework and ArrayList or Linked List in that.
 		
+		/** Advantages of array:
+		 * 1. Random access.
+		 * 2. type safety - the elements inside the array is based on one datatype.
+		 * 3. type casting - To print the element in arrays - no need to type cast. 
+		 * */
+		
 		//Different type of declaration and instantiation for 1D
 		int [] a = new int[5];
 		//or
