@@ -32,6 +32,34 @@ public class ComapreTo {
 			
 		}
 		
+		// Case 1: Unequal length, compared char-by-char, no difference found, so compare by length
+		String s5 = "JAVA";     // After matching 'A', there are 0 remaining chars
+		String s6 = "JAVAC";    // After matching 'A', there is 1 more char 'C'
+		System.out.println(s5.compareTo(s6)); // -1 → 0 - 1 (s5 is shorter) → s5 < s6
+
+		// Case 2: Reversed from above
+		String s7 = "JAVAC";    // After matching 'A', 1 more char
+		String s8 = "JAVA";     // After matching 'A', 0 more char
+		System.out.println(s7.compareTo(s8)); // 1 → 1 - 0 → s7 > s8
+
+		// Case 3: More difference in length
+		String sa = "JAVAJAVA"; // Same up to "JAVA", then has 4 extra chars
+		String sb = "JAVA";     // Ends after "JAVA"
+		System.out.println(sa.compareTo(sb)); // 4 → sa has 4 extra chars → sa > sb
+
+		// Case 4: concat() doesn't modify original string unless reassigned
+		String sc = "JAVA";
+		System.out.println(sc); // JAVA
+		sc.concat("Programming"); // Creates new String "JAVAPROGRAMMING" but not assigned
+		System.out.println(sc); // JAVA → original string unchanged (immutable)
+
+		
+		
+		
+		
+		
+		
+		
 		/*Q: If strings are immutable, how can we reassign them like s1 = "NewValue"?
 		Strings are immutable, so their content cannot be modified.
 		But string reference variables like s1 can point to different string objects.
