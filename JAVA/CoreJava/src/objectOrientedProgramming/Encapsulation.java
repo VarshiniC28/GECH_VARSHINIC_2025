@@ -22,18 +22,18 @@ class Bank{
 		return password;
 	}
 	
-////	Can we give one settermethod for all vars: yes
+////	Can we give one setter method for all vars: yes
 //	public void setterBank(int accNo, int password) {
 //		this.accNo = accNo;
 //		this.password = password;
 //	}
 	
-	//Can we give one gettermethod for all vars: no not possible because the varibale type could be diff string int etc
+	//Can we give one getter method for all vars: no not possible because the varibale type could be diff string int etc
 //	public int getterData() {
 //		return accNo, password;
 //	}
 	
-	//Constructor is a specialtype of seeter with same name as class with no return type 
+	//Constructor is a special type of setter with same name as class with no return type 
 	//Parameterized constructor/Full args constructor has all parameters, Zerparameterized constructor and no args/default	 constructor has no paramters, son no argumnets
 	//Full args constructor
 	public Bank(int accNo, int password) { 

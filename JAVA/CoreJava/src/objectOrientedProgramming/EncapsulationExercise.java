@@ -78,9 +78,9 @@ public class EncapsulationExercise {
 		// Loop to print all stored employee details
 		for(int i = 0; i < storage.length; i++) {
 			//System.out.println(storage[i]);            // Prints object address (hashcode) of e 
-			System.out.println(storage[i].getId());     // Print ID
-			System.out.println(storage[i].getName());   // Print name
-			System.out.println(storage[i].getSalary()); // Print salary
+			System.out.print(storage[i].getId());     // Print ID
+			System.out.print(storage[i].getName());   // Print name
+			System.out.print(storage[i].getSalary()); // Print salary
 		}
 
 	}
