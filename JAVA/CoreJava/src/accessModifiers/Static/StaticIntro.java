@@ -1,4 +1,4 @@
-package accessModifiers;
+package accessModifiers.Static;
 
 class Test{
 	

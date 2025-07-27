@@ -6,7 +6,8 @@ public class CodeSnippetOnStatic2 {
 
 	public static void main(String[] args) {
 
-		System.out.println(++i); // error: cannot access instance variable 'i' directly since no object is created yet
+		//uncomment below line
+		//System.out.println(++i); // error: cannot access instance variable 'i' directly since no object is created yet
 		// To fix: create an object, then access it: System.out.println(++new CodeSnippetOnStatic2().i);
 	}
 
