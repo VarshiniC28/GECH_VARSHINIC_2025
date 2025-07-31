@@ -51,10 +51,37 @@ interface fun{
 		
 	}
 	
-	//can give as many as default and static methods and can also give them together, but there must be a abstract method
+	private void add4() {//its possible to give one/more static method inside the functional interface along with one abstract method(must), i.e cant give only one static method only there must me one abstract method along with it
+		
+	}
+	
+	//can give as many as default and static methods, private methods and can also give them together, but there must be a abstract method
 }
 
 //----------------------------------------------------------------------------------
+
+//To reduce redundancy in the code i.e repeating of code
+
+interface Student{ //no need of class to implement if there is no abstract method
+	static void studentLife() {
+//		System.out.println("Student");
+//		System.out.println("is student");
+		students();
+	}
+	
+	static void student() {
+//		System.out.println("Student");
+//		System.out.println("is student");
+		students();
+	}
+	
+	//both method has same so one method with same lines of code can be called inside them
+	
+	private static void students() { //when we dont want a method to be in inheritance and cant be accessed we use private
+		System.out.println("Student");
+		System.out.println("is student");
+	}
+}
 
 //----------------------------------------------------------------------------------
 
