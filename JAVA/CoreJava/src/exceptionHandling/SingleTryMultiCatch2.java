@@ -19,7 +19,7 @@ public class SingleTryMultiCatch2 {
 			System.out.println("Enter the denominator: ");
 			int b = sc.nextInt();
 			
-			int c = a/b;
+			int c = a/b; //Here a Arithmetic Exception object is created which is a instance of inbuilt-class ArithmeticException from java.lang package which is caught by the catch block with reference a of type ArithmeticException a = (New ArithmeticException();(invisible) - for all exception the same happens.
 			System.out.println(c); 
 			
 			System.out.print("Enter the size of the array: ");
@@ -46,7 +46,7 @@ public class SingleTryMultiCatch2 {
 //		catch(Exception e) { //generic exception
 //			System.out.println(e.getMessage()); 
 //		} 
-		catch(ArithmeticException a){
+		catch(ArithmeticException a){ //ArithmetcException Object is caught and passed to the reference of the type inbuilt class ArithmeticException
 		 	System.out.println("Give non zero denominator");
 		}
 		catch(NegativeArraySizeException n) {

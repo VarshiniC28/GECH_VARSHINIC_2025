@@ -21,7 +21,7 @@ public class ExceptionIntro {
 			System.out.println("Enter the denominator: ");
 			int b = sc.nextInt();
 			
-			int c = a/b;
+			int c = a/b; //Here a Arithmetic Exception object is created which is a instance of inbuilt-class ArithmeticException from java.lang package.
 			System.out.println(c); 
 		}
 		catch(Exception e){ //executes only when there is exception.
