@@ -2,7 +2,7 @@ package exceptionHandling;
 
 import java.util.Scanner;
 
-public class CheckedException {
+public class CheckedExceptionInJava {
 
 	public static void main(String[] args) {
 		
