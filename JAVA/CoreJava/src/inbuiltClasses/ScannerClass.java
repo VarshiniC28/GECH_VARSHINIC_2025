@@ -15,6 +15,8 @@ public class ScannerClass {
 		float b = scan.nextFloat();
 		
 		System.out.println(a + b);// Prints the sum as float (int + float → result is float)
+		
+		scan.close();
 	}
 
 }

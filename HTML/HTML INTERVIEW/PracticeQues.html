@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--
+    1. Write HTML code to create a simple registration form.
+    2. Create an unordered list of your 3 favorite fruits.
+    3. Make a table with 2 columns and 3 rows showing any data.
+    4. Write HTML to embed an image and a video on a page.
+    5. How do you create a hyperlink that opens in a new tab?
+    6. Write code for a dropdown (select) with 3 options.
+    7. How do you make a text input required in a form?
+    8. Write HTML for a radio button group for gender selection.
+    9. How do you add a comment in HTML?
+    10. Write code for a description list with 2 terms and definitions.
+    11. How do you include an external CSS file in HTML?
+    12. Write HTML to create a navigation bar with 3 links.
+    13. How do you make a checkbox checked by default?
+    14. Write code for a file upload input.
+    15. How do you create a numbered (ordered) list in HTML?
+    16. Write HTML to display a paragraph in bold and italic.
+    17. How do you add a favicon to your HTML page?
+    18. Write code for a simple HTML5 page structure.
+    19. How do you disable a button in HTML?
+    20. Write HTML to create a multi-line text area in a form.
+    -->
+    <h1>HTML Interview Coding Practice Questions</h1>
+
+    <!-- 1. -->
+    <form action="#" method="post">
+        <label for="name">Name: </label><input type="text" name="name" id="name" placeholder="Enter your name" required>
+        <br>
+        <label for="email">Email: </label><input type="email" name="email" id="email" placeholder="Enter your email"
+            required>
+        <br>
+        <label for="password">password: </label><input type="password" name="password" id="password"
+            placeholder="Enter your password" required>
+        <br>
+        <label for="tel">Phone No: </label><input type="tel" name>
+        <br>
+        <button type="submit">Register</button>
+    </form>
+    <br>
+
+    <!-- 2. -->
+    <ul>
+        <li>All fruits</li>
+        <li>All fruits</li>
+        <li>All fruits</li>
+    </ul>
+    <br>
+
+    <!-- 3. -->
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>varsha</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>bb</td>
+            <td>1</td>
+        </tr>
+    </table>
+    <br>
+
+    <!-- 4. -->
+    <img src="./" alt="Image not found" width="360px" height="400px">
+    <br>
+    <video src="./" controls autoplay muted loop>Video</video>
+    <!-- or -->
+    <video controls autoplay muted loop>
+        <source src="./" type="video/mp4">
+    </video>
+    <br>
+
+    <!-- 5. -->
+    <a href="./INTERVIEW.HTML" target="_blank">Opens in new tab</a>
+
+    <br>
+    <!-- 6. -->
+    <select name="Counrty" id="Country">
+        <option value="">Select your country</option>
+        <option value="India">India</option>
+        <option value="USA">USA</option>
+        <option value="Korea">Korea</option>
+    </select>
+
+    <br>
+
+    <!-- 7. -->
+    <form action="" method="post">
+        <label for="name">Name</label>
+        <input type="name" name="name" id="name" placeholder="Enter your name" required>
+    </form>
+    <br>
+
+    <!-- 8. -->
+    <form action="#" method="post">
+        <label for="gender">Gender</label>
+
+        <input type="radio" name="gender" id="male"><label for="male">Male</label>
+        <input type="radio" name="gender" id="female"><label for="female">Female</label>
+    </form>
+    <br>
+    <!-- 9. -->
+    <p>We add comment using this "<!-- -->"</p>
+
+    <br>
+    <!-- 10. -->
+    <dl>
+        <dt>Amma</dt>
+        <dd>Mother</dd>
+        <dt>Tamma</dt>
+        <dd>Brother</dd>
+    </dl>
+    <br>
+
+    <!-- 11. -->
+    <link rel="stylesheet" href="./style.css">
+
+    <br>
+    <!-- 12. -->
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <br>
+    <!-- 13. -->
+    <input type="checkbox" name="subscribe" id="subscribe" checked>Subscribe to newsletter
+
+    <br>
+    <!-- 14. -->
+    <form action="#" method="post" enctype="multipart/form-data">
+        <label for="file">Upload file:</label>
+        <input type="file" name="file" id="file">
+    </form>
+
+    <br>
+    <!-- 15. -->
+    <ol>
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ol>
+
+    <br>
+    <!-- 16. -->
+    <p><strong>This is bold text.</strong> and this is <em>italic text.</em></p>
+
+    <br>
+    <!-- 17. -->
+    <link rel="icon" href="./favicon.ico">
+
+    <br>
+    <!-- 18. -->
+    <!DOCTYPE html>
+
+    <!-- 19. -->
+    <button disabled>Disabled Button</button>
+
+    <!-- 20. -->
+    <form action="#" method="post">
+        <textarea name="message" id="message" rows="4" cols="50"></textarea>
+    </form>
+</body>
+
+</html>
