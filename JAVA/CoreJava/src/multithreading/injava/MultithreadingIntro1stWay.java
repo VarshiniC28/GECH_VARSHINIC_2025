@@ -1,7 +1,7 @@
 package multithreading.injava;
 import java.util.Scanner;
 
-class Demo extends Thread{
+class Demo extends Thread{ //Thread class implements Runnable Interface
 	@Override
 	public void run() {
 		//1st task
@@ -49,7 +49,7 @@ class Demo2 extends Thread{
 }
 
 
-public class MultithreadingIntro {
+public class MultithreadingIntro1stWay {
 
 	public static void main(String[] args) {
 
@@ -71,15 +71,18 @@ public class MultithreadingIntro {
 		Demo2 d2 = new Demo2();
 
 		//As per principle of Multi-threading we must not call run() methods directly instead they should be called using start method .
-		//When d.start() is called this start method's stack frame is created inside Thread-0 small stack which is inside Stack segment
+		//When d.start() is called this run method's stack frame is created inside Thread-0 small stack which is inside Stack segment
 		d.start();
-		//When d1.start() is called this start method's stack frame is created inside Thread-1 small stack which is inside Stack segment
+		//When d1.start() is called this run method's stack frame is created inside Thread-1 small stack which is inside Stack segment
 		d1.start();
-		//When d.start() is called this start method's stack frame is created inside Thread-2 small stack which is inside Stack segment
+		//When d.start() is called this run method's stack frame is created insie Thread-2 small stack which is inside Stack segment
 		d2.start();
 		
 		//there is a software like RTS, compiler called Thread Scheduler which schedules threads which are independent.
 		//Thread Scheduler tell JVM to start executing from 0, and based on delays, to save time, it will schedule other threads to execute., after all are executed it is terminated
+		
+		//What happens if we call run() method? - 
+		//if we call d.run() directly the stack frame will be created inside main thread/small stack of main which will result in sequential execution not concurrent, so there will be no multi-threading.
 	}
 
 }
