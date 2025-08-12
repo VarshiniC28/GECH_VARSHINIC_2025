@@ -1,17 +1,17 @@
-package collectionFramework.Introduction;
+package arraylist;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.ListIterator;
 
-public class Introduction {
+public class ArrayListIntro {
 
 	public static void main(String[] args) {
 
 		//Collection Framework: 
 		
 		ArrayList a = new ArrayList();
-		a.add(10);
+		a.add(10); //autoboxing
 		a.add(20);//adds data at last
 		a.add("V"); //We can add data of any type - Hence ArrayList is Heterogeneous 
 		a.add(1,15); // to add data at a particular index
@@ -67,7 +67,7 @@ public class Introduction {
 		//cannot traverse array list in reverse direction using for each and iterator hence List iterator was introduced
 		
 		//5. ListIterator
-		ListIterator cursorl = ar2.listIterator(ar2.size()); //ar2.size wll make start from the index of size and we can access backward
+		ListIterator cursorl = ar2.listIterator(ar2.size()); //ar2.size will make start from the index of size and we can access backward
 		while(cursorl.hasPrevious()) {
 			System.out.println(cursorl.previous());
 		}

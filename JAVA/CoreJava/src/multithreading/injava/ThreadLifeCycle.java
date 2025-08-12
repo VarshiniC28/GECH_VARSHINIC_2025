@@ -32,7 +32,7 @@ class Warrior extends Thread{
 
 					Thread.sleep(3000); // TIMED_WAITING: while holding res1 + res2
 
-					synchronized (res3){ // BLOCKED if another thread holds res3
+					synchronized (res3){ // BLOCKED if another Thread-holds res3
 						System.out.println("Arjuna acquired Pashupatastra");
 						// When done: thread releases res3 lock
 					} // Exiting res3 block: res3 monitor is released
