@@ -14,7 +14,7 @@ public class WaysToAcessLinkedList {
 		li.add(50);
 		li.add(2);
 		
-		li.add(2, 500);
+		li.add(2, 500); //no shifting yet Time complexity is O(n) since This requires traversing the list from the head until the desired insertion point is found - except to add at last and first - its O(1)
 		
 		System.out.println(li);
 		
