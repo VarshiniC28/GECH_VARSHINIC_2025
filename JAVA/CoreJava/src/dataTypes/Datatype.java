@@ -53,6 +53,8 @@ public class Datatype {
 		// double:  ±1.7 x 10^308 (Double Precision)
 		// char:    0 to 65,535 (Unsigned, Unicode)
 		// boolean: true or false (stored as 1 byte)
+		
+		
 
 		}
 
