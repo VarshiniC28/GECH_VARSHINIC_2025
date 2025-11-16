@@ -9,7 +9,7 @@ public class StringsIntro {
 		 * => Strings are objects of inbuilt final class String in Java.
 		 * => Strings are immutable.  once created, their value cannot be changed.
 		 * => String is widely used for storing text values, passwords, inputs, etc.
-		 * => There is both immutable and mutable, where immutable belongs to inbuilt String class and mutable String belongs to class
+		 * => There is both immutable and mutable, where immutable belongs to inbuilt String class and mutable String belongs to class StringBuilder and StringBuffer.
 		 * */
 		
 		//Different ways to create Immutable Strings:
@@ -25,7 +25,7 @@ public class StringsIntro {
 		
 		//---------------------------------------------------------------
 		//Strings are stored in heap memory as they are objects (Heap memory has SCP and heap area)
-//		• Java stores string literals i. Without new keyword in a special memory area called the **String Constant Pool (SCP)** and duplicates are not allowed
+//		• Java stores string literals i.e Without new keyword in a special memory area called the **String Constant Pool (SCP)** and duplicates are not allowed
 //		• When we use `new String("text")`, it creates a new object in Heap area even if the same string already exists in SCP(duplicates are allowed)	
 		
 		//-----------------------------------------------------------

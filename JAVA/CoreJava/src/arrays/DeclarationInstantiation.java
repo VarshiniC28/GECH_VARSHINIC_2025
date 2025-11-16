@@ -48,6 +48,21 @@ public class DeclarationInstantiation {
 		//Different type of declaration and instantiation for 3D Array
 		//When we already know the data use this and below method, otherwise we use the same as above
 		int [][][] h ={{{1,2,3,4},{4,5,6,7}},{{1,2,3,4},{5,6,7,8}}}; 
+		
+		
+//		Advantages
+//		Fast access (O(1))
+//		Simple & easy to use
+//		Better performance due to contiguous memory
+//		Supports random access
+//		Best for fixed-size data
+//
+//		Disadvantages
+//		Fixed size
+//		Slow insert/delete (O(n))
+//		Requires contiguous memory block
+//		No built-in flexibility (resizing, dynamic operations)
+//		May waste memory
 	}
 
 }

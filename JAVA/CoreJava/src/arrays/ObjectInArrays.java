@@ -23,7 +23,7 @@ public class ObjectInArrays {
 		
 		kia.breed="lab";
 		//or
-		dogs[1].breed = "lab";
+		dogs[1].breed = "labr";
 		dogs[0].breed = "gold";
 		dogs[2].breed = "goldador";
 		
