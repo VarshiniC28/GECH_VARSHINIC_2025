@@ -15,6 +15,7 @@ public class StringTokenizerInbuiltClass {
         while(st.hasMoreTokens()) { // Checks if there is another token available
             System.out.println(st.nextToken()); 
         }
+        
 
         // ---------------------- Example 2 ----------------------
         StringTokenizer s1 = new StringTokenizer("JAVA,AI,ML", ","); // Delimiter: "," (comma) // Will split the string wherever comma occurs
