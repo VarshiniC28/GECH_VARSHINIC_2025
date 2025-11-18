@@ -57,7 +57,7 @@ public class OtherStringMethods {
 		        System.out.println(s2.split(",")); // Output: memory address
 
 		        // Use traditional for loop to print each part after split
-		        String[] arr = s2.split(",");
+		        String[] arr = s2.split(" ");
 		        for (int i = 0; i < arr.length; i++) {
 		            System.out.println(arr[i]); // prints: ISHWAR, CHANDRA, ...
 		        }

@@ -21,10 +21,10 @@ class Demo{
 		System.out.println(a+b);
 	}
 	
-	void add(int a, char b) {
-		System.out.println(a+b);
-	}
-	
+//	void add(int a, char b) {
+//		System.out.println(a+b);
+//	}
+//	
 	
 }
 
@@ -45,12 +45,12 @@ public class MethodOverloading {
 		d.add(1, 10);         // Calls method with two int parameters
 		d.add(1, 10.5f);      // Calls method with int and float parameters
 		d.add(1, 10, 10.5f);  // Calls method with int, int, and float parameters
-//		d.add('a', 'b'); //calls method with char and int , doing implicit
+		d.add('a', 'b'); //calls method with char and int , doing implicit
 		// Implicitly converting second char ('b') → int (since int is wider than char)
 		// So it matches: add(char, int)
 		// Output: 97 + 98 = 195
 		
-//		d.add('a', 'b'); //ambiguity error as java is confused
+		d.add('a', 'b'); //ambiguity error as java is confused
 		// At compile time, Java checks the method signatures and chooses the correct version of the method to call.
 
 	}

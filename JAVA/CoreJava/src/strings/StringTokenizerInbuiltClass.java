@@ -12,6 +12,7 @@ public class StringTokenizerInbuiltClass {
 
         // ---------------------- Example 1 ----------------------
         StringTokenizer st = new StringTokenizer("JAVA AI ML", " "); // Delimiter: " " (space) // Will split the string wherever space occurs
+        System.out.println(st);
         while(st.hasMoreTokens()) { // Checks if there is another token available
             System.out.println(st.nextToken()); 
         }
@@ -60,6 +61,17 @@ public class StringTokenizerInbuiltClass {
         //    - Newer, recommended
         //    - Uses regex
         //    - More powerful and flexible
+        
+        
+        
+        //----------------------------------------------------------------------------
+        
+        //Concatenating int, float and string:
+        int x = 10;
+        float y = 5.5f;
+        String s = "Value";
+        System.out.println(s + x + y); // Value105.5
+        
 		}
 		
 	}

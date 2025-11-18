@@ -34,6 +34,8 @@ public class MutableStrings {
 		System.out.println(sa);
 		System.out.println(sa.capacity()); //34
 		
+		System.out.println(sa.reverse());
+		
 		sa.delete(1, 10);
 		System.out.println(sa);
 		
