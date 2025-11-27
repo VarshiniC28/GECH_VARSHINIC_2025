@@ -43,8 +43,8 @@ class Bank{
 	
 	//no args contructor but can have body , which will also be given by java compiler if we dont write any constructor at all, once we write full args constructor, if we want no args will have to give no args.
 	public Bank() {
-//		accNo = 11;
-//		password = 11; //when we create object with no parameters , this value will already assigned to 
+//		this.accNo = 11;
+//		this.password = 11; //when we create object with no parameters , this value will already assigned to 
 		System.out.println("No args/Default contructor");
 	}
 	
@@ -70,11 +70,11 @@ public class Encapsulation {
 //		System.out.println(b.accno); //cant access since its private
 //		System.out.println(b.password);
 		
-//		b.setAccNo(11);
-//		System.out.println(b.getAccNo());
+		b.setAccNo(11);
+		System.out.println(b.getAccNo());
 		
-//		b.setterPassword(11);
-//		System.out.println(b.getPassword());
+		b.setterPassword(11);
+		System.out.println(b.getPassword());
 		
 //		b.setterBank(111, 10);
 //		System.out.println(b.getAccNo());

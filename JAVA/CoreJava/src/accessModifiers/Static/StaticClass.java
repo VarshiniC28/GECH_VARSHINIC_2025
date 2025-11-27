@@ -25,7 +25,7 @@ public class StaticClass {
 	public static void main(String[] args) {
 
 		//Since we are accessing the static using class name not object we call it as Class members.
-		//Similarly instance var, blocks, methods are called as Object members/Instance members(Object is Instance o	f class) since they need Object creation to execute.
+		//Similarly instance var, blocks, methods are called as Object members/Instance members(Object is Instance of class) since they need Object creation to execute.
 		System.out.println(Demo1.a);
 		Demo1.method();
 		

@@ -6,8 +6,10 @@ class Demo{
 	
 	//Static block and instance block both can access the static variable 
 	static {
+		a = 10;
+		System.out.println("Inside static block");
 		System.out.println(a);
-//		method1(); // calling the method1 
+		method1(); // calling the method1 
 	}
 	
 	//Static method and instance method both can also access the static variable

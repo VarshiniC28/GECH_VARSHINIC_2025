@@ -49,7 +49,7 @@ public class PojoClass {
 	public static void main(String[] args) {
 
 		//Pojo class - plain old java object
-		//its a clss with private data/vars, 2 constructors i.e zero and parameterized constructor with getters ans setters method 
+		//its a clss with private data/variables, 2 constructors i.e zero and parameterized constructor with getters and setters method 
 		
 		//Bean class is a class which implements a empty interface Serializable  which gives
 		

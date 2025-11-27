@@ -33,7 +33,7 @@ class Test2 extends Test{
 	}
 	
 	public Test2(int a, int b) {
-		//super(a,b); //This goes to parameterized constructor of Parent class.
+//		super(a,b); //This goes to parameterized constructor of Parent class.
 		super(); //this will goto default constructor of parent class //local chaining is happening here then constructor chaining .
 		this.a = a;
 		this.b = b;
@@ -68,6 +68,7 @@ public class ConstructorChaining {
 		//Programmers can give this(), this(a,b), super(), super(a,b)
 		//JVM can only give super() only if programmer has not given anything
 		//first line of constructor can be either this or super not both.
+		
 		
 	}
 

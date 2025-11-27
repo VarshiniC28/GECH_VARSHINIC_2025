@@ -69,7 +69,7 @@ public class InheritanceAndStatic {
 //		SubClass.disp();
 		
 //		SuperClass.disp();
-//		SuperClass s = new SuperClass();
+		SuperClass s = new SuperClass();
 		
 		SubClass su = new SubClass(); //Comment all other lines and understand the output order of execution //First parents inherited block followed by subclass block like that
 		

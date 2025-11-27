@@ -5,7 +5,7 @@
 	    int a; // instance variable (belongs to the object, not class)
 
 	    static { //uncomment below line
-	        //System.out.println(a); // ❌ Error: Cannot make a static reference to non-static variable 'a'
+//	        System.out.println(a); // ❌ Error: Cannot make a static reference to non-static variable 'a'
 	                               // Explanation: 'a' is tied to an object (instance of the class),
 	                               // but static blocks run **before** any object is created,
 	                               // so there’s no instance memory available to refer to 'a'.
@@ -30,9 +30,9 @@
 		
 		public static void main(String[] args) {
 			
-	//		Em e = new Em();
+			Em e = new Em();
 			
-			System.out.println("Hello");
+//			System.out.println("Hello");
 			
 			
 			//Output: Hello , because first static main method will be loaded and Hi will be executed only if its needed that e class is loaded i=here in main method by creating object.

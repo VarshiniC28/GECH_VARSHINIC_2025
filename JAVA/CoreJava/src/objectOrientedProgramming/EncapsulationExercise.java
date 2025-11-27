@@ -14,7 +14,7 @@ class Employees {
 
 	// Parameterized constructor (optional - helps set values while creating object)
 	public Employees(int id, String name, int salary) {
-		Id = id;
+		this.Id = id;
 		this.name = name;
 		this.salary = salary;
 	}
@@ -77,10 +77,14 @@ public class EncapsulationExercise {
 
 		// Loop to print all stored employee details
 		for(int i = 0; i < storage.length; i++) {
-			//System.out.println(storage[i]);            // Prints object address (hashcode) of e 
-			System.out.print(storage[i].getId());     // Print ID
-			System.out.print(storage[i].getName());   // Print name
-			System.out.print(storage[i].getSalary()); // Print salary
+			//System.out.println(storage[i]);            // Prints object address (hashcode) of e 4
+			System.out.println("Employee No." + (i+1));
+			System.out.print("Id: "+ storage[i].getId() + " | ");     // Print ID
+			System.out.print("Name: "+ storage[i].getName() + " | ");   // Print name
+			System.out.print("Salary "+ storage[i].getSalary() + " | "); // Print salary
+			
+			System.out.println();
+			System.out.println();
 		}
 
 	}
