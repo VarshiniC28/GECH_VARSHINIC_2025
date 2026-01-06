@@ -5,6 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        form,
+        fieldset,
+        input,
+        textarea,
+        button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 8px;
+            border: 2px solid teal;
+        }
+    </style>
 </head>
 
 <body>
@@ -16,34 +29,34 @@
         consectetur modi error quod libero ab. Odio, aliquam esse soluta maiores totam dignissimos placeat illo beatae.
     </p>
 
-    <form action="#" method="post">
+    <form action="#" method="post" validate>
         <fieldset>
             <legend>Personal Info</legend>
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter" required>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
             <br>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="email" required value="var@gmail.com">
+            <label for="email">Email: </label>
+            <input type="email" id="email" name="email" placeholder="Enter your email here" required
+                value="var@gmail.com">
             <br>
             <label for="message">Message</label>
-            <textarea name="message" id="message" cols="2" rows="3"> </textarea>
+            <textarea name="message" id="message" cols="20" rows="3">enter your message here</textarea>
             <br>
             <label for="tel">Tel.no</label>
             <input type="tel" name="tel" id="tel" placeholder="enter" required>
 
             <br>
-            <label for="gender">Gender:</label>
+            <label for="gender">Gender: </label>
+
+            <input type="radio" id="female" name="gender">
+            <label for="female">FEMALE</label>
 
             <input type="radio" name="gender" id="male">
-            <label for="male">Male</label>
-
-            <input type="radio" name="gender" id="female">
-            <label for="female">FEMALE</label>
+            <label for="male">male</label>
             <br>
-            <button type="submit">Send</button>
-            <input type="submit" value="1">
+            <button type="submit">Submit</button>
+            <input type="submit" value="This is also kinda submit">
         </fieldset>
-
 
     </form>
 </body>

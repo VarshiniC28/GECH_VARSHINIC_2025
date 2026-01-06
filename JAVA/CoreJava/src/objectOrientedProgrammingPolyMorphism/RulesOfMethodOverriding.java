@@ -5,7 +5,7 @@ import java.util.Scanner;
 //class keyw{
 //	final int a= 1;
 //	void change() {
-////		a = 10; //error as a is final, cant change and will always be constant that is 1
+////		a = 10; //error as it is final,we cant change and will always be constant that is 1
 //	}
 //}
 
@@ -99,6 +99,10 @@ public class RulesOfMethodOverriding {
 		Child1 c = new Child1(); //Child1 has 2 methods now
 		c.disp(0);
 		c.disp(0, 0);
+		
+		Alpha a = new Alpha();
+		System.out.println(a.method());
+		System.out.println(a.method1());
 	}
 
 }

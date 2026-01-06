@@ -14,10 +14,11 @@
 -- SELECT cols FROM tableB;
 
 use company;
+select * from employee;
 -- This gives all unique records not duplicates
-SELECT MANAGER_ID FROM EMPLOYEE
+SELECT name FROM EMPLOYEE
 UNION
-SELECT MANAGER_ID FROM EMPLOYEE;
+SELECT name FROM EMPLOYEE;
 
 -- This gives duplicates also that is gives all
 select manager_id from employee

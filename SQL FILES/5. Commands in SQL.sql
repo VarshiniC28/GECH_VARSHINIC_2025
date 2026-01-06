@@ -63,7 +63,7 @@ SELECT CITY, MARKS ,NAME, COUNT(NAME), COUNT(ROLLNO)
 FROM STUDENT 
 GROUP BY CITY; -- WILL give error since we have selected marks but not applying to group by clause
 
-SELECT CITY, AVG(ROLLNO) 
+SELECT CITY, AVG(MARKS) 
 FROM STUDENT 
 GROUP BY CITY;
 
@@ -71,12 +71,16 @@ GROUP BY CITY;
 SELECT GRADE, COUNT(ROLLNO) FROM STUDENT
 GROUP BY GRADE
 ORDER BY GRADE;
+
+SELECT CITY, AVG(MARKS) FROM STUDENT
+GROUP BY CITY
+-- ORDER BY CITY ASC;
+ORDER BY AVG(MARKS) DESC;
 -----------------------------------------------------------
 
--- 5. Havinig clause: similar to where i.e applies some condition on rows and used when we want to apply any condition after grouping.
+-- 5. Having clause: similar to where i.e applies some condition on rows and used when we want to apply any condition after grouping.
 -- EG : Count the number of students in each city where max marks cross 90
-SELECT CITY, COUNT(NAME)
-FROM STUDENT
+SELECT CITY, COUNT(NAME) FROM STUDENT
 GROUP BY CITY
 HAVING MAX(MARKS) > 90;
 -- where puts condition on rows and having puts condition on group

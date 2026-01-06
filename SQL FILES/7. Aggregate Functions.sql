@@ -6,7 +6,7 @@ USE COLLEGE;
 SELECT MAX(MARKS)
 FROM STUDENT;
 
--- Get maximum marks
+-- Get minimum marks
 SELECT MIN(MARKS)
 FROM STUDENT;
 

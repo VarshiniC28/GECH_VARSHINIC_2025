@@ -3,8 +3,8 @@
 -- Create: To create design or table schema with coloumns
 -- Syntax:
 -- CREATE TABLE table_name(
--- 	coulumn_name1 datatype constraint;
--- 	coulumn_name2 datatype constraint;
+-- 	coulumn_name1 datatype data_constraint;
+-- 	coulumn_name2 datatype data_constraint;
 -- );
 
 -- PRIMARY KEY - always not null and unique
@@ -103,7 +103,7 @@ ADD AGE INT NOT NULL DEFAULT 19;
 
 -- DROP
 ALTER TABLE STUDENT
-DROP STUDENT_AGE;
+DROP AGE;
 
 -- RENAME
 ALTER TABLE STUDENTS
@@ -115,7 +115,7 @@ CHANGE COLUMN AGE STUDENT_AGE INT;
 
 -- MODIFY
 ALTER TABLE STUDENT
-MODIFY AGE VARCHAR(2);
+MODIFY STUDENT_AGE VARCHAR(2);
 
 INSERT INTO STUDENT
 (ROLLNO, NAME, MARKS, STUDENT_AGE)
@@ -130,6 +130,8 @@ WHERE ROLLNO = 105;
 -- TRUNCATE TABLE table_name;
 -- Drop deletes table whereas truncate deletes only table data.
 
+CREATE DATABASE COMPANY;
 USE COMPANY;
+
 SELECT * FROM employee_info;
 TRUNCATE TABLE employee_info; -- deleted only data not the table, and we can now add new data directly to the table.

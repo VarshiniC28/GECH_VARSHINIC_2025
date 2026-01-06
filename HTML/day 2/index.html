@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HTML</title>
+  <title>HTML BASICS</title>
   <style>
     .ptag:hover {
       color: rgb(170, 98, 98);
@@ -24,19 +24,21 @@
 
     table,
     th,
-    td {
-      border: 0.5px solid rebeccapurple;
+    td,
+    tr {
+      border: 2px solid darkgreen;
       border-collapse: collapse;
-      padding: 20px;
-      margin-left: 20px;
+      padding: 30px;
+      margin-left: 100px;
+      border-radius: 12px 12px;
     }
   </style>
 </head>
 
 <body>
   <!-- Html has 2 types of tags
-     1. Inline tags - span ,a
-     2. block tags h1-h6 ,p -->
+     1. Inline tags - span ,a, img, input, label,textarea,button, select, option
+     2. block tags h1-h6 ,p , form,ul,li,ol,table-->
   <h1>Heading 1</h1>
   <h2>Headin 2</h2>
   <h3>Heading 4</h3>
@@ -67,17 +69,15 @@
   <a href="">hello</a>
 
   <!-- Attributes -->
-  <p class="ptag">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, nemo.
-  </p>
+  <p class="ptag">class</p>
 
-  <p id="ptag"></p>
+  <p id="ptag">id</p>
 
-  <p style="color: red;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, fuga.</p>
+  <p style="color: red">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, error!</p>
+  <p style="color: blue;">Lorem ipsum dolor sit amet.</p>
 
   <!-- Iframe tag is used to display another website inside our website -->
   <iframe src="https://www.w3schools.com/" frameborder="0">Reading</iframe>
-
   <br>
 
   <!-- Link tags -->
@@ -101,16 +101,13 @@
     <tr>
       <th>Name</th>
       <th>Age</th>
-      <th>Roll.no</th>
+      <th>Marks</th>
     </tr>
     <tr>
       <td>Varsha</td>
-      <td>20</td>
-      <td>054</td>
+      <td>21</td>
+      <td>100</td>
     </tr>
-
-
-
   </table>
 </body>
 

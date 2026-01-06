@@ -12,7 +12,7 @@ class SubClass extends SuperClass{
 	int i = 10;
 	
 	void disp() {
-//		System.out.println(i); //i = 10 , because its from this subclass.
+		System.out.println(i); //i = 10 , because its from this subclass.
 		System.out.println(super.i); //o/o i =1; because we are calling i var from superclass using super keyword.
 	}
 	

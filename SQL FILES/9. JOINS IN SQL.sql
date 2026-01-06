@@ -7,8 +7,8 @@
 -- refer Venn diagrams of these in the video at 2.25.41 or a screen shot 
 -- 1. Inner join : Common data that exists in both tables
 -- Outer Joins ->
--- 2. Left join : To get data from Table A and data of Table A thats inside Table B but not in A - this helps get cpmplete data of A from bot A and B 
--- 3. Right join : vice versa of left join - we get complete data of b from a also ( that data is not in B).
+-- 2. Left join : To get data from Table A and data of Table A thats inside Table B but not in A - this helps get cpmplete data of A from both A and B 
+-- 3. Right join : vice versa of left join - we get complete data of b from a also (that data is not in B).
 -- 4. Full Join : Complete data of both tables will combined - which gives complete data of both a and b
 -- -------------------------------------------------------------------------------------------------
 
@@ -18,11 +18,30 @@
 -- INNER JOIN tableB
 -- ON tableA.col_name = tableB.col_name;
 
+CREATE DATABASE SCHOOL;
 USE SCHOOL;
+
+CREATE TABLE STUDENT(
+	ID INT PRIMARY KEY,
+    NAME VARCHAR(50) NOT NULL DEFAULT "AMMU"
+);
+
+INSERT INTO STUDENT VALUES (101, "adam"),(102, "bob"), (103, "casey");
+
+CREATE TABLE COURSES(
+	ID INT PRIMARY KEY,
+    COURSE VARCHAR(50) 
+);
+
+INSERT INTO COURSES VALUES (102, "english"),(105, "Math"), (103, "Science"), (107, "Kannada");
+
 SELECT * FROM STUDENT
 INNER JOIN COURSES
 ON STUDENT.ID = COURSES.ID;
 -- ALIAS : Alternate name for table or column - as
+SELECT * FROM STUDENT AS S
+INNER JOIN COURSES AS C
+ON S.ID = C.ID;
 -- ---------------------------------------------------------------------------------------------------
 
 -- Left join : Returns all records from the left tabl, and the matched/overlapped records from the right table.
@@ -77,10 +96,10 @@ WHERE STUDENT.ID IS NULL;
 SELECT * FROM STUDENT
 LEFT JOIN COURSES
 ON STUDENT.ID = COURSES.ID
-WHERE COURSES.ID IS NULL;
+WHERE COURSES.ID IS NULL; 
 -- -------------------------------------------------------------------------------------------------
 
--- only and only b
+-- only A and only  - not the common data
 SELECT * FROM STUDENT
 RIGHT JOIN COURSES 
 ON STUDENT.ID = COURSES.ID
@@ -101,8 +120,7 @@ create table employee(
     manager_id INT
 );
 
-insert into employee ( id, name, manager_id)
-values
+insert into employee ( id, name, manager_id) values
 (101, "adam", 103),(102, "bob", 104),(103, "casey",NULL),(104, "donald", 103);
 
 SELECT * FROM EMPLOYEE AS A
