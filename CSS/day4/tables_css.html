@@ -1,45 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tables_css</title>
     <style>
-        .table_con, th, td{
-            border: 1px solid black;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .table_con,
+        th,
+        td {
+            border: 0.5px solid black;
             border-collapse: collapse;
         }
-        body{
+
+        body {
             padding: 20px;
         }
-        .table_con{
-            /*  */
-            width: 88vw; 
-            /*  */
+
+        .table_con {
+            width: 100vw;
+            /*vw:viewport width*/
             height: 50vh;
         }
+
         /* pseudo classes for tables */
-        tr:nth-child(2n){
+        tr:nth-child(2n) {
             background-color: aliceblue;
         }
-        tr:nth-child(2n+1){
-            background-color:rgb(213, 204, 204);
+
+        tr:nth-child(2n+1) {
+            background-color: rgb(213, 204, 204);
         }
-        tr:first-child{
+
+        tr:first-child {
             background-color: bisque;
-            color:purple;
+            color: purple;
         }
-        th, td{
+
+        th,
+        td {
             padding: 10px;
             text-align: center;
             font-family: 'Times New Roman', Times, serif;
             /* vertical-align: bottom; */
         }
-        th{
+
+        th {
             font-variant: small-caps;
         }
     </style>
 </head>
+
 <body>
     <table class="table_con">
         <tr>
@@ -68,4 +85,5 @@
         </tr>
     </table>
 </body>
+
 </html>

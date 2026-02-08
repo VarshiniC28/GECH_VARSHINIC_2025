@@ -7,15 +7,22 @@
     <title>Grid in CSS</title>
     <style>
         .container {
-            width: 100vw;
+            width: 90vw;
             height: 80vh;
             border: 2px solid black;
             display: grid;
-            grid-template-areas: "nav nav nav" "main main aside " "footer footer footer";
-            grid-template-columns: 360px auto auto;
+            grid-template-areas: "nav nav nav" "aside main main" "foot foot foot ";
+            /* defining areas in the grid */
+            /*You are defining a 3-column × 3-row grid using named areas. The first row has three "nav" areas spanning all three columns. The second row has an "aside" area in the first column and two "main" areas spanning the second and third columns. The third row has three "foot" areas spanning all three columns.*/
             grid-template-rows: 120px auto auto;
-            column-gap: 20px;
-            row-gap: 20px;
+            /* defining rows height */
+            /* first row is 120px height, other two rows will adjust automatically based on content */
+            grid-template-columns: 360px auto auto;
+            /*defining columns width ,first column is 360px width, other two columns will adjust automatically based on content*/
+            column-gap: 10px;
+            /* gap between columns */
+            row-gap: 10px;
+            /* gap between rows */
             padding: 20px;
         }
 
@@ -26,21 +33,25 @@
         }
 
         .first {
-            grid-area: "nav";
+            grid-area: nav;
             grid-column: 1/span3;
+            /* spans all three columns */
         }
 
         .sec {
-            grid-area: "main";
+            grid-area: main;
             grid-column: 1/span2;
+            /*`   spans two columns */
         }
 
         .thir {
             grid-area: "aside";
+            /* Assigns this element to the "aside" area **/
         }
 
         .four {
             grid-column: 3/span3;
+            /* Here 3 refers to the column number  */
         }
 
         .fiv {
@@ -57,12 +68,14 @@
         <div class="child sec">2</div>
         <div class="child thir">3</div>
         <div class="child four">4</div>
-        <div class="child five">5</div>
-        <!-- <div class="child six">6</div> -->
-        <!-- <div class="child sev">7</div> -->
-        <!-- <div class="child eight">8</div> -->
-        <!-- <div class="child nine">9</div> -->
+        <div class="child fiv">5</div>
+        <!-- <div class="child six">6</div>
+        <div class="child sev">7</div>
+        <div class="child eight">foot</div>
+        <div class="child nine">foot</div> -->
     </div>
+
+
 </body>
 
 </html>

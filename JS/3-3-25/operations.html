@@ -8,13 +8,15 @@
 <body>
     <h1>+ operator work on both addition and concatenation</h1>
 
-    <p>When u try with numbers it will work as addidtion</p>
+    <p>When u try with numbers it will work as addition</p>
     <p>When you try with string it will work as concatenation</p>
     
     <script>
         // O/P: 63
-        console.log(3+3+"3"); 
-        // O/P : 333 because the first operand is string then next opernads to them will behave like string
+        var res = 3+3+"3"
+        console.log(res);
+        console.log(typeof res); 
+        // O/P : 333 because the first operand is string then next operands to them will behave like string
         console.log("3"+3+3);
 
     </script>

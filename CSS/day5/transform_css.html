@@ -8,6 +8,8 @@
     <style>
         .container {
             perspective: 1000px;
+            /*Here we set the perspective for 3D transformations */
+            /*perspective means how far the object is from the viewer, so if 1000px that means it's 1000px away from the viewer */
         }
 
         .first {
@@ -16,15 +18,21 @@
             border: 2px solid black;
             margin: 30px auto;
             background-color: rgb(125, 173, 214);
-            transform: translateX(200px);
-            transform: translateY(200px);
+            /*transform: translateX(100px);
             transform: translateZ(-500px);
-            transform: translate3d(100px, 200px, 300px);
-            transform: rotate(45deg);
-            transform: scaleX(3);
-            transform: scaleY(3);
+            transform: translateY(50px);
+            /*moves the element 500px away from the viewer */
+            /* transform: translate3d(100px, 200px, 300px);
+            /*Here what's happening is moving the element 100px on the x-axis, 200px on the y-axis, and 300px on the z-axis */
+            /*transform: rotate(45deg);*/
+            /* rotates the element by 45 degrees */
+            /*transform: rotateZ(50deg);*/
+            /*transform: scaleX(3);
+            transform: scaleY(3);*/
             transform: skewX(30deg);
+            /*Skews the element by 30 degrees on the x-axis and skew here means it distorts the element along an axis*/
             transform: rotate3d(1, 2, 3, 45deg);
+            /*what happens is it rotates the element in 3D space around the vector (1, 2, 3) by 45 degrees */
             transform: skew3d(30deg, 20deg, 45deg);
             /*doesnt exist in css3 */
         }

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cube-scene {
+            perspective: 800px;
+        }
+
+        .cube {
+            margin: auto;
+            width: 150px;
+            height: 150px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 1s;
+        }
+
+
+        .face {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 100, 100, 0.8);
+            border: 2px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /*Push Front Face Forward (Z-axis)*/
+        .front {
+            transform: translateZ(75px);
+            /*Why 75px? Cube depth = 150px,So half depth = 75px*/
+        }
+
+        .back {
+            transform: rotateY(180deg) translateZ(75px);
+        }
+
+        .right {
+            transform: rotateY(90deg) translateZ(75px);
+        }
+
+        .left {
+            transform: rotateY(-90deg) translateZ(75px);
+        }
+
+        .top {
+            transform: rotateX(90deg) translateZ(75px);
+        }
+
+        .bottom {
+            transform: rotateX(-90deg) translateZ(75px);
+        }
+
+        .cube:hover {
+            transform: rotateX(45deg) rotateY(45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Cube Code</h1>
+    <div class="cube-scene">
+        <div class="cube">
+            <div class="face front">front</div>
+            <div class="face back">back</div>
+            <div class="face right">right</div>
+            <div class="face left">left</div>
+            <div class="face top">top</div>
+            <div class="face bottom">bottom</div>
+        </div>
+    </div>
+</body>
+
+</html>

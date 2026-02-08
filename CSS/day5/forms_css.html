@@ -19,14 +19,16 @@
             background-repeat: no-repeat;
             width: 100vw;
             height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .container {
             /* background-color: rgb(208, 204, 204); */
-            width: 40vw;
+            width: 50vw;
             height: 50vh;
-            margin: 20px auto;
-            border-radius: 20px;
+            border-radius: 45px 0px 45px 0px;
             padding: 50px;
             position: relative;
             background-color: aliceblue;
@@ -39,11 +41,12 @@
             font-family: 'Times New Roman', Times, serif;
             margin-bottom: 10px;
             text-shadow: 2px 2px grey;
+            font-variant: small-caps;
         }
 
         .input-group {
             width: 100%;
-            /* align-items: center; */
+            align-items: center;
             text-align: center;
             position: relative;
         }
@@ -79,6 +82,7 @@
             font-size: 20px;
             font-family: 'Times New Roman', Times, serif;
             border-radius: 5px;
+            padding: 8px;
         }
 
         #Submit:hover {
@@ -99,6 +103,14 @@
             cursor: pointer;
             background-color: aliceblue;
             border: 1px solid black;
+        }
+
+        @media (max-width: 768px) {
+
+            /* For tablets and smaller devices */
+            .container {
+                width: 90vw;
+            }
         }
     </style>
 </head>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src=./first.js defer></script>
+    <!-- defer means the script is executed after the HTML document is fully loaded -->
+</head>
+
+<body>
+
+    <h1>Type of JS</h1>
+    <p>There are three types of JavaScript:</p>
+    <ul>
+        <li>Internal JavaScript</li>
+        <li>External JavaScript</li>
+        <li>HTML JavaScript</li>
+    </ul>
+
+    <!-- External JS -->
+    <p id="ptag">JS</p>
+    <button type="button" onclick="handleExternalClick()">CLICK</button>
+
+    <br>
+    <hr>
+
+    <!-- inline -->
+    <p id="demo">Hello HTML5</p>
+    <button type="button" onclick="document.getElementById('demo').innerText = 'Hello JS'">Click here</button>
+
+    <br>
+
+    <!-- Internal -->
+    <div class="changeColor" style="color: black; background: red; height: 360px; width: 360px; text-align: center;">
+        Change my color !!
+    </div>
+    <br>
+    <hr><br>
+
+    <button type="button" onclick="handleClick()">Click me to help the div</button>
+
+
+    <script>
+        function handleClick() {
+            var element = document.getElementsByClassName('changeColor')[0]; // [0] because getElementsByClassName returns an array
+            element.innerText = 'Hello Internal JS';
+            element.style.color = 'white';
+            element.style.background = 'blue';
+        }
+    </script>
+</body>
+
+</html>

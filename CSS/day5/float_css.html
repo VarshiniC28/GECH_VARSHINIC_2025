@@ -11,6 +11,8 @@
       width: 100vw;
       height: 100vh;
       box-sizing: border-box;
+      /*The reason to use box-sizing:border-box is to include padding and border in the element's total width and height calculations. 
+      In simple terms, it ensures that the element's total width and height include padding and border, making layout more predictable.*/
     }
 
     .container {
@@ -26,17 +28,20 @@
       margin: 10px auto;
     }
 
+    /*Float in css means that an element is taken out of the normal document flow and shifted to the left or right of its container, allowing other elements to wrap around it. */
     .container img {
-      float: left;
+      float: right;
       margin: 10px 10px;
     }
 
     .first {
-      clear: right;
+      clear: left;
+      /* This property is used to prevent elements from wrapping around a floated element on the left side. */
     }
 
     .sec {
       clear: both;
+      /* This property is used to prevent elements from wrapping around any floated elements on either side. */
     }
 
     .third {

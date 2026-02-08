@@ -1,31 +1,37 @@
 /* Element selector */
-p{
+p {
     color: black;
 }
+
 /* Id selector */
-#div{
+#div {
     color: grey;
 }
+
 /* class selector */
-.ptag{
+.ptag {
     color: brown;
     font-size: x-large;
 }
+
 /* Universal selector */
-*{
-    /* background-color: aliceblue; */
-}
+/* * {
+    background-color: aliceblue;
+} */
+
 /* Group selector */
-h1,h2{
+h1,
+h2 {
     color: rgb(64, 34, 94);
 }
+
 /* Attribute Selectors */
-input[type="text"]{
+input[type="text"] {
     color: goldenrod;
 }
 
 /* margin and padding */
-.container{
+.container {
     border: 1px solid black;
 
     /* margin-top: 20px; */
@@ -38,45 +44,60 @@ input[type="text"]{
 
     padding-top: 20px;
     /* same order as margin */
-    padding: 20px 10px 5px 5px ;
-    }
+    padding: 20px 10px 5px 5px;
+}
 
-    /* background */
-    /* background color */
+/* background */
+/* background color */
 
-#div{
+#div {
+    background-color: blue;
+}
+
+#div2 #pt {
+    /* Here the */
+    color: white;
     background-color: black;
 }
 
 /* background image */
-body{
+body {
     background-image: url(./flower.jpg);
+    background-size: cover;
+
     background-repeat: repeat;
+    /* This is often redundant as it's the default */
+    background-repeat: repeat-x;
+    /* For a horizontal stripe */
+    background-repeat: repeat-y;
+
     /* Backgruond transperncy */
-    opacity: 1.5;
-    /* background-size: cover; */
-    /* background-position: right top;  */
-    background-attachment: scroll; 
-    background-clip: padding-box; */
-    background-clip: border-box;
-    background-clip: content-box;
+    opacity: 0.5;
+    background-position: right top;
+    /* background-attachment: scroll; */
+    /* background-clip: padding-box; */
+    /* background-clip: border-box; */
+    /* background-clip: content-box;*/
 }
-.First{
+
+.First {
     border: 2px solid black;
     background-color: yellow !important;
 }
-.SEC{
+
+.SEC {
     background-color: green;
 }
-p{
+
+p {
     background-color: aliceblue;
     /* border: 5px solid black; */
-    border-radius: 2px;
+    border-radius: 5px;
 }
-.outline{
+
+.outline {
     outline: 2px solid navy;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
 }
-

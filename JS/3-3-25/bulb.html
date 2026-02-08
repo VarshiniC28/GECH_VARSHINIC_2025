@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html>
+
 <body>
 
-<img id="myImage" onclick="changeImage()" src="pic_bulboff.gif" width="100" height="180">
+  <img id="myImage" onclick="changeImage()" src="pic_bulboff.gif" width="100" height="180">
 
-<p>Click the light bulb to turn on/off the light.</p>
-<button type="button" ></button>
+  <p>Click the light bulb to turn on/off the light.</p>
 
-<script>
-function changeImage() {
-  var image = document.getElementById('myImage');
-  if (image.src.match("bulbon")) {
-    image.src = "pic_bulboff.gif";
-  } else {
-    image.src = "pic_bulbon.gif";
-  }
-}
-</script>
+  <script>
+    function changeImage() {
+      var image = document.getElementById('myImage');
+      if (image.src.match("bulbon")) { //image.src.match("bulbon") checks whether the string "bulbon" appears in that URL. String.prototype.match returns an array if found (truthy) or null if not (falsy).
+        image.src = "pic_bulboff.gif";
+      } else {
+        image.src = "pic_bulbon.gif";
+      }
+    }
+  </script>
 
 </body>
+
 </html>

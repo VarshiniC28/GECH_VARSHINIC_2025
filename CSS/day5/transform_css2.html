@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Transform & Perspective Master Demo</title>
+    <style>
+        /* =========================
+           BASIC PAGE STYLING
+        ========================== */
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 40px;
+        }
+
+        h2 {
+            margin-top: 60px;
+        }
+
+        .row {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            /*perspective: 500px;*/
+        }
+
+        /* =========================
+           COMMON BOX STYLE
+        ========================== */
+        .box {
+            width: 150px;
+            height: 150px;
+            background: cornflowerblue;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            transition: transform 0.6s ease-in-out;
+        }
+
+        /* =====================================================
+           1️⃣ TRANSFORM: TRANSLATE (MOVE)
+        ====================================================== */
+        .translate:hover {
+            transform: translate(50px, 30px);
+            /* Moves element right (X) and down (Y) */
+        }
+
+        /* =====================================================
+           2️⃣ TRANSFORM: SCALE (ZOOM)
+        ====================================================== */
+        .scale:hover {
+            transform: scale(1.5);
+            /* 1 = normal, >1 zoom in, <1 zoom out */
+        }
+
+        /* =====================================================
+           3️⃣ TRANSFORM: ROTATE (2D)
+        ====================================================== */
+        .rotate:hover {
+            transform: rotate(45deg);
+            /* Rotates clockwise */
+        }
+
+        /* =====================================================
+           4️⃣ TRANSFORM: SKEW
+        ====================================================== */
+        .skew:hover {
+            transform: skew(20deg, 10deg);
+            /* Tilts element on X and Y axis */
+        }
+
+        /* =====================================================
+           5️⃣ TRANSFORM-ORIGIN
+        ====================================================== */
+        .origin {
+            transform-origin: left top;
+            /* Changes pivot point */
+        }
+
+        .origin:hover {
+            transform: rotate(45deg);
+        }
+
+        /* =====================================================
+           6️⃣ 3D WITHOUT PERSPECTIVE (LOOKS FLAT)
+        ====================================================== */
+        .flat3d:hover {
+            transform: rotateY(60deg);
+            /* 3D transform but NO depth */
+        }
+
+        /* =====================================================
+           7️⃣ PERSPECTIVE (ON PARENT) ✅ CORRECT WAY
+        ====================================================== */
+        .scene {
+            perspective: 800px;
+            /* Distance between viewer and object */
+        }
+
+        .scene .card:hover {
+            transform: rotateY(60deg);
+        }
+
+        /* =====================================================
+           8️⃣ PERSPECTIVE USING TRANSFORM FUNCTION
+        ====================================================== */
+        .self-perspective:hover {
+            transform: perspective(800px) rotateX(60deg);
+            /* Perspective applied only to this element */
+        }
+
+        /* =====================================================
+           9️⃣ PERSPECTIVE-ORIGIN
+        ====================================================== */
+        .origin-scene {
+            perspective: 800px;
+            perspective-origin: left top;
+            /* This sets the vanishing point for the perspective effect. */
+            /* Vanishing point */
+        }
+
+        .origin-scene .card:hover {
+            transform: rotateX(60deg);
+        }
+
+        /* =====================================================
+           🔟 PRESERVE-3D (CHILDREN IN 3D SPACE)
+        ====================================================== */
+        .cube-scene {
+            perspective: 800px;
+        }
+
+        .cube {
+            width: 150px;
+            height: 150px;
+            position: relative;
+            transform-style: preserve-3d;
+            /* Keep children in 3D space */
+            transition: transform 1s;
+        }
+
+        .cube:hover {
+            transform: rotateX(45deg) rotateY(45deg);
+        }
+
+        .face {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 100, 100, 0.8);
+            border: 2px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .front {
+            transform: translateZ(75px);
+        }
+
+        .back {
+            transform: rotateY(180deg) translateZ(75px);
+        }
+
+        .right {
+            transform: rotateY(90deg) translateZ(75px);
+        }
+
+        .left {
+            transform: rotateY(-90deg) translateZ(75px);
+        }
+
+        /* =====================================================
+           1️⃣1️⃣ REAL-WORLD CARD FLIP
+        ====================================================== */
+        .flip-scene {
+            perspective: 1000px;
+        }
+
+        .flip-card {
+            width: 150px;
+            height: 150px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 1.5s;
+        }
+
+        .flip-scene:hover .flip-card {
+            transform: rotateY(180deg);
+        }
+
+        .side {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .front-side {
+            background: green;
+            color: white;
+        }
+
+        .back-side {
+            background: orange;
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>1️⃣ 2D Transforms</h2>
+    <div class="row">
+        <div class="box translate">translate</div>
+        <div class="box scale">scale</div>
+        <div class="box rotate">rotate</div>
+        <div class="box skew">skew</div>
+        <div class="box origin">origin</div>
+    </div>
+
+    <h2>2️⃣ 3D Without Perspective (Flat)</h2>
+    <div class="row">
+        <div class="box flat3d">rotateY</div>
+    </div>
+
+    <h2>3️⃣ Perspective on Parent (Correct)</h2>
+    <div class="row scene">
+        <div class="box card">3D</div>
+    </div>
+
+    <h2>4️⃣ Perspective via Transform</h2>
+    <div class="row">
+        <div class="box self-perspective">self</div>
+        <!--Self perspective here is the perspective applied directly to the element itself, not its parent. This is useful for creating a 3D effect without affecting the parent's perspective.-->
+    </div>
+
+    <h2>5️⃣ Perspective Origin</h2>
+    <div class="row origin-scene">
+        <div class="box card">origin</div>
+    </div>
+
+    <h2>6️⃣ preserve-3d (Cube)</h2>
+    <div class="row cube-scene">
+        <div class="cube">
+            <div class="face front">front</div>
+            <div class="face back">back</div>
+            <div class="face right">right</div>
+            <div class="face left">left</div>
+        </div>
+    </div>
+
+    <h2>7️⃣ Real Card Flip</h2>
+    <div class="row flip-scene">
+        <div class="flip-card">
+            <div class="side front-side">FRONT</div>
+            <div class="side back-side">BACK</div>
+        </div>
+    </div>
+
+</body>
+
+</html>

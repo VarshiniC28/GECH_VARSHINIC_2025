@@ -14,9 +14,13 @@
     }
 
     /* @media not|only media_type and (max-width:500vw) and (condition) {
-             css style           
+             css style
         } */
-    @media print {}
+    @media print {
+      .container {
+        background-color: orange;
+      }
+    }
 
     @media screen and (min-width:600px) and (max-width:700px) {
       .container {

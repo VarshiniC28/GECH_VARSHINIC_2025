@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>What can we do with JS?</h1>
+    <p>We can do a lot of things with JS, some of them are:</ <ul>
+        <li>Change HTML content</li>
+        <li>Change the attributes of HTML</li>
+        <li>Change the CSS style</li>
+        <li>Hide the HTML code</li>
+        <li>Show the HTML code</li>
+        </ul>
+
+        <!-- 1. Change HTML content -->
+    <h3>1. We can change HTML content</h3>
+    <p id="demo">This is existing content</p>
+    <button onclick="document.getElementById('demo').innerText='JS will change HTML Content'">Click me </button>
+    <br>
+    <hr>
+    <hr>
+
+    <!-- 2. Change the attributes of HTML -->
+    <h3>2. We can change the attributes of HTML</h3>
+    <img src="./pic_bulboff.gif" alt="img not found" id="bulb">
+    <button type="button" onclick="document.getElementById('bulb').src = './pic_bulbon.gif'">Turn on</button>
+    <button type="button" onclick="document.getElementById('bulb').src='./pic_bulboff.gif'">Turn Off</button>
+    <br>
+    <hr>
+    <hr>
+
+    <!-- 3. Change CSS style -->
+    <h3>3. We can change CSS style</h3>
+    <p id="demo2">This is existing content</p>
+    <button type="button" onclick="document.getElementById('demo2').style.color='red'">Change Color</button>
+    <br>
+    <hr>
+    <hr>
+
+    <!-- 4. Hide HTML code -->
+    <h3>4. We can hide HTML code</h3>
+    <p id="hide">Lorem ipsum dolor sit amet consectetur.</p>
+    <button type="button" onclick="document.getElementById('hide').style.display = 'none'">Hide</button>
+
+    <!-- 5. Show the Html code -->
+    <button type="button" onclick="document.getElementById('hide').style.display = 'block'">Show</button>
+
+
+</body>
+
+</html>

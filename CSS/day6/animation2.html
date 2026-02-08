@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation Basics</title>
+
+    <style>
+        /* ---------------- BOX ---------------- */
+        .box {
+            height: 100px;
+            width: 100px;
+            background: blue;
+            position: relative;
+
+            animation-name: moveBox;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-out;
+            /*animation-direction: alternate;*/
+        }
+
+        @keyframes moveBox {
+            from {
+                left: 0;
+            }
+
+            to {
+                left: 200px;
+            }
+        }
+
+        /* ---------------- CIRCLE ---------------- */
+        .circle {
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+            margin-top: 100px;
+            position: relative;
+            border-radius: 50%;
+            border: 0.5px solid black;
+            box-shadow: 2px 2px 5px gray;
+            animation-name: moveCircle;
+            animation-duration: 8s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+            animation-direction: alternate;
+        }
+
+        @keyframes moveCircle {
+            0% {
+                left: 0;
+                background: blueviolet;
+            }
+
+            50% {
+                left: 400px;
+                background: purple;
+            }
+
+            100% {
+                left: 0px;
+                background: blueviolet;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="circle"></div>
+</body>
+
+</html>
