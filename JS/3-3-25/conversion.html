@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Methods</title>
 </head>
+
 <body>
+
+    <!-- Javascript can run without browser or not? :   -->
+    <!-- Yes, JavaScript can run without a browser using Node.js runtime environment on servers and local machines. -->
+
+
     <h1>Methods</h1>
     <p>1. ParseInt - it will convert string to number</p>
     <p>2. Number() - it will convert from string to number</p>
@@ -14,42 +21,64 @@
     <p>5. + - string to number </p>
     <p>6. "" - number to String </p>
 
+    <!-- Type coercion means  -->
+    <!-- the automatic conversion of values from one data type to another by JavaScript -->
+    <!-- is it good or bad ?  -->
+    <!-- Type coercion is generally considered bad practice because it can lead to unexpected behavior and bugs. It's better to use explicit type conversion methods like parseInt(), Number(), or String() to make your code more readable and predictable. -->
+
     <script>
         // 1.parseInt
-        let var1="121";
-        console.log("Type of var1 : ",typeof var1);
-        let var2=parseInt(var1);
-        console.log("Type of var2 : ",typeof var2);
+        let var1 = "121";
+        console.log("Type of var1 : ", typeof var1);
+        let var2 = parseInt(var1);
+        console.log("Type of var2 : ", typeof var2);
 
         //2.Number
-        let var3="121";
-        console.log("Type of var3 : ",typeof var3);
-        let var4=Number(var3);
-        console.log("Type of var4 : ",typeof var4);
+        let var3 = "121";
+        console.log("Type of var3 : ", typeof var3);
+        let var4 = Number(var3);
+        console.log("Type of var4 : ", typeof var4);
 
         //3.String
-        let var5=12;
-        console.log("Type of var5 : ",typeof var5);
-        let var6=String(var5);
-        console.log("Type of var6 : ",typeof var6);
+        let var5 = 12;
+        console.log("Type of var5 : ", typeof var5);
+        let var6 = String(var5);
+        console.log("Type of var6 : ", typeof var6);
 
         //4.toString
-        let var7=23;
-        console.log("Type of var7 : ",typeof var7);
-        let var8=Number.toString(var7);
-        console.log("Type of var8 : ",typeof var8);
+        let var7 = 23;
+        console.log("Type of var7 : ", typeof var7);
+        let var8 = Number.toString(var7);
+        console.log("Type of var8 : ", typeof var8);
 
         //5. +
-        let var9="12345";
-        console.log("Type of var9 : ",typeof var9);
-        let var10= +var9;
-        console.log("Type of var10 : ",typeof var10);
+        let var9 = "12345";
+        console.log("Type of var9 : ", typeof var9);
+        let var10 = +var9;
+        console.log("Type of var10 : ", typeof var10);
 
         //6. " "
-        let var11=67;
-        console.log("Type of var11 : ",typeof var11);
-        let var12=var11 + "";
-        console.log("Type of var12 : ",typeof var12);
+        let var11 = 67;
+        console.log("Type of var11 : ", typeof var11);
+        let var12 = var11 + "";
+        console.log("Type of var12 : ", typeof var12);
+
+        console.log("5" + 2); // "52" because the + operator with a string operand performs string concatenation, converting the number 2 to a string and concatenating it with "5"
+        console.log("5" - 2); // 3 because the - operator is not defined for strings, so JavaScript attempts to convert the string "5" to a number, resulting in 5 - 2 which equals 3
+        console.log("5" * "2"); // 10 because the * operator is not defined for strings, so JavaScript attempts to convert both strings "5" and "2" to numbers, resulting in 5 * 2 which equals 10
+        console.log("5" / "2"); // 2.5 because the / operator
+        console.log(true + 1); // 2 because in JavaScript, the boolean value true is coerced to the number 1 when used in an arithmetic operation, so true + 1 is equivalent to 1 + 1 which equals 2
+        console.log(false + "1"); // "false1" because the + operator with a string operand performs string concatenation, converting the boolean value false to the string "false" and concatenating it with "1"
+
+        console.log(0 == false); // true because in loose equality (==), JavaScript performs type coercion and considers 0 and false to be equivalent in value
+        console.log(0 === false); // false because in strict equality (===), JavaScript checks for both value and type, and 0 is a number while false is a boolean, so they are not of the same type
+        console.log("" == false); // true because in loose equality (==), JavaScript performs type coercion and considers an empty string ("") and false to be equivalent in value
+        console.log("" === false); // false because in strict equality (===), JavaScript checks for both value and type, and an empty string ("") is of type string while false is of type boolean, so they are not of the same type
+        console.log(null == undefined); // true because in loose equality (==), JavaScript considers null and undefined to be equivalent in value
+        console.log(null === undefined); // false because in strict equality (===), JavaScript checks for both value and type, and null is of type object while undefined is of type undefined, so they are not of the same type
+
+
     </script>
 </body>
+
 </html>

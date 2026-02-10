@@ -44,6 +44,32 @@
     <p>A primitive data type that creates a unique and immutable identifier, used as object keys to avoid naming
         conflicts and enable privacy in object properties.</p>
     <p><strong>Example:</strong> <code>let sym = Symbol("id"); let obj = {[sym]: 123};</code></p>
+
+
+    <script>
+        let x = null;
+        let y;
+
+        console.log(typeof x); //object because of a historical bug in JavaScript, null is considered an object type
+        console.log(typeof y); //undefined because y is declared but not assigned any value, so it is of type undefined
+        console.log(x == y); //true because both null and undefined are considered equal in value when using loose equality (==) in JavaScript
+        console.log(x === y); //false because strict equality (===) checks for both value and type, and null and undefined are of different types (object vs undefined)
+        // ==  and === are comparison operators in JavaScript. == checks for equality of values, while === checks for both value and type equality.
+
+        //You cannot reassign a const But you can modify object contents
+        const obj = { a: 1 };
+        obj.a = 2;   // allowed
+        obj = {};    // NOT allowed
+
+        //falsy values in JavaScript are values that are considered false when evaluated in a boolean context. The falsy values include:
+        //false
+        //0
+        //-0
+        //""       // empty string
+        //null
+        //undefined
+        //NaN       
+    </script>
 </body>
 
 </html>
