@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Edit Student</title>
+</head>
+
+<body>
+
+    <h2>Edit Student</h2>
+
+    <form th:action="@{/student/update/{id}(id=${student.id})}" 
+          th:object="${student}" 
+          method="post">
+
+        <!-- Hidden ID field (MANDATORY for update) -->
+        <input type="hidden" th:field="*{id}" />
+
+        <br><br>
+
+        <label>Name:</label>
+        <input type="text" th:field="*{name}" />
+
+        <br><br>
+
+        <button type="submit">Update</button>
+
+    </form>
+
+</body>
+
+</html>

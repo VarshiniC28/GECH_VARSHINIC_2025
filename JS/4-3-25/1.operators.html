@@ -106,7 +106,7 @@
     // Returns false if at least one operand is false.
     // Uses short-circuiting (stops evaluating as soon as it finds false).
     console.log("Logical operators");
-    console.log(true & true);
+    console.log(true & true); //1 because it will work as bitwise operator
 
     let r = 10;
     let result = r > 5 && r < 0;
@@ -115,7 +115,7 @@
     //   ||:Returns true if at least one operand is true.
     // Returns false only if both operands are false.
     console.log(true || false);
-    console.log(true || console.log("This won't execute")); // true
+    console.log(true || console.log("This won't execute")); // true because of short-circuiting that is it will not evaluate the second operand if the first one is true
 
     let name = "";
     let userName = name || "Guest";
@@ -124,13 +124,13 @@
 
     //   ! :Reverses the Boolean value.
     // !true becomes false, and !false becomes true.
-    console.log(!true);
+    console.log(!true); //false
 
     //   Ternary operators: ? :
 
     let w = 2;
     let f = 3;
-    console.log(a > b ? a : b);
+    console.log(w > f ? w : f);
 
     console.log(5 && 1); // Logical AND → 1 (truthy value)
 
