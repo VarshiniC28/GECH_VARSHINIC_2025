@@ -77,7 +77,7 @@ public class JournalEntryController {
 	public ResponseEntity<JournalModels> editAndUpdate(@PathVariable Long id, @RequestBody JournalModels myEntry) {
 		try {
 			serv.edit(id, myEntry);
-			return new ResponseEntity<>(HttpStatus.OK);
+			return new ResponseEntity<>(myEntry, HttpStatus.OK);
 		}catch(Exception e) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}

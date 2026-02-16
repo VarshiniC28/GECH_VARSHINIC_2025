@@ -2,10 +2,14 @@ package com.myjournals.myJournal.models;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 //import lombok.AllArgsConstructor;
@@ -41,5 +45,8 @@ public class JournalModels {
 	private String content;
 	private LocalDateTime date;
 	
-	
+	@ManyToOne //owning side will have the foreign key
+	@JoinColumn(name = "user_id") //foreign key in journal models 
+	@JsonBackReference
+	private Users user;
 }
