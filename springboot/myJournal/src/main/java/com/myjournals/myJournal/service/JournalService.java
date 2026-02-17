@@ -6,22 +6,35 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.myjournals.myJournal.models.JournalModels;
+import com.myjournals.myJournal.models.Users;
 import com.myjournals.myJournal.repositories.JournalRepository;
+
+import org.springframework.transaction.annotation.Transactional;
+
 
 @Service
 public class JournalService {
 
 	@Autowired
 	private JournalRepository repo;
+	
+	@Autowired
+	private UserService userServ;
 
 	//save
-	public void saveEntry(JournalModels myEntry) {
-		repo.save(myEntry);
+	@Transactional
+	public void saveEntry(JournalModels myEntry, String userName) {
+		Users user = userServ.findByUsername(userName);
+		myEntry.setUser(user); //explicitly set user for that journal entry
+		JournalModels save = repo.save(myEntry);
+		user.getEntries().add(save);
+		user.setUserName(null); //intentional bug to understand the Transaction
+		userServ.saveUser(user);
 	}
 	
 	
 	//get all entries
-	public List<JournalModels> getAll(){
+	public List<JournalModels> getAll(String username){
 		return repo.findAll();
 	}
 	

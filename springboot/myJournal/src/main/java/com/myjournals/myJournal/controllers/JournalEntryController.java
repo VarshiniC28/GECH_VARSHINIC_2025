@@ -17,7 +17,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.myjournals.myJournal.models.JournalModels;
+import com.myjournals.myJournal.models.Users;
 import com.myjournals.myJournal.service.JournalService;
+import com.myjournals.myJournal.service.UserService;
 
 @RestController
 @RequestMapping("/journal")
@@ -25,19 +27,10 @@ public class JournalEntryController {
 
 	@Autowired
 	private JournalService serv;
-
-	//post the entry
-	@PostMapping("/create")
-	public ResponseEntity<JournalModels> createEntry(@RequestBody JournalModels myEntry) {
-		try {
-			myEntry.setDate(LocalDateTime.now());
-			serv.saveEntry(myEntry);
-			return new ResponseEntity<>(myEntry, HttpStatus.OK);
-		}catch(Exception e) {
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-		}
-	}
 	
+	@Autowired
+	private UserService userServ;
+
 	//get all entries
 //	@GetMapping("/entries")
 //	public List<JournalModels> getAll(){
@@ -45,13 +38,26 @@ public class JournalEntryController {
 //	}
 	
 	//same method but with response entity
-	@GetMapping("/entries")
-	public ResponseEntity<?> getAll(){
-		List<JournalModels> all = serv.getAll();
+	@GetMapping("/entries/{userName}")
+	public ResponseEntity<?> getAll(@PathVariable String userName){
+		Users user = userServ.findByUsername(userName);
+		List<JournalModels> all = user.getEntries();
 		if(all != null && !all.isEmpty()) {
 			return new ResponseEntity<>(all, HttpStatus.OK);
 		}
-		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		return new ResponseEntity<>(all, HttpStatus.NOT_FOUND);
+	}
+	
+	//post the entry
+	@PostMapping("/create/{userName}")
+	public ResponseEntity<JournalModels> createEntry(@RequestBody JournalModels myEntry, @PathVariable String userName) {
+		try {
+			myEntry.setDate(LocalDateTime.now());
+			serv.saveEntry(myEntry, userName);
+			return new ResponseEntity<>(myEntry, HttpStatus.OK);
+		}catch(Exception e) {
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
 	}
 	
 	//get by id
@@ -73,8 +79,8 @@ public class JournalEntryController {
 	}
 	
 	//edit by id
-	@PutMapping("/edit/{id}")
-	public ResponseEntity<JournalModels> editAndUpdate(@PathVariable Long id, @RequestBody JournalModels myEntry) {
+	@PutMapping("/edit/{userName}/{id}")
+	public ResponseEntity<JournalModels> editAndUpdate(@PathVariable Long id, @RequestBody JournalModels myEntry, @PathVariable String userName) {
 		try {
 			serv.edit(id, myEntry);
 			return new ResponseEntity<>(myEntry, HttpStatus.OK);
