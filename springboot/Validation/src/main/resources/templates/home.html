@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Student Home</title>
+</head>
+
+<body>
+
+<h2>Student List</h2>
+
+<a href="/showAddForm">Add Student</a>
+<br><br>
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Image</th>
+        <th>Actions</th>
+    </tr>
+
+    <tr th:each="student : ${students}">
+        <td th:text="${student.name}"></td>
+        <td th:text="${student.age}"></td>
+        <td th:text="${student.email}"></td>
+        <td th:text="${student.address}"></td>
+        <td>
+            <img th:src="@{'/images/' + ${student.imageName}}" width="60" height="60"/>
+        </td>
+        <td>
+            <a th:href="@{/showUpdateForm(id=${student.id})}">Edit</a>
+            <a th:href="@{/deleteStudent(id=${student.id})}">Delete</a>
+        </td>
+    </tr>
+
+</table>
+
+</body>
+</html>

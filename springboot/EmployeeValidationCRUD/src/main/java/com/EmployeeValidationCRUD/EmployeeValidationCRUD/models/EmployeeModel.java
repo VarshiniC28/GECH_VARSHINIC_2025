@@ -1,6 +1,6 @@
 package com.EmployeeValidationCRUD.EmployeeValidationCRUD.models;
 
-import org.springframework.web.multipart.MultipartFile;
+//import org.springframework.web.multipart.MultipartFile;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

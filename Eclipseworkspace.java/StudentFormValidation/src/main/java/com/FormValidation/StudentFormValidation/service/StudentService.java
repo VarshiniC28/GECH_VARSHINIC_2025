@@ -44,7 +44,9 @@ public class StudentService {
 				Files.createDirectories(uploadPath);
 			}
 			try (InputStream inputStream = image.getInputStream()) {
+				
 				Files.copy(inputStream, Paths.get(uploadDir + storeImageName), StandardCopyOption.REPLACE_EXISTING);
+				
 			} catch (Exception e) {
 				System.out.println("Error copying the file: " + e.getMessage());
 			}

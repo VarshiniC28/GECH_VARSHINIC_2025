@@ -38,6 +38,8 @@ public class HomeController {
 		return "home";
 	}
 
+	
+	
 	@GetMapping({"/add-student"})
 	public String addStudent(Model model) {
 		model.addAttribute("studentDTO", new StudentDTO());
@@ -47,7 +49,7 @@ public class HomeController {
 	@PostMapping("/add-student")
 		public String addStudent(@Valid @ModelAttribute StudentDTO studentDTO, BindingResult result ,Model model, RedirectAttributes  attributes) {
 		StudentForm student = studentRepository.findByEmail(studentDTO.getEmail());
-		if(student!= null) {
+		if(student != null) {
 			result.addError(new FieldError("StudentDTO", "email", "Email is already taken"));
 		}
 		if(studentDTO.getImage().isEmpty()) {
@@ -56,7 +58,7 @@ public class HomeController {
 		if(result.hasErrors()) {
 			return "add_student";
 		}
-			System.out.println(studentDTO.getName()+"2");
+//			System.out.println(studentDTO.getName()+"2");
 			studentService.saveStudent(studentDTO);
 			attributes.addFlashAttribute("success","Student added susccessfully");
 			return "redirect:/";
