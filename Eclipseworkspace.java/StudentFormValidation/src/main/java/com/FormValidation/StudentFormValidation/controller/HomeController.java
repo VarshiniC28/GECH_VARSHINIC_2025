@@ -38,8 +38,6 @@ public class HomeController {
 		return "home";
 	}
 
-	
-	
 	@GetMapping({"/add-student"})
 	public String addStudent(Model model) {
 		model.addAttribute("studentDTO", new StudentDTO());
